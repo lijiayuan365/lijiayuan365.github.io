@@ -1268,7 +1268,7 @@ pre .javascript .function {
   opacity: 0;
 }
 .posts-expand {
-  padding-top: 40px;
+  /*padding-top: 40px;*/
 }
 @media (max-width: 767px) {
   .posts-expand {
@@ -1330,7 +1330,7 @@ pre .javascript .function {
   box-sizing: border-box;
   margin: auto;
   padding: 3px;
-  border: 1px solid #ddd;
+  /*border: 1px solid #ddd;*/
 }
 .posts-expand .post-body .fancybox img {
   margin: 0 auto 25px;
@@ -1608,8 +1608,8 @@ pre .javascript .function {
   left: auto;
 }
 .posts-expand .post-eof {
-  display: block;
-  margin: 80px auto 60px;
+  display: none;
+  /*margin: 80px auto 60px;*/
   width: 8%;
   height: 1px;
   background: #ccc;
@@ -2864,7 +2864,7 @@ pre .javascript .function {
   box-sizing: border-box;
   padding: 40px;
   width: 700px;
-  background: #fff;
+  /*background: #fff;*/
   min-height: 700px;
   box-shadow: initial;
   border-radius: initial;
