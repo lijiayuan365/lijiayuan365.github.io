@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="正则表达式 前言 定义正则12let reg = new RegExp(&amp;quot;G&amp;quot;);//RegExp对象，参数就是我们要制定的规则let reg = /G/; //一般写法，推荐使用，性能更好   常用方法 test()：在字符串中查找符合正则的内容，找到返回true，反之返回false1234//判断数字是否有非数字let str =&amp;apos;1233456&amp;apos;;l">
+<meta name="description" content="正则表达式1 定义正则12let reg = new RegExp(&amp;quot;G&amp;quot;);//RegExp对象，参数就是我们要制定的规则let reg = /G/; //一般写法，推荐使用，性能更好 2 常用方法 test()：在字符串中查找符合正则的内容，找到返回true，反之返回false 1234//判断数字是否有非数字let str =&amp;apos;1233456&amp;apos;;le">
 <meta name="keywords" content="知识点">
 <meta property="og:type" content="article">
 <meta property="og:title" content="正则基础知识">
 <meta property="og:url" content="http://yoursite.com/2018/10/13/reg-knowledge/index.html">
 <meta property="og:site_name" content="小红帽的博客">
-<meta property="og:description" content="正则表达式 前言 定义正则12let reg = new RegExp(&amp;quot;G&amp;quot;);//RegExp对象，参数就是我们要制定的规则let reg = /G/; //一般写法，推荐使用，性能更好   常用方法 test()：在字符串中查找符合正则的内容，找到返回true，反之返回false1234//判断数字是否有非数字let str =&amp;apos;1233456&amp;apos;;l">
+<meta property="og:description" content="正则表达式1 定义正则12let reg = new RegExp(&amp;quot;G&amp;quot;);//RegExp对象，参数就是我们要制定的规则let reg = /G/; //一般写法，推荐使用，性能更好 2 常用方法 test()：在字符串中查找符合正则的内容，找到返回true，反之返回false 1234//判断数字是否有非数字let str =&amp;apos;1233456&amp;apos;;le">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-14T07:18:59.212Z">
+<meta property="og:updated_time" content="2018-10-15T00:30:20.726Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则基础知识">
-<meta name="twitter:description" content="正则表达式 前言 定义正则12let reg = new RegExp(&amp;quot;G&amp;quot;);//RegExp对象，参数就是我们要制定的规则let reg = /G/; //一般写法，推荐使用，性能更好   常用方法 test()：在字符串中查找符合正则的内容，找到返回true，反之返回false1234//判断数字是否有非数字let str =&amp;apos;1233456&amp;apos;;l">
+<meta name="twitter:description" content="正则表达式1 定义正则12let reg = new RegExp(&amp;quot;G&amp;quot;);//RegExp对象，参数就是我们要制定的规则let reg = /G/; //一般写法，推荐使用，性能更好 2 常用方法 test()：在字符串中查找符合正则的内容，找到返回true，反之返回false 1234//判断数字是否有非数字let str =&amp;apos;1233456&amp;apos;;le">
 
 
 
@@ -392,7 +392,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  840
+                  842
                 </span>
               
 
@@ -430,17 +430,11 @@
 
       
         <a id="more"></a>
-<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><!--more-->
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<h3 id="定义正则"><a href="#定义正则" class="headerlink" title="定义正则"></a>定义正则</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let reg = new RegExp(&quot;G&quot;);//RegExp对象，参数就是我们要制定的规则</span><br><span class="line">let reg = /G/; //一般写法，推荐使用，性能更好</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><ul>
-<li><strong>test()</strong>：在字符串中查找符合正则的内容，找到返回true，反之返回false<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//判断数字是否有非数字</span><br><span class="line">let str =&apos;1233456&apos;;</span><br><span class="line">let reg = /\D/;</span><br><span class="line">console.log(reg.test(str));//false</span><br></pre></td></tr></table></figure>
+<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><h3 id="1-定义正则"><a href="#1-定义正则" class="headerlink" title="1 定义正则"></a>1 定义正则</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let reg = new RegExp(&quot;G&quot;);//RegExp对象，参数就是我们要制定的规则</span><br><span class="line">let reg = /G/; //一般写法，推荐使用，性能更好</span><br></pre></td></tr></table></figure>
+<h3 id="2-常用方法"><a href="#2-常用方法" class="headerlink" title="2 常用方法"></a>2 常用方法</h3><ul>
+<li><p><strong>test()</strong>：在字符串中查找符合正则的内容，找到返回true，反之返回false</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//判断数字是否有非数字</span><br><span class="line">let str =&apos;1233456&apos;;</span><br><span class="line">let reg = /\D/;</span><br><span class="line">console.log(reg.test(str));//false</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-</blockquote>
-<ul>
 <li><p><strong>exec()</strong> </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*RegExp的exec()方法和String的match()方法很类似，</span></span><br><span class="line"><span class="comment">它对一个指定的字符串执行一个正则表达式匹配，如果没有找到任何一个匹配，</span></span><br><span class="line"><span class="comment">它将返回null，否则返回一个数组，这个数组的第一个元素包含的是与正则表达</span></span><br><span class="line"><span class="comment">式相匹配的字符串,余下的所有元素包含的是匹配的各个分组。而且，正则表达式</span></span><br><span class="line"><span class="comment">对象的index属性还包含了匹配发生的字符串的位置，属性input引用的则是被检</span></span><br><span class="line"><span class="comment">索的字符串。如果正则表达式具有g标志，它将把该对象的lastIndex属性设置到</span></span><br><span class="line"><span class="comment">紧接着匹配字符串的位置开始检索，如果exec()没有发现任何匹配，它将把 </span></span><br><span class="line"><span class="comment">lastIndex属性重置为0，这一特殊的行为可以使你可以反复调用exec()遍历一个字</span></span><br><span class="line"><span class="comment">符串中所有的正则表达式匹配。*/</span></span><br><span class="line"><span class="keyword">let</span> str5 = <span class="string">'cat,fat,bat,sat,cct'</span>;</span><br><span class="line"><span class="keyword">let</span> reg5 = <span class="regexp">/.at/g</span>;</span><br><span class="line">reg5.lastIndex = <span class="number">10</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg5.exec(str5));<span class="comment">//[ 'cat', index: 0, input: 'cat,fat,bat,sat,cct' ]</span></span><br></pre></td></tr></table></figure>
 </li>
@@ -454,13 +448,10 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//找到指定格式的所有数字</span><br><span class="line">let str3 = &apos;haj123sdk54hask33dkhalsd879&apos;;</span><br><span class="line">let reg3 = /\d+/g;//每次至少匹配一个数字</span><br><span class="line">console.log(str3.match(reg3));//[ &apos;123&apos;, &apos;54&apos;, &apos;33&apos;, &apos;879&apos; ]</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<blockquote>
-<h3 id="常见字符"><a href="#常见字符" class="headerlink" title="常见字符"></a>常见字符</h3><ul>
-<li><h4 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h4>这几个常见转义字符还是要的顺手记下滴<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">\s :空格</span><br><span class="line">\S :非空格</span><br><span class="line">\d :数字</span><br><span class="line">\D :非数字</span><br><span class="line">\w :字符（字母，数字，下划线那些）</span><br><span class="line">\W :非字符</span><br><span class="line">. :任意字符</span><br><span class="line">\. :真正的点</span><br></pre></td></tr></table></figure>
+<h3 id="3-常见字符"><a href="#3-常见字符" class="headerlink" title="3 常见字符"></a>3 常见字符</h3><ul>
+<li><h4 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h4><p>这几个常见转义字符还是要的顺手记下滴</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">\s :空格</span><br><span class="line">\S :非空格</span><br><span class="line">\d :数字</span><br><span class="line">\D :非数字</span><br><span class="line">\w :字符（字母，数字，下划线那些）</span><br><span class="line">\W :非字符</span><br><span class="line">. :任意字符</span><br><span class="line">\. :真正的点</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-</blockquote>
-<ul>
 <li><h4 id="量词"><a href="#量词" class="headerlink" title="量词"></a>量词</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;n,m&#125; :出现n~m次</span><br><span class="line">&#123;n,&#125; :至少n次</span><br><span class="line">&#123;n&#125; :出现n次</span><br><span class="line">* :任意次</span><br><span class="line">? :1次或者0次，相当于&#123;0,&#125;</span><br><span class="line">+ :1~n次</span><br></pre></td></tr></table></figure>
 </li>
 <li><h4 id="其他符号"><a href="#其他符号" class="headerlink" title="其他符号"></a>其他符号</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">^ :匹配输入串的开始位置</span><br><span class="line">$ :匹配输入串的结束位置</span><br><span class="line">[] :[]里面的任意字符</span><br><span class="line">[^] :非[]里面的任意字符</span><br><span class="line">() :分组符，小括号中的项叫做正则的子项</span><br><span class="line">$1($n) :正则式中的第1（n）个子项</span><br></pre></td></tr></table></figure></li>
@@ -567,6 +558,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2018/10/16/update-webpack4/" rel="prev" title="Webpack3 迁移到 Webpack4">
+                Webpack3 迁移到 Webpack4 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -650,7 +645,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -661,7 +656,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -672,7 +667,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -733,7 +728,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#正则表达式"><span class="nav-text">正则表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义正则"><span class="nav-text">定义正则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用方法"><span class="nav-text">常用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见字符"><span class="nav-text">常见字符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#转义字符"><span class="nav-text">转义字符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#量词"><span class="nav-text">量词</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他符号"><span class="nav-text">其他符号</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#正则表达式"><span class="nav-text">正则表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-定义正则"><span class="nav-text">1 定义正则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-常用方法"><span class="nav-text">2 常用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-常见字符"><span class="nav-text">3 常见字符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#转义字符"><span class="nav-text">转义字符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#量词"><span class="nav-text">量词</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他符号"><span class="nav-text">其他符号</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
