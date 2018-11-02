@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="模块化,CommonJS,AMD,CMD," />
 
 
 
@@ -86,17 +86,18 @@
 
 
 
-<meta name="description" content="面向对象面向君，不负代码不负卿">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+<meta name="description" content="前言最近遇到很多朋友问 Javascript 模块化使用的问题，然后发现对这这个也是一知半解，偶尔还会搞混，在项目中使用的时候会出各种小错误，所以就写一下，复习一下 Javascript 模块化的知识和使用方式。 模块通常是指编程语言所提供的代码组织机制，利用此机制可将程序拆解为独立且通用的代码单元。所谓模块化主要是解决代码分割、作用域隔离、模块之间的依赖管理以及发布到生产环境时的自动化打包与处理">
+<meta name="keywords" content="模块化,CommonJS,AMD,CMD">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js-module">
+<meta property="og:url" content="http://yoursite.com/2018/11/02/js-module/index.html">
 <meta property="og:site_name" content="小红帽的博客">
-<meta property="og:description" content="面向对象面向君，不负代码不负卿">
+<meta property="og:description" content="前言最近遇到很多朋友问 Javascript 模块化使用的问题，然后发现对这这个也是一知半解，偶尔还会搞混，在项目中使用的时候会出各种小错误，所以就写一下，复习一下 Javascript 模块化的知识和使用方式。 模块通常是指编程语言所提供的代码组织机制，利用此机制可将程序拆解为独立且通用的代码单元。所谓模块化主要是解决代码分割、作用域隔离、模块之间的依赖管理以及发布到生产环境时的自动化打包与处理">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-14T07:40:23.437Z">
+<meta property="og:updated_time" content="2018-11-02T03:11:15.460Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
-<meta name="twitter:description" content="面向对象面向君，不负代码不负卿">
+<meta name="twitter:title" content="js-module">
+<meta name="twitter:description" content="前言最近遇到很多朋友问 Javascript 模块化使用的问题，然后发现对这这个也是一知半解，偶尔还会搞混，在项目中使用的时候会出各种小错误，所以就写一下，复习一下 Javascript 模块化的知识和使用方式。 模块通常是指编程语言所提供的代码组织机制，利用此机制可将程序拆解为独立且通用的代码单元。所谓模块化主要是解决代码分割、作用域隔离、模块之间的依赖管理以及发布到生产环境时的自动化打包与处理">
 
 
 
@@ -126,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/about/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/02/js-module/"/>
 
 
 
 
 
-  <title>about | 小红帽的博客</title>
+  <title>js-module | 小红帽的博客</title>
   
 
 
@@ -291,33 +292,318 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/02/js-module/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小红帽">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小红帽的博客">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">about</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
+          <h1 class="post-title" itemprop="name headline">js-module</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-02T10:18:10+08:00">
+                2018-11-02
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-11-02T11:11:15+08:00">
+                2018-11-02
+              </time>
+            
+          </span>
+
           
-        
-      </div>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.4k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
       
+        <p><strong>前言</strong><br>最近遇到很多朋友问 Javascript 模块化使用的问题，然后发现对这这个也是一知半解，偶尔还会搞混，在项目中使用的时候会出各种小错误，所以就写一下，复习一下 Javascript 模块化的知识和使用方式。</p>
+<p>模块通常是指编程语言所提供的代码组织机制，利用此机制可将程序拆解为独立且通用的代码单元。所谓模块化主要是解决代码分割、作用域隔离、模块之间的依赖管理以及发布到生产环境时的自动化打包与处理等多个方面。</p>
+<h2 id="1-模块化的优点"><a href="#1-模块化的优点" class="headerlink" title="1 模块化的优点"></a>1 模块化的优点</h2><ol>
+<li>可维护性。因为模块是独立的，一个设计良好的模块会让外面的代码对自己的依赖越少越好，这样自己就可以独立去更新和改进。</li>
+<li>命名空间。在 JavaScript 里面，如果一个变量在最顶级的函数之外声明，它就直接变成全局可用。因此，常常不小心出现命名冲突的情况。使用模块化开发来封装变量，可以避免污染全局环境。</li>
+<li>重用代码。我们有时候会喜欢从之前写过的项目中拷贝代码到新的项目，这没有问题，但是更好的方法是，通过模块引用的方式，来避免重复的代码库。</li>
+</ol>
+<h2 id="2-模块化规范"><a href="#2-模块化规范" class="headerlink" title="2 模块化规范"></a>2 模块化规范</h2><h3 id="2-1-CommonJS-规范"><a href="#2-1-CommonJS-规范" class="headerlink" title="2.1 CommonJS 规范"></a>2.1 CommonJS 规范</h3><p>CommonJS 是 Mozilla 的工程师于 2009 年开始的一个项目，他的目的是让浏览器之外的 Javascript （比如服务器端或者桌面端）能够通过模块化的方式来开发和协作。</p>
+<p>在 CommonJS 规范中，每个 JS 文件就是一个独立的模块上下文（module context），在这个上下文中创建的属性都是私有的。也就是说，在一个文件定义的变量（包括函数和类），都是私有的，对其他文件是不可见的。</p>
+<h4 id="2-1-1-实例"><a href="#2-1-1-实例" class="headerlink" title="2.1.1 实例"></a>2.1.1 实例</h4><p>这里分两种情况讲明吧，一种是一个文件中导出一个模块，这种我们引入模块的时候可以定义随便一个变量名去接入使用模块。另外则是一个文件中导出多个模块。这种情况的话，模块文件导出的是一个包含多个模块的对象，我们导入引用的时候只能是用一个对象 {} 引用，然后这边使用的模块名必须要和源文件中导出的模块名一致。（这边有点绕，具体看代码就明白了）</p>
+<ul>
+<li>一个文件导出一个模块</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// sayHello.js</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'hello'</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">module</span>.exports = sayHello</span><br><span class="line"></span><br><span class="line"><span class="comment">//main.js 中引入 sayHello.js</span></span><br><span class="line"><span class="comment">// 引入单个模块，这里引入的时候可以 say，sayHello 等等变量名去定义导入的模块 </span></span><br><span class="line"><span class="keyword">const</span> say = <span class="built_in">require</span>(<span class="string">'./sayHello.js'</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>一个文件导出多个模块</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// say.js</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHi</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'hello'</span>);  </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayBye</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'bye'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;sayBye,sayHi&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* main.js</span></span><br><span class="line"><span class="comment">*  这个时候引用的话，用&#123;&#125;去引用导出的模块，怎么导出我们就怎么引用，然后里面的模块名就只能是引用文件 say.js 里面定义的 sayBye，sayHi 变量名</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">const</span> &#123;sayBye, sayHello&#125; = <span class="built_in">require</span>(<span class="string">'./say.js'</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="2-1-2-注意事项"><a href="#2-1-2-注意事项" class="headerlink" title="2.1.2 注意事项"></a>2.1.2 注意事项</h4><p>因为 CommonJS 规范主要应用的场景是服务器端，所以采用同步加载模块的策略。如果我们依赖 3 个模块，代码会一个一个一次加载，这种的话就不适合浏览器端来使用了。</p>
+<h3 id="2-2-AMD-规范"><a href="#2-2-AMD-规范" class="headerlink" title="2.2 AMD 规范"></a>2.2 AMD 规范</h3><p>AMD 是 Asynchronous Module Definition 的简称，即『异步模块定义 』，见名知义，AMD 优先照顾浏览器模块的加载场景，使用异步加载和回调的方式。<code>注意</code>使用模式需要 define 方法的支持。一般是引用 <a href="http://www.requirejs.cn/" target="_blank" rel="noopener">requireJS</a></p>
+<h4 id="2-2-1-实例"><a href="#2-2-1-实例" class="headerlink" title="2.2.1 实例"></a>2.2.1 实例</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// file lib/sayModule.js </span></span><br><span class="line"> </span><br><span class="line">define(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;            </span><br><span class="line">    <span class="keyword">return</span> &#123; </span><br><span class="line">        sayHello: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; </span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'hello'</span>); </span><br><span class="line">        &#125; </span><br><span class="line">    &#125;; </span><br><span class="line">&#125;); </span><br><span class="line"> </span><br><span class="line"><span class="comment">//file main.js </span></span><br><span class="line"> </span><br><span class="line">define([<span class="string">'./lib/sayModule'</span>], <span class="function"><span class="keyword">function</span> (<span class="params">say</span>)</span>&#123; </span><br><span class="line">    say.sayHello(); <span class="comment">//hello </span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>这种形式感觉有点烦，个人基本都没怎么用。</p>
+<h3 id="2-3-CMD-规范"><a href="#2-3-CMD-规范" class="headerlink" title="2.3 CMD 规范"></a>2.3 CMD 规范</h3><p>CMD 是 Common Module Definition，公共模块定义，</p>
+<h3 id="2-4-ES6-规范"><a href="#2-4-ES6-规范" class="headerlink" title="2.4 ES6 规范"></a>2.4 ES6 规范</h3><p>ES6 规范用的就比较多了，他的话比较简单清晰，就分为导出（export）与导入（import）两个模块 然后他的使用方式也是有很多种情况。</p>
+<ol>
+<li>直接用 export {模块，模块} 导出。引用的话就直接用 import from 导出就可以了。</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// module.js</span></span><br><span class="line"><span class="keyword">let</span> fn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'test'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> bar = <span class="string">'bar'</span>;</span><br><span class="line"><span class="keyword">export</span> &#123;fn, bar&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="keyword">import</span> &#123;bar, fn&#125; <span class="keyword">from</span> <span class="string">'./module'</span>;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>重命名导出与导入。有时候发现我引用了两个文件的模块的名字是一样的，然后就会出现命名冲突了，这个时候就需要重命名导出导入来解决这种情况了，具体就看代码了。</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 导出重命名</span></span><br><span class="line"><span class="keyword">let</span> name = <span class="string">'name'</span>;</span><br><span class="line"><span class="comment">// 这个时候其他文件导入的时候就用 newName 导入了</span></span><br><span class="line"><span class="keyword">export</span> &#123; name <span class="keyword">as</span> newName&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 导入重命名</span></span><br><span class="line"><span class="comment">// 这样我们就用 newName 这个名字重命名原来的模块了。</span></span><br><span class="line"><span class="keyword">import</span> &#123; moduleName <span class="keyword">as</span> newName&#125; <span class="keyword">from</span> <span class="string">'test'</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>export default 匿名导出，如果只想导出一个 js 模块或者功能，可以直接用 export default 导出</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// module.js 字符串，方法，对象，想导出啥就导出啥</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="string">'string'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// main.js XX YY，想用啥命名就用啥命名，毕竟导出的就只有一个对象</span></span><br><span class="line"><span class="keyword">import</span> XXX <span class="keyword">from</span> <span class="string">'./lib'</span></span><br><span class="line"><span class="built_in">console</span>.log(XXX) <span class="comment">// 'string'</span></span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>一般就用 ES6 的规范和 CommonJS 的规范，AMD 和CMD 实在不熟，就没用过了。</p>
+
+      
+    </div>
+	<div>
+    
+    <div>
+    
+        <br />
+        <br />
+        <div style="text-align:center;color: #ccc;font-size:14px;">----------- 本文结束 -----------</div>
+        <br />
+        <br />
+        <br />
+        <br />
+    
+</div>
+    
     </div>
     
     
     
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode_for_gh.jpg" alt="小红帽 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>想看更多文章，那就订阅我的微信公众号吧</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>如果觉得我的文章对你有很大帮助的话，请我喝杯奶茶吧~(@^_^@)~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="小红帽 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/模块化/" rel="tag"># 模块化</a>
+          
+            <a href="/tags/CommonJS/" rel="tag"># CommonJS</a>
+          
+            <a href="/tags/AMD/" rel="tag"># AMD</a>
+          
+            <a href="/tags/CMD/" rel="tag"># CMD</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/24/learn-promise/" rel="next" title="简单学习 Promise 对象">
+                <i class="fa fa-chevron-left"></i> 简单学习 Promise 对象
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -326,6 +612,14 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="gitalk-container"></div>
+    </div>
+
+
+
 
         </div>
         
@@ -346,8 +640,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -439,6 +742,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-模块化的优点"><span class="nav-text">1 模块化的优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-模块化规范"><span class="nav-text">2 模块化规范</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-CommonJS-规范"><span class="nav-text">2.1 CommonJS 规范</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-1-实例"><span class="nav-text">2.1.1 实例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-2-注意事项"><span class="nav-text">2.1.2 注意事项</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-AMD-规范"><span class="nav-text">2.2 AMD 规范</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-1-实例"><span class="nav-text">2.2.1 实例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-CMD-规范"><span class="nav-text">2.3 CMD 规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-ES6-规范"><span class="nav-text">2.4 ES6 规范</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -649,6 +968,23 @@
 
 
 
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script type="text/javascript">
+      const gitalk = new Gitalk({
+        clientID: 'ec5ba3525e570a3e7c96',
+        clientSecret: '08d17f74d1b2292cf961559ee60d9284507b4dba',
+        repo: 'gitalk',
+        owner: 'lijiayuan365',
+        admin: 'lijiayuan365'.split(','),
+        id: location.pathname,
+        // facebook-like distraction free mode
+        distractionFreeMode: 'true',
+        createIssueManually: 'true'
+      })
+      gitalk.render('gitalk-container')
+    </script>
   
 
   
