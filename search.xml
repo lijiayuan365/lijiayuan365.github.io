@@ -74,8 +74,8 @@
         <category>Blog</category>
       </categories>
       <tags>
-        <tag>配置博客</tag>
         <tag>Hexo</tag>
+        <tag>配置博客</tag>
       </tags>
   </entry>
   <entry>
@@ -110,8 +110,8 @@
         <category>Blog</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
         <tag>搭建博客</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
 </search>
