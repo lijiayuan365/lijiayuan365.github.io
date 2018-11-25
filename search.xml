@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[parent-child-talk]]></title>
+    <url>%2F2018%2F11%2F25%2Fparent-child-talk%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[custom-directive-clickoutside]]></title>
+    <url>%2F2018%2F11%2F25%2Fcustom-directive-clickoutside%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[JS 中的深拷贝与浅拷贝]]></title>
+    <url>%2F2018%2F11%2F25%2Fdeepcopy-shallowcopy-in-JS%2F</url>
+    <content type="text"><![CDATA[前言 最近在写项目的时候涉及到一些父子组件传递个对象或者数组通信啥的，或者是直接复制添加对象啥的，直接使用赋值的时候总会出错 1 什么是深拷贝&amp;浅拷贝见名知义，无论是深拷贝还是浅拷贝，都是 copy 的问题。就是 copy 的时候出现的两种情况。区分起来也挺简单的，举个例子，假设 B 是 A 复制过来的，当我们修改 A 的时候，B 也随之改变了，那么这个就是浅拷贝，那要是 B 没有随 A 一起改变的话，那么这个就深拷贝了。 2 现实场景首先呢，我们先要明白在 Javascript 中，有 5 种简单数据类型（也称为基本数据类型），分别是 Undefined，Null，String，Number，Boolean,还有 1 种复杂数据类型即 Object，（ES6 新出的 Symbol 数据类型就先不讨论了） 2.1 基本数据类型对于基本数据类型的复制就谈不上什么深拷贝和浅拷贝了，对于基本数据类型来说，他们的值在栈内存中占据着固定大小的空间，并被保存在栈内存中。假设 变量 b 复制 基本数据类型变量 a，那么 b 会内存中占据自己的空间，和 a 就没啥关系了，大家各管各的，互不干涉。12345let a = 2; let b = a;b = 4;console.log(a); // 2console.log(b); // 4 2.2 复杂数据类型（Object）对于对象的话，他是引用类型，复制起来就要区分浅拷贝和深拷贝了，因为 Object 是引用类型，他真正的值保存在堆内存中，他在栈内存存储是变量名和指向该对象值的指针（就是一个地址），如下图所示。所以当我们用平常用一个变量去复制一个 Object 类型的变量的时候，复制的是他的指针地址而已，所以两个变量最终都指向同一个变量，大家要改一起改，这就是浅拷贝啦，如下12345let obj1 = &#123;name:'kk',age:12,desc:'源对象'&#125;let obj2 = obj1;obj2.desc = '目标对象'console.log(obj1); //&#123;name:'kk',age:12,desc:'目标对象'&#125; 此处源对象跟着一起变了console.log(obj2); // &#123;name:'kk',age:12,desc:'目标对象'&#125; 啥，不信？！，那就看图如何但是在我们日常的使用当中，Object 类型的浅拷贝的行为会让我们很迷，我复制这个对象就是想复制他的值而已啦，不要复制人家个值就和他绑到一块了，跟他一起「同生共死」。所以啊，当我们想按照我们复制的想法，就只复制他的值用来自己用，他的是他的，我的是我的，大家井水不犯河水。接下来就要说咋办了。 3 实现对象类型的深拷贝对于对象的深拷贝，搜集了网上的资料，就有下面三种方法 3.1 slice()&amp;concat()这个是针对数组的深拷贝，可以通过这两个方法实现对数组的深拷贝,如下1234567891011121314151617let arr = [1,2,3,4]let arr2 = arr.slice();arr[0] = 0;console.log(arr); //[1,2,3,4]console.log(arr2); //[1,2,3,4]``` `concat` 同理可得，不过这两个方法有个问题，`slice()` 和 `concat()` 方法能够深拷贝的就只有数组的一级属性，但是如果是多维数组的话，那么只有一级属性的值是深拷贝，往下就都是浅拷贝了，如下所示```javascriptlet arr = [[1,2],2,3,4]let arr2 = arr.concat();arr[0][0] = 0;arr[1] = 1;console.log(arr); //[[0,2],1,3,4]console.log(arr2); //[[0,2],2,3,4]// arr2[1] 没变，但是 arr2[0] 跟着一起改了 3.2 JSON 的骚操作通过 JSON 的 stringify， parase 操作也可以实现对象的深拷贝。123456789101112131415161718192021222324252627282930313233let obj1 = &#123;name:&apos;kk&apos;,age:12,desc:&apos;源对象&apos;&#125;let obj2 = JSON.parase(JSON.stringify(obj1));obj2.desc = &apos;目标对象&apos;;console.log(obj1); //&#123;name:&apos;kk&apos;,age:12,desc:&apos;源对象&apos;&#125; 此处源对象就没有一起变了console.log(obj2); // &#123;name:&apos;kk&apos;,age:12,desc:&apos;目标对象&apos;&#125;``` 此法数组和对象都可以用。### 3.3 自己写一个深拷贝函数自己动手，丰衣足食```javascriptfunction deepCopy(obj) &#123; let newObj = Array.isArray(obj) ? [] : &#123;&#125;; if (obj &amp;&amp; typeof obj === &quot;object&quot;) &#123; for (let key in obj) &#123; if (obj.hasOwnProperty(key)) &#123; //判断ojb子元素是否为对象，如果是，递归复制 if (obj[key] &amp;&amp; typeof obj[key] === &quot;object&quot;) &#123; newObj[key] = deepCopy(obj[key]); &#125; else &#123; //如果不是，简单复制 newObj[key] = obj[key]; &#125; &#125; &#125; &#125; return newObj;&#125;let a = [1,2,3];let b = deepCopy(a);a[0] = 0;console.log(a); //[0,2,3]console.log(a); // [1,2,3] 3.4 JQ 的 extend 方法这个就直接放文档了$.extend( [deep ], target, object1 [, objectN ] )deep:如果设为true，则递归合并即深拷贝。target:待修改对象。object1:待合并到第一个对象的对象。objectN:待合并到第一个对象的对象。使用如下 let a = [1,2,3], let b = $.extend(true,[],a); a[0]=1; console.log(a); // [0,2,3] console.log(b); // [1,2,3] 以上就是关于 JS 中的深拷贝与浅拷贝的知识和如何进行深拷贝的知识了，如果有错或者有其他方式的话，欢迎在下面留言评论啦。]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>深拷贝</tag>
+        <tag>浅拷贝</tag>
+        <tag>对象复制</tag>
+        <tag>对象传值</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[js-module]]></title>
     <url>%2F2018%2F11%2F02%2Fjs-module%2F</url>
     <content type="text"><![CDATA[前言最近遇到很多朋友问 Javascript 模块化使用的问题，然后发现对这这个也是一知半解，偶尔还会搞混，在项目中使用的时候会出各种小错误，所以就写一下，复习一下 Javascript 模块化的知识和使用方式。 模块通常是指编程语言所提供的代码组织机制，利用此机制可将程序拆解为独立且通用的代码单元。所谓模块化主要是解决代码分割、作用域隔离、模块之间的依赖管理以及发布到生产环境时的自动化打包与处理等多个方面。 1 模块化的优点 可维护性。因为模块是独立的，一个设计良好的模块会让外面的代码对自己的依赖越少越好，这样自己就可以独立去更新和改进。 命名空间。在 JavaScript 里面，如果一个变量在最顶级的函数之外声明，它就直接变成全局可用。因此，常常不小心出现命名冲突的情况。使用模块化开发来封装变量，可以避免污染全局环境。 重用代码。我们有时候会喜欢从之前写过的项目中拷贝代码到新的项目，这没有问题，但是更好的方法是，通过模块引用的方式，来避免重复的代码库。 2 模块化规范2.1 CommonJS 规范CommonJS 是 Mozilla 的工程师于 2009 年开始的一个项目，他的目的是让浏览器之外的 Javascript （比如服务器端或者桌面端）能够通过模块化的方式来开发和协作。 在 CommonJS 规范中，每个 JS 文件就是一个独立的模块上下文（module context），在这个上下文中创建的属性都是私有的。也就是说，在一个文件定义的变量（包括函数和类），都是私有的，对其他文件是不可见的。 2.1.1 实例这里分两种情况讲明吧，一种是一个文件中导出一个模块，这种我们引入模块的时候可以定义随便一个变量名去接入使用模块。另外则是一个文件中导出多个模块。这种情况的话，模块文件导出的是一个包含多个模块的对象，我们导入引用的时候只能是用一个对象 {} 引用，然后这边使用的模块名必须要和源文件中导出的模块名一致。（这边有点绕，具体看代码就明白了） 一个文件导出一个模块 123456789// sayHello.jsfunction sayHello()&#123; console.log('hello')&#125;module.exports = sayHello//main.js 中引入 sayHello.js// 引入单个模块，这里引入的时候可以 say，sayHello 等等变量名去定义导入的模块 const say = require('./sayHello.js'); 一个文件导出多个模块 12345678910111213// say.jsfunction sayHi()&#123; console.log('hello'); &#125;function sayBye()&#123; console.log('bye');&#125;module.exports = &#123;sayBye,sayHi&#125;/* main.js* 这个时候引用的话，用&#123;&#125;去引用导出的模块，怎么导出我们就怎么引用，然后里面的模块名就只能是引用文件 say.js 里面定义的 sayBye，sayHi 变量名*/const &#123;sayBye, sayHello&#125; = require('./say.js'); 2.1.2 注意事项因为 CommonJS 规范主要应用的场景是服务器端，所以采用同步加载模块的策略。如果我们依赖 3 个模块，代码会一个一个一次加载，这种的话就不适合浏览器端来使用了。 2.2 AMD 规范AMD 是 Asynchronous Module Definition 的简称，即『异步模块定义 』，见名知义，AMD 优先照顾浏览器模块的加载场景，使用异步加载和回调的方式。注意使用模式需要 define 方法的支持。一般是引用 requireJS 2.2.1 实例123456789101112131415// file lib/sayModule.js define(function ()&#123; return &#123; sayHello: function () &#123; console.log('hello'); &#125; &#125;; &#125;); //file main.js define(['./lib/sayModule'], function (say)&#123; say.sayHello(); //hello &#125;) 这种形式感觉有点烦，个人基本都没怎么用。 2.3 CMD 规范CMD 是 Common Module Definition，公共模块定义， 2.4 ES6 规范ES6 规范用的就比较多了，他的话比较简单清晰，就分为导出（export）与导入（import）两个模块 然后他的使用方式也是有很多种情况。 直接用 export {模块，模块} 导出。引用的话就直接用 import from 导出就可以了。 123456789// module.jslet fn = function()&#123; console.log('test');&#125;let bar = 'bar';export &#123;fn, bar&#125;// main.jsimport &#123;bar, fn&#125; from './module'; 重命名导出与导入。有时候发现我引用了两个文件的模块的名字是一样的，然后就会出现命名冲突了，这个时候就需要重命名导出导入来解决这种情况了，具体就看代码了。 12345678// 导出重命名let name = 'name';// 这个时候其他文件导入的时候就用 newName 导入了export &#123; name as newName&#125;// 导入重命名// 这样我们就用 newName 这个名字重命名原来的模块了。import &#123; moduleName as newName&#125; from 'test' export default 匿名导出，如果只想导出一个 js 模块或者功能，可以直接用 export default 导出 123456// module.js 字符串，方法，对象，想导出啥就导出啥export default 'string';// main.js XX YY，想用啥命名就用啥命名，毕竟导出的就只有一个对象import XXX from './lib'console.log(XXX) // 'string' 总结一般就用 ES6 的规范和 CommonJS 的规范，AMD 和CMD 实在不熟，就没用过了。]]></content>
@@ -74,8 +98,8 @@
         <category>Blog</category>
       </categories>
       <tags>
-        <tag>配置博客</tag>
         <tag>Hexo</tag>
+        <tag>配置博客</tag>
       </tags>
   </entry>
   <entry>
@@ -110,8 +134,8 @@
         <category>Blog</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
         <tag>搭建博客</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
 </search>
