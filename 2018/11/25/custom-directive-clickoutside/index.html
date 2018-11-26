@@ -86,17 +86,19 @@
 
 
 
-<meta name="description" content="面向对象面向君，不负代码不负卿">
+<meta name="description" content="前言 最近搞了毕设，需要实现一个场景，点击一块区域，弹出一个编辑区域，点击页面的其他地方的时候，这个编辑区域就隐藏，本想想之前写模态框一样写个方法的时候，突然觉得可以尝试用 vue 相关的东西优雅的解决这个事情，然后就学了下面的自定义指令了。 1 前置知识既然要用 Vue 的自定义指令，那么肯定">
 <meta property="og:type" content="article">
-<meta property="og:title" content="custom-directive-clickoutside">
+<meta property="og:title" content="Vue 自定义指令实现点击元素外触发事件">
 <meta property="og:url" content="http://yoursite.com/2018/11/25/custom-directive-clickoutside/index.html">
 <meta property="og:site_name" content="小红帽的博客">
-<meta property="og:description" content="面向对象面向君，不负代码不负卿">
+<meta property="og:description" content="前言 最近搞了毕设，需要实现一个场景，点击一块区域，弹出一个编辑区域，点击页面的其他地方的时候，这个编辑区域就隐藏，本想想之前写模态框一样写个方法的时候，突然觉得可以尝试用 vue 相关的东西优雅的解决这个事情，然后就学了下面的自定义指令了。 1 前置知识既然要用 Vue 的自定义指令，那么肯定">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-25T02:24:55.193Z">
+<meta property="og:image" content="https://note.youdao.com/favicon.ico">
+<meta property="og:updated_time" content="2018-11-26T14:54:13.566Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="custom-directive-clickoutside">
-<meta name="twitter:description" content="面向对象面向君，不负代码不负卿">
+<meta name="twitter:title" content="Vue 自定义指令实现点击元素外触发事件">
+<meta name="twitter:description" content="前言 最近搞了毕设，需要实现一个场景，点击一块区域，弹出一个编辑区域，点击页面的其他地方的时候，这个编辑区域就隐藏，本想想之前写模态框一样写个方法的时候，突然觉得可以尝试用 vue 相关的东西优雅的解决这个事情，然后就学了下面的自定义指令了。 1 前置知识既然要用 Vue 的自定义指令，那么肯定">
+<meta name="twitter:image" content="https://note.youdao.com/favicon.ico">
 
 
 
@@ -132,7 +134,7 @@
 
 
 
-  <title>custom-directive-clickoutside | 小红帽的博客</title>
+  <title>Vue 自定义指令实现点击元素外触发事件 | 小红帽的博客</title>
   
 
 
@@ -320,7 +322,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">custom-directive-clickoutside</h1>
+          <h1 class="post-title" itemprop="name headline">Vue 自定义指令实现点击元素外触发事件</h1>
         
 
         <div class="post-meta">
@@ -348,8 +350,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-11-25T10:24:55+08:00">
-                2018-11-25
+              <time title="更新于" itemprop="dateModified" datetime="2018-11-26T22:54:13+08:00">
+                2018-11-26
               </time>
             
           </span>
@@ -381,7 +383,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  127
                 </span>
               
 
@@ -418,7 +420,9 @@
       
 
       
-        
+        <p><strong>前言</strong> 最近搞了毕设，需要实现一个场景，点击一块区域，弹出一个编辑区域，点击页面的其他地方的时候，这个编辑区域就隐藏，本想想之前写模态框一样写个方法的时候，突然<br><img src="https://note.youdao.com/favicon.ico" alt="image"><br>觉得可以尝试用 vue 相关的东西优雅的解决这个事情，然后就学了下面的自定义指令了。</p>
+<h2 id="1-前置知识"><a href="#1-前置知识" class="headerlink" title="1 前置知识"></a>1 前置知识</h2><p>既然要用 Vue 的自定义指令，那么肯定</p>
+
       
     </div>
 	<div>
@@ -572,8 +576,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -592,7 +605,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -603,7 +616,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -614,7 +627,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -665,6 +678,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-前置知识"><span class="nav-text">1 前置知识</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

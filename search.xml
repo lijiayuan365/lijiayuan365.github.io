@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Vue 自定义指令]]></title>
+    <url>%2F2018%2F11%2F26%2Fvue-custom-directive%2F</url>
+    <content type="text"><![CDATA[前言 最近搞了毕设，需要实现一个场景，点击一块区域，弹出一个编辑区域，点击页面的其他地方的时候，这个编辑区域就隐藏，本想想之前写模态框一样写个方法的时候，突然 觉得可以尝试用 vue 相关的东西优雅的解决这个事情，然后就学了下面的自定义指令了。 1 Vue 自定义指令1.1 定义直接看官网的介绍吧（觉得官方文档说的很清楚了，所以我基本都是抄他的了）。 除了核心功能默认内置的指令 (v-model 和 v-show)，Vue 也允许注册自定义指令。注意，在 Vue2.0 中，代码复用和抽象的主要形式是组件。然而，有的情况下，你仍然需要对普通 DOM 元素进行底层操作，这时候就会用到自定义指令。 1.2 基础实现这个在分两种情况，如果你想定义一个全局的自定义组件的话,那么就在项目中的 main.js 里面定义了，例如定义一个官网中的自动聚焦的指令12345678// 注册一个全局自定义指令 `v-focus`Vue.directive('focus', &#123; // 当被绑定的元素插入到 DOM 中时…… inserted: function (el) &#123; // 聚焦元素 el.focus() &#125;&#125;) 要是你只是想定义一个局部的指令在某个组件内部用的话，那么就在相应的组件内定义了123456789// 跟 data(),methods:&#123;&#125; 那些同级写了directives: &#123; focus: &#123; // 指令的定义 inserted: function (el) &#123; el.focus() &#125; &#125;&#125; 定义完后我们就能愉快的使用了1&lt;input v-focus&gt; 1.2 钩子函数当然这个自定义指令不会就这么一点东西啦，为了解决一些现实中场景，Vue 给我们一堆钩子函数用来实现我们的一些骚操作。具体如下 (均为可选)： bind：只调用一次，指令第一次绑定到元素时调用。在这里可以进行一次性的初始化设置。 inserted：被绑定元素插入父节点时调用 (仅保证父节点存在，但不一定已被插入文档中)。 update：所在组件的 VNode 更新时调用，但是可能发生在其子 VNode 更新之前。指令的值可能发生了改变，也可能没有。但是你可以通过比较更新前后的值来忽略不必要的模板更新 (详细的钩子函数参数见下)。 componentUpdated：指令所在组件的 VNode 及其子 VNode 全部更新后调用。 unbind：只调用一次，指令与元素解绑时调用。接下来我们来看一下钩子函数的参数 (即 el、binding、vnode 和 oldVnode)。 当然要想好好用用这写钩子函数，就要懂得用下面的这些参数 1.3 钩子函数参数指令钩子函数会被传入以下参数： el：指令所绑定的元素，可以用来直接操作 DOM 。 binding：一个对象，包含以下属性： name：指令名，不包括 v- 前缀。 value：指令的绑定值，例如：- v-my-directive=”1 + 1” 中，绑定值为 2。 oldValue：指令绑定的前一个值，仅在 update 和 componentUpdated 钩子中可用。无论值是否改变都可用。 expression：字符串形式的指令表达式。例如 v-my-directive=”1 + 1” 中，表达式为 “1 + 1”。 arg：传给指令的参数，可选。例如 v-my-directive:foo 中，参数为 “foo”。 modifiers：一个包含修饰符的对象。例如：v-my-directive.foo.bar 中，修饰符对象为 { - foo: true, bar: true }。 vnode：Vue 编译生成的虚拟节点。移步 VNode API 来了解更多详情。 oldVnode：上一个虚拟节点，仅在 update 和 componentUpdated 钩子中可用。 然后官网有话说 除了 el 之外，其它参数都应该是只读的，切勿进行修改。如果需要在钩子之间共享数据，建议通过元素的 dataset 来进行。 然后下面我们给一个简单的例子1234567891011121314151617// 在组件内部定义一个局部指令directives:&#123; demo:&#123; bind: function (el, binding, vnode) &#123; var s = JSON.stringify; el.innerHTML = `name: $&#123;s(binding.name)&#125; &lt;br&gt; value: $&#123;s(binding.value)&#125; &lt;br&gt; expression: $&#123;s(binding.expression)&#125; &lt;br&gt; argument: $&#123;s(binding.arg)&#125; &lt;br&gt; modifiers: $&#123;s(binding.modifiers)&#125; &lt;br&gt; vnode keys: $&#123;Object.keys(vnode).join(', ')&#125;` &#125; &#125;&#125; // 绑定到组件中的一个 div 中&lt;div v-demo:foo.a.b="message"&gt;&lt;/div&gt; 然后我们在网页中就可以看到这么一堆文字了(当然下面的注释是我自己写的)123456789101112name: "demo" // 指定名称value: "Welcome to Your Vue.js App" // 指令绑定值expression: "message" // 字符串形式的指令表达式argument: "foo" // 传给指令的参数modifiers: &#123;"a":true,"b":true&#125; // 修饰符的对象vnode keys: tag, data, children, text, elm, ns, context, fnContext, fnOptions, fnScopeId, key, componentOptions, componentInstance, parent, raw, isStatic, isRootInsert, isComment, isCloned, isOnce, asyncFactory, asyncMeta, isAsyncPlaceholderVue 编译生成的虚拟节点 1.4 函数简写在很多时候，你可能想在 bind 和 update 时触发相同行为，而不关心其它的钩子。比如这样写:123colorSwatch: function colorSwitch(el, binding) &#123; el.style.backgroundColor = binding.value&#125;, 1.5 对象字面量如果指令需要多个值，可以传入一个 JavaScript 对象字面量。记住，指令函数能够接受所有合法的 JavaScript 表达式。1&lt;div v-demo="&#123; color: 'white', text: 'hello!' &#125;"&gt;&lt;/div&gt; 1234Vue.directive('demo', function (el, binding) &#123; console.log(binding.value.color) // =&gt; "white" console.log(binding.value.text) // =&gt; "hello!"&#125;) 就差不多这样吧，想看个实例的话就看一下我的另外一篇笔记《Vue 自定义指令实现点击元素外触发事件》吧]]></content>
+      <categories>
+        <category>Vue</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+        <tag>自定义指令</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[parent-child-talk]]></title>
     <url>%2F2018%2F11%2F25%2Fparent-child-talk%2F</url>
     <content type="text"></content>
   </entry>
   <entry>
-    <title><![CDATA[custom-directive-clickoutside]]></title>
+    <title><![CDATA[Vue 自定义指令实现点击元素外触发事件]]></title>
     <url>%2F2018%2F11%2F25%2Fcustom-directive-clickoutside%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[前言 最近搞了毕设，需要实现一个场景，点击一块区域，弹出一个编辑区域，点击页面的其他地方的时候，这个编辑区域就隐藏，本想想之前写模态框一样写个方法的时候，突然觉得可以尝试用 vue 相关的东西优雅的解决这个事情，然后就学了下面的自定义指令了。 1 前置知识既然要用 Vue 的自定义指令，那么肯定]]></content>
   </entry>
   <entry>
     <title><![CDATA[JS 中的深拷贝与浅拷贝]]></title>
@@ -25,7 +37,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[js-module]]></title>
+    <title><![CDATA[JS 模块化知识]]></title>
     <url>%2F2018%2F11%2F02%2Fjs-module%2F</url>
     <content type="text"><![CDATA[前言最近遇到很多朋友问 Javascript 模块化使用的问题，然后发现对这这个也是一知半解，偶尔还会搞混，在项目中使用的时候会出各种小错误，所以就写一下，复习一下 Javascript 模块化的知识和使用方式。 模块通常是指编程语言所提供的代码组织机制，利用此机制可将程序拆解为独立且通用的代码单元。所谓模块化主要是解决代码分割、作用域隔离、模块之间的依赖管理以及发布到生产环境时的自动化打包与处理等多个方面。 1 模块化的优点 可维护性。因为模块是独立的，一个设计良好的模块会让外面的代码对自己的依赖越少越好，这样自己就可以独立去更新和改进。 命名空间。在 JavaScript 里面，如果一个变量在最顶级的函数之外声明，它就直接变成全局可用。因此，常常不小心出现命名冲突的情况。使用模块化开发来封装变量，可以避免污染全局环境。 重用代码。我们有时候会喜欢从之前写过的项目中拷贝代码到新的项目，这没有问题，但是更好的方法是，通过模块引用的方式，来避免重复的代码库。 2 模块化规范2.1 CommonJS 规范CommonJS 是 Mozilla 的工程师于 2009 年开始的一个项目，他的目的是让浏览器之外的 Javascript （比如服务器端或者桌面端）能够通过模块化的方式来开发和协作。 在 CommonJS 规范中，每个 JS 文件就是一个独立的模块上下文（module context），在这个上下文中创建的属性都是私有的。也就是说，在一个文件定义的变量（包括函数和类），都是私有的，对其他文件是不可见的。 2.1.1 实例这里分两种情况讲明吧，一种是一个文件中导出一个模块，这种我们引入模块的时候可以定义随便一个变量名去接入使用模块。另外则是一个文件中导出多个模块。这种情况的话，模块文件导出的是一个包含多个模块的对象，我们导入引用的时候只能是用一个对象 {} 引用，然后这边使用的模块名必须要和源文件中导出的模块名一致。（这边有点绕，具体看代码就明白了） 一个文件导出一个模块 123456789// sayHello.jsfunction sayHello()&#123; console.log('hello')&#125;module.exports = sayHello//main.js 中引入 sayHello.js// 引入单个模块，这里引入的时候可以 say，sayHello 等等变量名去定义导入的模块 const say = require('./sayHello.js'); 一个文件导出多个模块 12345678910111213// say.jsfunction sayHi()&#123; console.log('hello'); &#125;function sayBye()&#123; console.log('bye');&#125;module.exports = &#123;sayBye,sayHi&#125;/* main.js* 这个时候引用的话，用&#123;&#125;去引用导出的模块，怎么导出我们就怎么引用，然后里面的模块名就只能是引用文件 say.js 里面定义的 sayBye，sayHi 变量名*/const &#123;sayBye, sayHello&#125; = require('./say.js'); 2.1.2 注意事项因为 CommonJS 规范主要应用的场景是服务器端，所以采用同步加载模块的策略。如果我们依赖 3 个模块，代码会一个一个一次加载，这种的话就不适合浏览器端来使用了。 2.2 AMD 规范AMD 是 Asynchronous Module Definition 的简称，即『异步模块定义 』，见名知义，AMD 优先照顾浏览器模块的加载场景，使用异步加载和回调的方式。注意使用模式需要 define 方法的支持。一般是引用 requireJS 2.2.1 实例123456789101112131415// file lib/sayModule.js define(function ()&#123; return &#123; sayHello: function () &#123; console.log('hello'); &#125; &#125;; &#125;); //file main.js define(['./lib/sayModule'], function (say)&#123; say.sayHello(); //hello &#125;) 这种形式感觉有点烦，个人基本都没怎么用。 2.3 CMD 规范CMD 是 Common Module Definition，公共模块定义， 2.4 ES6 规范ES6 规范用的就比较多了，他的话比较简单清晰，就分为导出（export）与导入（import）两个模块 然后他的使用方式也是有很多种情况。 直接用 export {模块，模块} 导出。引用的话就直接用 import from 导出就可以了。 123456789// module.jslet fn = function()&#123; console.log('test');&#125;let bar = 'bar';export &#123;fn, bar&#125;// main.jsimport &#123;bar, fn&#125; from './module'; 重命名导出与导入。有时候发现我引用了两个文件的模块的名字是一样的，然后就会出现命名冲突了，这个时候就需要重命名导出导入来解决这种情况了，具体就看代码了。 12345678// 导出重命名let name = 'name';// 这个时候其他文件导入的时候就用 newName 导入了export &#123; name as newName&#125;// 导入重命名// 这样我们就用 newName 这个名字重命名原来的模块了。import &#123; moduleName as newName&#125; from 'test' export default 匿名导出，如果只想导出一个 js 模块或者功能，可以直接用 export default 导出 123456// module.js 字符串，方法，对象，想导出啥就导出啥export default 'string';// main.js XX YY，想用啥命名就用啥命名，毕竟导出的就只有一个对象import XXX from './lib'console.log(XXX) // 'string' 总结一般就用 ES6 的规范和 CommonJS 的规范，AMD 和CMD 实在不熟，就没用过了。]]></content>
       <categories>
