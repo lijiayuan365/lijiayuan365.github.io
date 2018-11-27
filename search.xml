@@ -20,7 +20,7 @@
   <entry>
     <title><![CDATA[Vue 自定义指令实现点击元素外触发事件]]></title>
     <url>%2F2018%2F11%2F25%2Fcustom-directive-clickoutside%2F</url>
-    <content type="text"><![CDATA[前言 最近搞了毕设，需要实现一个场景，点击一块区域，弹出一个编辑区域，点击页面的其他地方的时候，这个编辑区域就隐藏，本想想之前写模态框一样写个方法的时候，突然觉得可以尝试用 vue 相关的东西优雅的解决这个事情，然后就学了下面的自定义指令了。 1 前置知识既然要用 Vue 的自定义指令，那么肯定]]></content>
+    <content type="text"><![CDATA[前言 最近搞了毕设，需要实现一个场景，点击一块区域，弹出一个编辑区域，点击页面的其他地方的时候，这个编辑区域就隐藏，本想想之前写模态框一样写个方法的时候，突然觉得可以尝试用 vue 相关的东西优雅的解决这个事情，然后就学了下面的自定义指令了。 前置知识既然要用 Vue 的自定义指令，那么肯定要了解一下 Vue 自定义指令的相关知识啦，关于这部分的内容，看我之前写过的《Vue 自定义指令》或者直接看官方文档就可以啦，这里我就不再多讲了。 解决思路这个按照我之前写模态框的经验，我的做法是给 document 绑定一个点击事件，然后判断触发点击事件的那个元素是不是模态框所在的目标区域，如果不是，那么就触发隐藏事件。看一下代码吧123456$(document).mouseup(function(e)&#123; var _con = $(' 目标区域 '); // 设置目标区域 if(!_con.is(e.target))&#123; // 判断是不是目标区域 some code... // 功能代码 &#125;&#125;); 实现有了思路，实现起来就简单了。就直接放定义的代码啦12345678910111213141516171819202122232425262728const clickOutside = &#123; // 初始化指令 bind(el, binding, vnode) &#123; function clickHandler(e) &#123; // 这里判断点击的元素是否是本身，是本身，则返回 if (el.contains(e.target)) &#123; return false; &#125; // 判断指令中是否绑定了函数 if (binding.expression) &#123; // 如果绑定了函数 则调用那个函数，此处binding.value就是handleClose方法 binding.value(e); &#125; &#125; // 给当前元素绑定个私有变量，方便在unbind中可以解除事件监听 el.__vueClickOutside__ = clickHandler; document.addEventListener('click', clickHandler); &#125;, update() &#123;&#125;, unbind(el, binding) &#123; // 解除事件监听 document.removeEventListener('click', el.__vueClickOutside__); delete el.__vueClickOutside__; &#125;,&#125;;directives: &#123;clickOutside&#125;, 接下来就可以就可以在组件内直接使用啦1&lt;div v-click-outside="closeDialog"&gt;&lt;/div&gt; 我实现的效果 然后关于这个点击元素外触发某个事件，如果还有啥其他优雅的方式的话，下面留言分享一下哈。]]></content>
   </entry>
   <entry>
     <title><![CDATA[JS 中的深拷贝与浅拷贝]]></title>
