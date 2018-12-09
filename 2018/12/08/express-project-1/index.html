@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="搭建博客,Hexo," />
+  <meta name="keywords" content="express,分层架构," />
 
 
 
@@ -86,21 +86,20 @@
 
 
 
-<meta name="description" content="1 什么是 HexoHexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 2 开始搭建博客2.1 前提电脑安装好 Node 和 Git 2.2 安装直接用 npm 全局安装（嫌慢的话就用 cnpm 吧）1npm install -g hexo-cli 2.3 搭建博客网站完成 Hexo 的安装之后，就可">
-<meta name="keywords" content="搭建博客,Hexo">
+<meta name="description" content="手把手快速搭建 express 后台">
+<meta name="keywords" content="express,分层架构">
 <meta property="og:type" content="article">
-<meta property="og:title" content="搭建自己的github博客">
-<meta property="og:url" content="http://yoursite.com/2018/06/25/build-hexo/index.html">
+<meta property="og:title" content="手把手用 express 搭建后台">
+<meta property="og:url" content="http://yoursite.com/2018/12/08/express-project-1/index.html">
 <meta property="og:site_name" content="小红帽的博客">
-<meta property="og:description" content="1 什么是 HexoHexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 2 开始搭建博客2.1 前提电脑安装好 Node 和 Git 2.2 安装直接用 npm 全局安装（嫌慢的话就用 cnpm 吧）1npm install -g hexo-cli 2.3 搭建博客网站完成 Hexo 的安装之后，就可">
+<meta property="og:description" content="手把手快速搭建 express 后台">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://img.cdn.lijiayuan.top//hexo%E6%90%AD%E5%BB%BA/hexo-build/build.png">
-<meta property="og:image" content="http://img.cdn.lijiayuan.top//hexo%E6%90%AD%E5%BB%BA/hexo-build/index.png">
-<meta property="og:updated_time" content="2018-11-02T05:06:46.512Z">
+<meta property="og:image" content="http://img.cdn.lijiayuan.top/express-project/2.png">
+<meta property="og:updated_time" content="2018-12-09T10:58:45.652Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="搭建自己的github博客">
-<meta name="twitter:description" content="1 什么是 HexoHexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 2 开始搭建博客2.1 前提电脑安装好 Node 和 Git 2.2 安装直接用 npm 全局安装（嫌慢的话就用 cnpm 吧）1npm install -g hexo-cli 2.3 搭建博客网站完成 Hexo 的安装之后，就可">
-<meta name="twitter:image" content="http://img.cdn.lijiayuan.top//hexo%E6%90%AD%E5%BB%BA/hexo-build/build.png">
+<meta name="twitter:title" content="手把手用 express 搭建后台">
+<meta name="twitter:description" content="手把手快速搭建 express 后台">
+<meta name="twitter:image" content="http://img.cdn.lijiayuan.top/express-project/2.png">
 
 
 
@@ -130,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/06/25/build-hexo/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/12/08/express-project-1/"/>
 
 
 
 
 
-  <title>搭建自己的github博客 | 小红帽的博客</title>
+  <title>手把手用 express 搭建后台 | 小红帽的博客</title>
   
 
 
@@ -307,7 +306,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/25/build-hexo/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/08/express-project-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小红帽">
@@ -324,7 +323,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">搭建自己的github博客</h1>
+          <h1 class="post-title" itemprop="name headline">手把手用 express 搭建后台</h1>
         
 
         <div class="post-meta">
@@ -336,8 +335,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-25T18:39:55+08:00">
-                2018-06-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-08T21:35:26+08:00">
+                2018-12-08
               </time>
             
 
@@ -352,8 +351,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-11-02T13:06:46+08:00">
-                2018-11-02
+              <time title="更新于" itemprop="dateModified" datetime="2018-12-09T18:58:45+08:00">
+                2018-12-09
               </time>
             
           </span>
@@ -371,8 +370,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Blog/" itemprop="url" rel="index">
-                    <span itemprop="name">Blog</span>
+                  <a href="/categories/项目经验/" itemprop="url" rel="index">
+                    <span itemprop="name">项目经验</span>
                   </a>
                 </span>
 
@@ -407,7 +406,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.1k
+                  1.4k
                 </span>
               
 
@@ -423,12 +422,16 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  5
                 </span>
               
             </div>
           
 
+          
+              <div class="post-description">
+                  手把手快速搭建 express 后台
+              </div>
           
 
         </div>
@@ -444,30 +447,34 @@
       
 
       
-        <a id="more"></a>
-<h2 id="1-什么是-Hexo"><a href="#1-什么是-Hexo" class="headerlink" title="1 什么是 Hexo"></a>1 什么是 Hexo</h2><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
-<h2 id="2-开始搭建博客"><a href="#2-开始搭建博客" class="headerlink" title="2 开始搭建博客"></a>2 开始搭建博客</h2><h3 id="2-1-前提"><a href="#2-1-前提" class="headerlink" title="2.1 前提"></a>2.1 前提</h3><p>电脑安装好 Node 和 Git</p>
-<h3 id="2-2-安装"><a href="#2-2-安装" class="headerlink" title="2.2 安装"></a>2.2 安装</h3><p>直接用 npm 全局安装（嫌慢的话就用 cnpm 吧）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></p>
-<h3 id="2-3-搭建博客网站"><a href="#2-3-搭建博客网站" class="headerlink" title="2.3 搭建博客网站"></a>2.3 搭建博客网站</h3><p>完成 Hexo 的安装之后，就可以执行下面的命令，在指定文件夹内生成系列的网站文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init folderName</span><br><span class="line">cd folderName</span><br><span class="line">npm install // 安装依赖</span><br></pre></td></tr></table></figure></p>
-<p><strong>注意</strong><br>好像新版本的 hexo-cli 在初始化项目的时候会自动安装依赖，如下图<br><img src="http://img.cdn.lijiayuan.top//hexo%E6%90%AD%E5%BB%BA/hexo-build/build.png" alt="image">\<br>鉴于网络因素，直接用npm 安装依赖实在是太慢了，想快一点的同学看到他在装依赖的时候，不要怂，直接就是 Ctrl+C 断了它进程，然后自己进入文件夹用 cnpm install 装依赖。</p>
-<h2 id="3-查看效果"><a href="#3-查看效果" class="headerlink" title="3 查看效果"></a>3 查看效果</h2><p>运行下面代码，开启博客<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure></p>
-<p>最后打开4000端口就可以看到自己的博客网站啦<br><img src="http://img.cdn.lijiayuan.top//hexo%E6%90%AD%E5%BB%BA/hexo-build/index.png" alt="image"></p>
-<h2 id="4-项目结构"><a href="#4-项目结构" class="headerlink" title="4 项目结构"></a>4 项目结构</h2><p>新建个项目之后，指定的文件夹的目录如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure></p>
-<h3 id="4-1-config-yml"><a href="#4-1-config-yml" class="headerlink" title="4.1 _config.yml"></a>4.1 _config.yml</h3><p>网站的 <a href="https://note.youdao.com/" target="_blank" rel="noopener">配置</a> 信息，小伙伴们可以在这边配置大部分的参数。</p>
-<h3 id="4-2-package-json"><a href="#4-2-package-json" class="headerlink" title="4.2 package.json"></a>4.2 package.json</h3><p>这个就不说了，就是这个项目的信息了。</p>
-<h3 id="4-3-scaffold-文件夹"><a href="#4-3-scaffold-文件夹" class="headerlink" title="4.3 scaffold 文件夹"></a>4.3 scaffold 文件夹</h3><p><a href="https://hexo.io/zh-cn/docs/writing" target="_blank" rel="noopener">模板</a> 文件夹。当我们新建文章的时候，Hexo 会根据 scaffold 来建议文件\<br>Hexo 的模板是指在新建的 markdown 文件中默认填充的内容。例如，如果我们修改 scaffold/post.md 中的 Front-matter 内容，那么没一次新建一篇文章都会包含这个修改</p>
-<h3 id="4-4-source-文件夹"><a href="#4-4-source-文件夹" class="headerlink" title="4.4 source 文件夹"></a>4.4 source 文件夹</h3><p>资源文件夹是存放用户资源的地方。除 <code>_posts</code> 文件夹之外，开头命名为 <code>_</code>(下划线)的文件/文件夹和隐藏的文件将会被忽略（意思就是在这里不要以下划线开头去命名新建的文件/文件夹）。Markdown 和 HTML 文件会被解析并放到 <code>public</code> 文件夹，而其他文件会被拷贝过去。</p>
-<h3 id="4-5-themes-文件夹"><a href="#4-5-themes-文件夹" class="headerlink" title="4.5 themes 文件夹"></a>4.5 themes 文件夹</h3><p><a href="https://hexo.io/zh-cn/docs/themes" target="_blank" rel="noopener">主题</a> 文件夹。Hexo会根据主题来生成静态页面。这里的话，推荐一个主题吧。 <a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener">next</a> 我也不知道为啥要推荐它，反正就瞅他顺眼+多人用+文档全吧。不过想用其他也随便吧，反正写博客嘛，咱们还是多关注内容，外观的话，顺眼舒服就行了。</p>
-<h2 id="5-开始写博客"><a href="#5-开始写博客" class="headerlink" title="5 开始写博客"></a>5 开始写博客</h2><p>这个就很简单了，三步走直接搞定啦。</p>
-<ol>
-<li>直接找个能写 markdown 的工具就开始写我们的博客了。这里的话我推荐用一下 『有道云笔记』吧（『有道云笔记』的工作人员看到了麻烦给点广告费啊~(@^_^@)~），平常就可以在上面做做笔记，写写博客，写完直接导出来一个 markdown 文件。当然其他编辑器一般也是可以方便的写 markdown 的。\<br>『<strong>注意</strong>：这里有道云笔记有个坑点，不是会员不给 markdown 引入本地的图片，如果想用图片的话只能引入网上外链，这时候就要使用图床了，这边推荐用一下『七牛云』吧，有免费 10 G 的空间可以用。（『七牛云』的小姐姐看到麻烦给我叫个鸡腿），里面还有一些使用技巧，这里就不说了，大家自己再去百度玩一下吧。』</li>
-<li><p>将写完的 markdowm 文件直接丢到 <code>source/_posts</code> 文件夹内，但是为了方便分类和管理自己的文章，在导出的 markdown 文件加入下面这些东西</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">#文章标题</span><br><span class="line">title: flex布局</span><br><span class="line">#文章发布时间</span><br><span class="line">date: 2018-08-26 21:37:55</span><br><span class="line">#文章的标签，可多写几个</span><br><span class="line">tags: 前端布局</span><br><span class="line">#文章分类</span><br><span class="line">categories: flex</span><br><span class="line">---</span><br><span class="line">#下面就是我们的文章正文啦</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>上面然后就可以在我们的站点中看到我们新增的博客啦。</p>
-</li>
-</ol>
-<h2 id="6-后续"><a href="#6-后续" class="headerlink" title="6 后续"></a>6 后续</h2><p>讲到这里，我们的博客已经搭建起来的了，如果还有不明白的东西可以去翻翻 <a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">hexo 中文文档</a>。最后咧，虽然博客搭起来了，也能写了，但是不自己配置一下的话，还是有点简陋的，所以下次就来讲讲如何去配置我们的 Hexo 博客吧。</p>
+        <p><strong>前言</strong> 想必很多小伙伴开始学 node 的时候想搞个项目出来却不知道怎么下手吧，这个教程的话就是教大家用 express 框架简单粗暴搭建一个可以用的后台出来，然后关于 node 和 express 的其他知识，大家还是需要自己去看看文档了解一下。</p>
+<h2 id="1-环境准备"><a href="#1-环境准备" class="headerlink" title="1 环境准备"></a>1 环境准备</h2><p>express 既然是基于 node 的开发框架，首先 node 那些肯定都配好了吧，这个就自己搞去。然后下面就是要搞 express 的东西了。</p>
+<p>1、全局安装 express，方便后面直接导入 express 模块。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install express -g</span><br></pre></td></tr></table></figure></p>
+<p>2、再全局安装 express 的脚手架工具，装完我们就可以很舒服的生成一个 express 项目了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install express-generator -g</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-项目"><a href="#2-项目" class="headerlink" title="2 项目"></a>2 项目</h2><h3 id="2-1-搭建"><a href="#2-1-搭建" class="headerlink" title="2.1 搭建"></a>2.1 搭建</h3><p>环境配好后，搭建项目就很舒服啦，直接就是一条指令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">express express-demo</span><br></pre></td></tr></table></figure></p>
+<p>接下来就是，安装依赖，运行项目<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br><span class="line">npm run start</span><br></pre></td></tr></table></figure></p>
+<p>然后我们打开浏览器查看 3000 端口，看到下面的页面就说明我们 express 后台已经跑起来了<br><img src="http://img.cdn.lijiayuan.top/express-project/2.png" alt="image"></p>
+<h3 id="2-2-项目结构"><a href="#2-2-项目结构" class="headerlink" title="2.2 项目结构"></a>2.2 项目结构</h3><p>生成的项目结构如下图所示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">│  app.js</span><br><span class="line">│  package.json</span><br><span class="line">│</span><br><span class="line">├─.idea</span><br><span class="line">│  │  express-demo.iml</span><br><span class="line">│  │  modules.xml</span><br><span class="line">│  │  vcs.xml</span><br><span class="line">│  │  workspace.xml</span><br><span class="line">│  │</span><br><span class="line">│  └─inspectionProfiles</span><br><span class="line">├─bin</span><br><span class="line">│      www</span><br><span class="line">│</span><br><span class="line">├─public</span><br><span class="line">│  │  index.html</span><br><span class="line">│  │</span><br><span class="line">│  ├─images</span><br><span class="line">│  ├─javascripts</span><br><span class="line">│  └─stylesheets</span><br><span class="line">│          style.css</span><br><span class="line">│</span><br><span class="line">├─routes</span><br><span class="line">│      index.js</span><br><span class="line">│      users.js</span><br><span class="line">│</span><br><span class="line">└─views</span><br><span class="line">        error.jade</span><br><span class="line">        index.jade</span><br><span class="line">        layout.jade</span><br></pre></td></tr></table></figure></p>
+<p>我们一个一个来说明哈。</p>
+<p>1、<code>bin</code> 文件夹</p>
+<p>里面的话有 <code>www</code> 文件，那个就是项目的启动脚本文件，监听端口在里面设置，一般情况不管这个文件。</p>
+<p>2、<code>public</code> 文件夹</p>
+<p>静态资源文件夹，放着 css，js，img 那些，然后如果在里面写个 <code>index.html</code> 的话，我们访问 3000 端口的时候就会直接访问 <code>index.html</code> 的那个页面。所以这边的话，可以把我们前端开发打包好的代码。</p>
+<p>3、<code>routes</code> 文件夹</p>
+<p>这个是重点啦，路由文件夹，里面的文件用于生成路由实例，这个路由实例用来响应前端发过的请求，按照现在前后端分离的思想，我们在这里面写后台的那些接口了。我们抓一个文件来看一下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// index.js</span></span><br><span class="line"><span class="comment">// 引入依赖</span></span><br><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">var</span> router = express.Router();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 处理前端请求</span></span><br><span class="line"><span class="comment">/* GET home page. */</span></span><br><span class="line"><span class="comment">/* 这边的 router.get 是接收前端的 get 请求</span></span><br><span class="line"><span class="comment">  第一个参数是路由地址，这边的 '/' 就指根路由，也就是http://localhost:3000 啦</span></span><br><span class="line"><span class="comment">  第二个参数是一个响应接口的回调函数，里面有三个参数，分别是 请求头request 响应体response，和一个next</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">router.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">  res.render(<span class="string">'index'</span>, &#123; <span class="attr">title</span>: <span class="string">'Express'</span> &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 导出路由模块</span></span><br><span class="line"><span class="built_in">module</span>.exports = router;</span><br></pre></td></tr></table></figure></p>
+<p>上面这个是系统默认的给的，他的话是根据模板（下面会讲）生成了一个页面渲染回去，但是我们现在前后端都分离啦，一般都是后台写接口丢给前端就好啦，所以我们要改成下面这个样子<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">router.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 处理好要返回给前端的数据</span></span><br><span class="line">  <span class="keyword">let</span> data = &#123;</span><br><span class="line">      name:<span class="string">'xhm'</span>,</span><br><span class="line">      age:<span class="number">12</span> &#125;</span><br><span class="line">  <span class="comment">// 用 res.json 方法写接口</span></span><br><span class="line">  res.json(&#123;</span><br><span class="line">    code:<span class="number">0</span>,</span><br><span class="line">    msg:<span class="string">'ok'</span>,</span><br><span class="line">    data:data</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>安装上面这样搞，我们重新访问 3000 端口的时候就会发现这个时候返回就是一个 json 的数据啦（如下图），这样就写了一个简单的后台接口，后面的不同业务逻辑的接口，就看你前面怎么去处理那些数据啦。</p>
+<p>4、<code>views</code> 文件夹<br>这个用于存放 jade 模板，这个的话，不懂也比较少会用到，只知道这个可以作为页面的模板来使用，渲染一下报错页面和主页，其他就没有用了。</p>
+<p>5、<code>app.js</code> 文件<br>这个是项目的入口文件，这边有着项目的一下配置，也在此整合了项目的模块，其中要注意的就是里面关于路由模块的配置了。看下面代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引入 routes 文件夹中的路由文件</span></span><br><span class="line"><span class="keyword">var</span> indexRouter = <span class="built_in">require</span>(<span class="string">'./routes/index'</span>);</span><br><span class="line"><span class="keyword">var</span> usersRouter = <span class="built_in">require</span>(<span class="string">'./routes/users'</span>);</span><br><span class="line">...</span><br><span class="line"><span class="comment">// 设置这些路由的地址</span></span><br><span class="line">app.use(<span class="string">'/'</span>, indexRouter);</span><br><span class="line">app.use(<span class="string">'/users'</span>, usersRouter);</span><br></pre></td></tr></table></figure></p>
+<p>这边做一点说明吧：</p>
+<ul>
+<li>这边设置路由的地址是相对于项目的，然后在 routes 文件夹里面的地址是相对于这边的，用上面的代码来说，假设那个 <code>./routes/users</code> 文件里面定义了 <code>&#39;/login&#39;</code> 这么一个路由地址，那么由于整个 <code>users</code> 的地址是 <code>&#39;/users&#39;</code>，所以我们在外面要访问那个 <code>login</code> 的话，该访问的地址是 <code>http://localhost:3000/users/login</code>。</li>
+<li>后面要再想加其他路由模块的时候，就按照上面先引入路由模块，再用 <code>app.use</code> 设置好地址，后面就可以用了。</li>
+</ul>
+<p>6、<code>package.json</code> 文件</p>
+<p>这个就是整个项目的配置文件啦。项目的名字啦，版本号和项目所需的那些依赖全都写在这里面的啦，但是一般我们是不用管的。</p>
+<h2 id="3-数据库"><a href="#3-数据库" class="headerlink" title="3 数据库"></a>3 数据库</h2><p>既然搭建了后台，数据库肯定是要连接的，不同的数据库的话，就安装不同的插件来使用，如果你使用的是 mongoDB 的话，就推荐使用 mongoose 来操作数据库，关于 mongoose 的使用可以看我另外一篇<a href="https://lijiayuan.top/2018/10/23/using-mongoose/" target="_blank" rel="noopener">教程</a></p>
+<h2 id="4-后记"><a href="#4-后记" class="headerlink" title="4 后记"></a>4 后记</h2><p>源代码的话我放到我的 <a href="https://github.com/lijiayuan365/express-demo" target="_blank" rel="noopener">Github</a> 上面去了,可以去 clone 下来看一下。关于 express 项目的简单开发就讲到这边啦，但是如果是这么简单的设置这个项目的目录结构的话，可扩展性不高，代码复用也不好，所以我们要看下一篇文章啦–<a href="">express 项目分层实践</a></p>
 
       
     </div>
@@ -532,9 +539,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/搭建博客/" rel="tag"># 搭建博客</a>
+            <a href="/tags/express/" rel="tag"># express</a>
           
-            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+            <a href="/tags/分层架构/" rel="tag"># 分层架构</a>
           
         </div>
       
@@ -562,14 +569,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/11/26/vue-custom-directive/" rel="next" title="Vue 自定义指令">
+                <i class="fa fa-chevron-left"></i> Vue 自定义指令
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/06/30/reg-trian/" rel="prev" title="正则练习题">
-                正则练习题 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/12/08/express-project-2/" rel="prev" title="express 项目分层实践">
+                express 项目分层实践 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -738,7 +749,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-什么是-Hexo"><span class="nav-text">1 什么是 Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-开始搭建博客"><span class="nav-text">2 开始搭建博客</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-前提"><span class="nav-text">2.1 前提</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-安装"><span class="nav-text">2.2 安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-搭建博客网站"><span class="nav-text">2.3 搭建博客网站</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-查看效果"><span class="nav-text">3 查看效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-项目结构"><span class="nav-text">4 项目结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-config-yml"><span class="nav-text">4.1 _config.yml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-package-json"><span class="nav-text">4.2 package.json</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-scaffold-文件夹"><span class="nav-text">4.3 scaffold 文件夹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-source-文件夹"><span class="nav-text">4.4 source 文件夹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5-themes-文件夹"><span class="nav-text">4.5 themes 文件夹</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-开始写博客"><span class="nav-text">5 开始写博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-后续"><span class="nav-text">6 后续</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-环境准备"><span class="nav-text">1 环境准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-项目"><span class="nav-text">2 项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-搭建"><span class="nav-text">2.1 搭建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-项目结构"><span class="nav-text">2.2 项目结构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-数据库"><span class="nav-text">3 数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-后记"><span class="nav-text">4 后记</span></a></li></ol></div>
             
 
           </div>
