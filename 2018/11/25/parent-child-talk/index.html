@@ -86,17 +86,17 @@
 
 
 
-<meta name="description" content="面向对象面向君，不负代码不负卿">
+<meta name="description" content="前言  1 父组件传值给子组件1.1 传值写法父组件传值给子组件，这个就比较常见了，直接用 props 就可以了。但是就算是 props 子组件那边也有三种写法，如下面代码所示：父组件12345&amp;lt;!-- 两种情况 --&amp;gt;&amp;lt;!--静态传值--&amp;gt;&amp;lt;child name=&quot;xhm&quot;&amp;gt;&amp;lt;/child&amp;gt;&amp;lt;!--动态传值--&amp;gt;&amp;lt;child :n">
 <meta property="og:type" content="article">
-<meta property="og:title" content="parent-child-talk">
+<meta property="og:title" content="Vue 父子组件间的通信">
 <meta property="og:url" content="http://yoursite.com/2018/11/25/parent-child-talk/index.html">
 <meta property="og:site_name" content="小红帽的博客">
-<meta property="og:description" content="面向对象面向君，不负代码不负卿">
+<meta property="og:description" content="前言  1 父组件传值给子组件1.1 传值写法父组件传值给子组件，这个就比较常见了，直接用 props 就可以了。但是就算是 props 子组件那边也有三种写法，如下面代码所示：父组件12345&amp;lt;!-- 两种情况 --&amp;gt;&amp;lt;!--静态传值--&amp;gt;&amp;lt;child name=&quot;xhm&quot;&amp;gt;&amp;lt;/child&amp;gt;&amp;lt;!--动态传值--&amp;gt;&amp;lt;child :n">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-25T07:47:42.794Z">
+<meta property="og:updated_time" content="2018-12-11T13:12:07.768Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="parent-child-talk">
-<meta name="twitter:description" content="面向对象面向君，不负代码不负卿">
+<meta name="twitter:title" content="Vue 父子组件间的通信">
+<meta name="twitter:description" content="前言  1 父组件传值给子组件1.1 传值写法父组件传值给子组件，这个就比较常见了，直接用 props 就可以了。但是就算是 props 子组件那边也有三种写法，如下面代码所示：父组件12345&amp;lt;!-- 两种情况 --&amp;gt;&amp;lt;!--静态传值--&amp;gt;&amp;lt;child name=&quot;xhm&quot;&amp;gt;&amp;lt;/child&amp;gt;&amp;lt;!--动态传值--&amp;gt;&amp;lt;child :n">
 
 
 
@@ -132,7 +132,7 @@
 
 
 
-  <title>parent-child-talk | 小红帽的博客</title>
+  <title>Vue 父子组件间的通信 | 小红帽的博客</title>
   
 
 
@@ -320,7 +320,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">parent-child-talk</h1>
+          <h1 class="post-title" itemprop="name headline">Vue 父子组件间的通信</h1>
         
 
         <div class="post-meta">
@@ -348,8 +348,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-11-25T15:47:42+08:00">
-                2018-11-25
+              <time title="更新于" itemprop="dateModified" datetime="2018-12-11T21:12:07+08:00">
+                2018-12-11
               </time>
             
           </span>
@@ -381,7 +381,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  2k
                 </span>
               
 
@@ -397,7 +397,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  7
                 </span>
               
             </div>
@@ -418,7 +418,48 @@
       
 
       
-        
+        <p><strong>前言</strong> </p>
+<h2 id="1-父组件传值给子组件"><a href="#1-父组件传值给子组件" class="headerlink" title="1 父组件传值给子组件"></a>1 父组件传值给子组件</h2><h3 id="1-1-传值写法"><a href="#1-1-传值写法" class="headerlink" title="1.1 传值写法"></a>1.1 传值写法</h3><p>父组件传值给子组件，这个就比较常见了，直接用 props 就可以了。但是就算是 props 子组件那边也有三种写法，如下面代码所示：<br>父组件<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 两种情况 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--静态传值--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">child</span> <span class="attr">name</span>=<span class="string">"xhm"</span>&gt;</span><span class="tag">&lt;/<span class="name">child</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--动态传值--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">child</span> <span class="attr">:name</span>=<span class="string">"userName"</span>&gt;</span><span class="tag">&lt;/<span class="name">child</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>子组件<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1 简单粗暴就给个名称的情况</span></span><br><span class="line">props:[<span class="string">'name'</span>],</span><br><span class="line"><span class="comment">// 2 给个名称顺便指定个类型，如果父组件传递过来的值类型不对的话就会报错</span></span><br><span class="line">props:&#123;</span><br><span class="line">    name:<span class="built_in">String</span></span><br><span class="line">&#125;,</span><br><span class="line"><span class="comment">// 3 给个名称不仅指定了类型，还顺便送了个默认值,当父组件传个空过来或者啥都没传过来的时候就用默认值了</span></span><br><span class="line">props: &#123;</span><br><span class="line">  name: &#123;</span><br><span class="line">    type: <span class="built_in">String</span>,</span><br><span class="line">    <span class="keyword">default</span>: <span class="string">'xhm'</span>,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
+<p>注意一下的话，如果是数组或者是对象要默认值的话，直接设置默认数组或者默认对象会报错，需要用工厂函数返回，如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">props: &#123;</span><br><span class="line">  arr:&#123;</span><br><span class="line">    type:<span class="built_in">Array</span>,</span><br><span class="line">    <span class="keyword">default</span>:<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">       <span class="keyword">return</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line"><span class="comment">// 对象也是和上面一个用工厂函数</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="1-2-子组件使用父组件的值"><a href="#1-2-子组件使用父组件的值" class="headerlink" title="1.2 子组件使用父组件的值"></a>1.2 子组件使用父组件的值</h3><p>由于单向数据流的限制，我们不能直接在子组件中修改 props 的值，当我们修改的时候会报错,官方的说法是：</p>
+<blockquote>
+<p>所有的 prop 都使得其父子 prop 之间形成了一个单向下行绑定：父级 prop 的更新会向下流动到子组件中，但是反过来则不行。这样会防止从子组件意外改变父级组件的状态，从而导致你的应用的数据流向难以理解。</p>
+</blockquote>
+<blockquote>
+<p>额外的，每次父级组件发生更新时，子组件中所有的 prop 都将会刷新为最新的值。这意味着你不应该在一个子组件内部改变 prop。如果你这样做了，Vue 会在浏览器的控制台中发出警告。</p>
+</blockquote>
+<p>所以啊，如果你不只是想在子组件中简单的渲染父组件传过来的值的话，那么可以用下面的两种方法。</p>
+<ol>
+<li><p><code>这个 prop 用来传递一个初始值；</code>这个子组件接下来希望将其作为一个本地的 prop 数据来使用。在这种情况下，最好定义一个本地的 data 属性并将这个 prop 用作其初始值：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">props: [<span class="string">'name'</span>],</span><br><span class="line">data() &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    userName:<span class="keyword">this</span>.name,</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>这个 prop 以一种原始的值传入且需要进行转换。</code>在这种情况下，最好使用这个 prop 的值来定义一个计算属性：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">props: [<span class="string">'name'</span>],</span><br><span class="line">computed: &#123;</span><br><span class="line">  userName()&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.firstName + <span class="keyword">this</span>.name</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="2-子组件传值给父组件"><a href="#2-子组件传值给父组件" class="headerlink" title="2 子组件传值给父组件"></a>2 子组件传值给父组件</h2><p>虽然我们说是要单向数据流，但是很多时候，我们在子组件改变了某些值之后，还是要反馈给父组件，让父组件做一下修改，那么这个时候就要想着子组件向父组件传值啦。有下面这么两种方式</p>
+<h2 id="2-1-emit-方法"><a href="#2-1-emit-方法" class="headerlink" title="2.1 emit 方法"></a>2.1 emit 方法</h2><p>这个基本都是用 emit 来传递了，用法直接看代码吧：<br>子组件<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// props:['name]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// methods 里</span></span><br><span class="line">update()&#123;</span><br><span class="line">  <span class="keyword">this</span>.$emit(<span class="string">'update'</span>,<span class="string">'ljy'</span>);</span><br><span class="line">  <span class="comment">// 第一个参数：事件名，第二个参数：传递给事件方法的参数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>父组件<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/* template 里面的代码，监听子组件里面的 update 事件，调用父组件的 childUpdate 方法</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> &lt;child :name="userName" @update="childUpdate"&gt;&lt;/child&gt;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">// methods</span></span><br><span class="line">chidlUpdate(val)&#123;</span><br><span class="line">  <span class="comment">// val 参数就是子组件传递过来的数据</span></span><br><span class="line">  <span class="keyword">this</span>.userName = val;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>虽然这样是可以实现子组件向父组件传值，但是写多一个方法感觉很烦，所以 vue 官方高出了一个 <code>以 update:myPropName 的模式触发事件。</code>，这个是啥，举个例子，我们的子组件中有一个 <code>name</code> 的 props，我们用下面这个形式通知父组件<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$emit(<span class="string">'update:name'</span>, newName)</span><br><span class="line"><span class="comment">// this.$emit('update:props中的变量名', 新的值)</span></span><br></pre></td></tr></table></figure></p>
+<p>然后父组件可以监听那个事件并根据需要更新一个本地的数据属性:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">child</span> <span class="attr">:name</span>=<span class="string">"userName"</span> @<span class="attr">update:name</span>=<span class="string">"userName = $event"</span>&gt;</span><span class="tag">&lt;/<span class="name">child</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>这样当我们在子组件触发那个修改的方法的时候，父组件的 <code>userName</code> 变量就会更新为 <code>newName</code>了，然后为了方便起见，官方提供了一个缩写，即 <strong><code>.sync</code></strong> 修饰符。看代码吧：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">child</span> <span class="attr">:name.sync</span>=<span class="string">"userName"</span>&gt;</span><span class="tag">&lt;/<span class="name">child</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>上面的代码和前面的代码是一个效果，是不是方便了很多。舒服了吧。</p>
+<h2 id="2-2-利用浅拷贝（不推荐）"><a href="#2-2-利用浅拷贝（不推荐）" class="headerlink" title="2.2 利用浅拷贝（不推荐）"></a>2.2 利用浅拷贝（不推荐）</h2><p>这个的话是针对于 对象和数组那些引用类型的数据而言的，由于这些存在浅拷贝的问题（不明白浅拷贝的看这篇<a href="https://lijiayuan.top/2018/11/25/deepcopy-shallowcopy-in-JS/" target="_blank" rel="noopener">文章</a>），所以可以利用这点来实现子父组件的「同生共死」，看代码吧<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 假设 name 是一个对象或者数组</span></span><br><span class="line">props:[<span class="string">'name'</span>],</span><br><span class="line"><span class="keyword">return</span> &#123;</span><br><span class="line">  userName:<span class="keyword">this</span>.name,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>就这样？！ </p>
+<p>没错就是这么简单粗暴，由于浅拷贝的问题，我们在子组件修改 <code>userName</code> 的时候，从父组件传递过来的那个值也会改变的，然后就会实现 props 的「双向绑定」了。但是一般没人会这么干，因为这样会造成维护上的问题，会让人觉得咋没干啥父组件的值咋就变了，会让人头秃啊，所以除非你项目中非得要搞这么一个子父组件 props 的「同生共死」，那就这么干吧。</p>
+<h2 id="3-子组件调用父组件的方法"><a href="#3-子组件调用父组件的方法" class="headerlink" title="3 子组件调用父组件的方法"></a>3 子组件调用父组件的方法</h2><p>不知道这样的叫法对不对，反正就这样啦。总结之后又下面这几种方法</p>
+<h3 id="3-1-emit"><a href="#3-1-emit" class="headerlink" title="3.1 emit"></a>3.1 emit</h3><p>其实本来 emit 就是用于子组件向父组件通信的，上面的子组件传值给父组件其实也就是父组件监听子组件的事件，然后触发父组件的方法的，换个说法，也就是子组件调用了父组件的方法，再写一下代码吧：</p>
+<p>子组件<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// methods 里</span></span><br><span class="line">update()&#123;</span><br><span class="line">  <span class="keyword">this</span>.$emit(<span class="string">'update'</span>,<span class="string">'ljy'</span>);</span><br><span class="line">  <span class="comment">// 第一个参数：事件名，第二个参数：传递给事件方法的参数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>父组件<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/* template 里面的代码，监听子组件里面的 update 事件，调用父组件的 childUpdate 方法</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> &lt;child :name="userName" @update="childUpdate"&gt;&lt;/child&gt;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">// methods</span></span><br><span class="line">chidlUpdate(val)&#123;</span><br><span class="line">  <span class="comment">// val 参数就是子组件传递过来的数据</span></span><br><span class="line">  <span class="keyword">this</span>.userName = val;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面的代码中，从某种意义上来说，就是子组件调用了父组件的 <code>childUpdate</code> 方法。</p>
+<h3 id="3-2-this-paarent-event"><a href="#3-2-this-paarent-event" class="headerlink" title="3.2 this.$paarent.event"></a>3.2 this.$paarent.event</h3><p>这个就比较简单了，我们假设我们在父组件定义了一个 <code>fatherMethod()</code> 方法，然后我们子组件就可以通过下面的代码实现调用  <code>fatherMethod()</code> 的方法<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">childClick()&#123;</span><br><span class="line">  <span class="keyword">this</span>.$parent.fatherMethod();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-3-props"><a href="#3-3-props" class="headerlink" title="3.3 props"></a>3.3 props</h3><p>props 能传递 Function 类型的数据，所以，我们通过 props 当然也是可以直接的调用父组件传递过来的方法啦。不多说，直接撸代码：<br>父组件<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 假设父组件里定义了一个 fatherMethod() 方法 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">child</span> <span class="attr">:fatherMethod</span>=<span class="string">"fatherMethod"</span>&gt;</span><span class="tag">&lt;/<span class="name">child</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>子组件<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">props: &#123;</span><br><span class="line">  fatherMethod: &#123;</span><br><span class="line">    type: <span class="built_in">Function</span>,</span><br><span class="line">    <span class="keyword">default</span>: <span class="literal">null</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line">methods: &#123;</span><br><span class="line">  childClick() &#123;</span><br><span class="line">    <span class="keyword">this</span>.fatherMethod();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
+<p>这样我们也是调用了父组件的方法啦。</p>
+<h2 id="4-父组件调用子组件的方法"><a href="#4-父组件调用子组件的方法" class="headerlink" title="4 父组件调用子组件的方法"></a>4 父组件调用子组件的方法</h2><p>这个，暂时没有遇到过这种情况，不过以备不时之需，也写一下吧。父组件调用子组件的方法的话是利用 ref 获取到子组件实例，从而调用子组件的方法，假设我们子组件有这么一个 <code>childMethod()</code> 方法。那么我们的父组件就可以这么来调用子组件的方法了<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* &lt;child ref="con"&gt;&lt;/child&gt; 子组件 */</span></span><br><span class="line"></span><br><span class="line">methods: &#123;</span><br><span class="line">  update() &#123;</span><br><span class="line">    <span class="keyword">this</span>.$refs.con.childMethod();</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>至此，关于父子组件通信的的话题就聊到这边了，如果有啥错误或者遗漏的，欢迎在下面斧正啦。</p>
+
       
     </div>
 	<div>
@@ -572,8 +613,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -592,7 +642,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -614,7 +664,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -665,6 +715,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-父组件传值给子组件"><span class="nav-text">1 父组件传值给子组件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-传值写法"><span class="nav-text">1.1 传值写法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-子组件使用父组件的值"><span class="nav-text">1.2 子组件使用父组件的值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-子组件传值给父组件"><span class="nav-text">2 子组件传值给父组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-emit-方法"><span class="nav-text">2.1 emit 方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-利用浅拷贝（不推荐）"><span class="nav-text">2.2 利用浅拷贝（不推荐）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-子组件调用父组件的方法"><span class="nav-text">3 子组件调用父组件的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-emit"><span class="nav-text">3.1 emit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-this-paarent-event"><span class="nav-text">3.2 this.$paarent.event</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-props"><span class="nav-text">3.3 props</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-父组件调用子组件的方法"><span class="nav-text">4 父组件调用子组件的方法</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
