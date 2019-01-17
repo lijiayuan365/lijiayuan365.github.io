@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -27,8 +27,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -47,7 +47,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -55,9 +55,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -86,17 +86,17 @@
 
 
 
-<meta name="description" content="前言  1 父组件传值给子组件1.1 传值写法父组件传值给子组件，这个就比较常见了，直接用 props 就可以了。但是就算是 props 子组件那边也有三种写法，如下面代码所示：父组件12345&amp;lt;!-- 两种情况 --&amp;gt;&amp;lt;!--静态传值--&amp;gt;&amp;lt;child name=&quot;xhm&quot;&amp;gt;&amp;lt;/child&amp;gt;&amp;lt;!--动态传值--&amp;gt;&amp;lt;child :n">
+<meta name="description" content="前言 在 Vue 项目中父子组件的通信是非常常见的，最近做项目的时候发现对这方面的知识还不怎么熟练，在这边做一下笔记，系统学习一下吧。 1 父组件传值给子组件1.1 传值写法父组件传值给子组件，这个就比较常见了，直接用 props 就可以了。但是就算是 props 子组件那边也有三种写法，如下面代码所示：父组件12345&amp;lt;!-- 两种情况 --&amp;gt;&amp;lt;!--静态传值--&amp;gt;&amp;lt">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue 父子组件间的通信">
 <meta property="og:url" content="http://yoursite.com/2018/11/25/parent-child-talk/index.html">
 <meta property="og:site_name" content="小红帽的博客">
-<meta property="og:description" content="前言  1 父组件传值给子组件1.1 传值写法父组件传值给子组件，这个就比较常见了，直接用 props 就可以了。但是就算是 props 子组件那边也有三种写法，如下面代码所示：父组件12345&amp;lt;!-- 两种情况 --&amp;gt;&amp;lt;!--静态传值--&amp;gt;&amp;lt;child name=&quot;xhm&quot;&amp;gt;&amp;lt;/child&amp;gt;&amp;lt;!--动态传值--&amp;gt;&amp;lt;child :n">
+<meta property="og:description" content="前言 在 Vue 项目中父子组件的通信是非常常见的，最近做项目的时候发现对这方面的知识还不怎么熟练，在这边做一下笔记，系统学习一下吧。 1 父组件传值给子组件1.1 传值写法父组件传值给子组件，这个就比较常见了，直接用 props 就可以了。但是就算是 props 子组件那边也有三种写法，如下面代码所示：父组件12345&amp;lt;!-- 两种情况 --&amp;gt;&amp;lt;!--静态传值--&amp;gt;&amp;lt">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-11T13:12:07.768Z">
+<meta property="og:updated_time" content="2018-12-12T04:33:37.161Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue 父子组件间的通信">
-<meta name="twitter:description" content="前言  1 父组件传值给子组件1.1 传值写法父组件传值给子组件，这个就比较常见了，直接用 props 就可以了。但是就算是 props 子组件那边也有三种写法，如下面代码所示：父组件12345&amp;lt;!-- 两种情况 --&amp;gt;&amp;lt;!--静态传值--&amp;gt;&amp;lt;child name=&quot;xhm&quot;&amp;gt;&amp;lt;/child&amp;gt;&amp;lt;!--动态传值--&amp;gt;&amp;lt;child :n">
+<meta name="twitter:description" content="前言 在 Vue 项目中父子组件的通信是非常常见的，最近做项目的时候发现对这方面的知识还不怎么熟练，在这边做一下笔记，系统学习一下吧。 1 父组件传值给子组件1.1 传值写法父组件传值给子组件，这个就比较常见了，直接用 props 就可以了。但是就算是 props 子组件那边也有三种写法，如下面代码所示：父组件12345&amp;lt;!-- 两种情况 --&amp;gt;&amp;lt;!--静态传值--&amp;gt;&amp;lt">
 
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/25/parent-child-talk/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/25/parent-child-talk/">
 
 
 
@@ -144,7 +144,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -154,13 +154,13 @@
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">小红帽的博客</span>
         <span class="logo-line-after"><i></i></span>
@@ -190,7 +190,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -200,7 +200,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
             关于
           </a>
@@ -210,7 +210,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -220,7 +220,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -230,7 +230,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -243,7 +243,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
             
             搜索
           </a>
@@ -264,9 +264,7 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -298,20 +296,20 @@
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/25/parent-child-talk/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小红帽">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/uploads/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="小红帽的博客">
     </span>
 
@@ -348,8 +346,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-12-11T21:12:07+08:00">
-                2018-12-11
+              <time title="更新于" itemprop="dateModified" datetime="2018-12-12T12:33:37+08:00">
+                2018-12-12
               </time>
             
           </span>
@@ -366,7 +364,7 @@
           
             <span class="post-meta-divider">|</span>
             <span class="page-pv">本文总阅读量
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
             </span>
           
 
@@ -418,7 +416,7 @@
       
 
       
-        <p><strong>前言</strong> </p>
+        <p><strong>前言</strong> 在 Vue 项目中父子组件的通信是非常常见的，最近做项目的时候发现对这方面的知识还不怎么熟练，在这边做一下笔记，系统学习一下吧。</p>
 <h2 id="1-父组件传值给子组件"><a href="#1-父组件传值给子组件" class="headerlink" title="1 父组件传值给子组件"></a>1 父组件传值给子组件</h2><h3 id="1-1-传值写法"><a href="#1-1-传值写法" class="headerlink" title="1.1 传值写法"></a>1.1 传值写法</h3><p>父组件传值给子组件，这个就比较常见了，直接用 props 就可以了。但是就算是 props 子组件那边也有三种写法，如下面代码所示：<br>父组件<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 两种情况 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--静态传值--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">child</span> <span class="attr">name</span>=<span class="string">"xhm"</span>&gt;</span><span class="tag">&lt;/<span class="name">child</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--动态传值--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">child</span> <span class="attr">:name</span>=<span class="string">"userName"</span>&gt;</span><span class="tag">&lt;/<span class="name">child</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>子组件<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1 简单粗暴就给个名称的情况</span></span><br><span class="line">props:[<span class="string">'name'</span>],</span><br><span class="line"><span class="comment">// 2 给个名称顺便指定个类型，如果父组件传递过来的值类型不对的话就会报错</span></span><br><span class="line">props:&#123;</span><br><span class="line">    name:<span class="built_in">String</span></span><br><span class="line">&#125;,</span><br><span class="line"><span class="comment">// 3 给个名称不仅指定了类型，还顺便送了个默认值,当父组件传个空过来或者啥都没传过来的时候就用默认值了</span></span><br><span class="line">props: &#123;</span><br><span class="line">  name: &#123;</span><br><span class="line">    type: <span class="built_in">String</span>,</span><br><span class="line">    <span class="keyword">default</span>: <span class="string">'xhm'</span>,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
 <p>注意一下的话，如果是数组或者是对象要默认值的话，直接设置默认数组或者默认对象会报错，需要用工厂函数返回，如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">props: &#123;</span><br><span class="line">  arr:&#123;</span><br><span class="line">    type:<span class="built_in">Array</span>,</span><br><span class="line">    <span class="keyword">default</span>:<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">       <span class="keyword">return</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line"><span class="comment">// 对象也是和上面一个用工厂函数</span></span><br></pre></td></tr></table></figure></p>
@@ -439,13 +437,13 @@
 </li>
 </ol>
 <h2 id="2-子组件传值给父组件"><a href="#2-子组件传值给父组件" class="headerlink" title="2 子组件传值给父组件"></a>2 子组件传值给父组件</h2><p>虽然我们说是要单向数据流，但是很多时候，我们在子组件改变了某些值之后，还是要反馈给父组件，让父组件做一下修改，那么这个时候就要想着子组件向父组件传值啦。有下面这么两种方式</p>
-<h2 id="2-1-emit-方法"><a href="#2-1-emit-方法" class="headerlink" title="2.1 emit 方法"></a>2.1 emit 方法</h2><p>这个基本都是用 emit 来传递了，用法直接看代码吧：<br>子组件<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// props:['name]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// methods 里</span></span><br><span class="line">update()&#123;</span><br><span class="line">  <span class="keyword">this</span>.$emit(<span class="string">'update'</span>,<span class="string">'ljy'</span>);</span><br><span class="line">  <span class="comment">// 第一个参数：事件名，第二个参数：传递给事件方法的参数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-1-emit-方法"><a href="#2-1-emit-方法" class="headerlink" title="2.1 emit 方法"></a>2.1 emit 方法</h3><p>这个基本都是用 emit 来传递了，用法直接看代码吧：<br>子组件<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// props:['name]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// methods 里</span></span><br><span class="line">update()&#123;</span><br><span class="line">  <span class="keyword">this</span>.$emit(<span class="string">'update'</span>,<span class="string">'ljy'</span>);</span><br><span class="line">  <span class="comment">// 第一个参数：事件名，第二个参数：传递给事件方法的参数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>父组件<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/* template 里面的代码，监听子组件里面的 update 事件，调用父组件的 childUpdate 方法</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> &lt;child :name="userName" @update="childUpdate"&gt;&lt;/child&gt;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">// methods</span></span><br><span class="line">chidlUpdate(val)&#123;</span><br><span class="line">  <span class="comment">// val 参数就是子组件传递过来的数据</span></span><br><span class="line">  <span class="keyword">this</span>.userName = val;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>虽然这样是可以实现子组件向父组件传值，但是写多一个方法感觉很烦，所以 vue 官方高出了一个 <code>以 update:myPropName 的模式触发事件。</code>，这个是啥，举个例子，我们的子组件中有一个 <code>name</code> 的 props，我们用下面这个形式通知父组件<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$emit(<span class="string">'update:name'</span>, newName)</span><br><span class="line"><span class="comment">// this.$emit('update:props中的变量名', 新的值)</span></span><br></pre></td></tr></table></figure></p>
 <p>然后父组件可以监听那个事件并根据需要更新一个本地的数据属性:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">child</span> <span class="attr">:name</span>=<span class="string">"userName"</span> @<span class="attr">update:name</span>=<span class="string">"userName = $event"</span>&gt;</span><span class="tag">&lt;/<span class="name">child</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>这样当我们在子组件触发那个修改的方法的时候，父组件的 <code>userName</code> 变量就会更新为 <code>newName</code>了，然后为了方便起见，官方提供了一个缩写，即 <strong><code>.sync</code></strong> 修饰符。看代码吧：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">child</span> <span class="attr">:name.sync</span>=<span class="string">"userName"</span>&gt;</span><span class="tag">&lt;/<span class="name">child</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>上面的代码和前面的代码是一个效果，是不是方便了很多。舒服了吧。</p>
-<h2 id="2-2-利用浅拷贝（不推荐）"><a href="#2-2-利用浅拷贝（不推荐）" class="headerlink" title="2.2 利用浅拷贝（不推荐）"></a>2.2 利用浅拷贝（不推荐）</h2><p>这个的话是针对于 对象和数组那些引用类型的数据而言的，由于这些存在浅拷贝的问题（不明白浅拷贝的看这篇<a href="https://lijiayuan.top/2018/11/25/deepcopy-shallowcopy-in-JS/" target="_blank" rel="noopener">文章</a>），所以可以利用这点来实现子父组件的「同生共死」，看代码吧<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 假设 name 是一个对象或者数组</span></span><br><span class="line">props:[<span class="string">'name'</span>],</span><br><span class="line"><span class="keyword">return</span> &#123;</span><br><span class="line">  userName:<span class="keyword">this</span>.name,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-2-利用浅拷贝（不推荐）"><a href="#2-2-利用浅拷贝（不推荐）" class="headerlink" title="2.2 利用浅拷贝（不推荐）"></a>2.2 利用浅拷贝（不推荐）</h3><p>这个的话是针对于 对象和数组那些引用类型的数据而言的，由于这些存在浅拷贝的问题（不明白浅拷贝的看这篇<a href="https://lijiayuan.top/2018/11/25/deepcopy-shallowcopy-in-JS/" target="_blank" rel="noopener">文章</a>），所以可以利用这点来实现子父组件的「同生共死」，看代码吧<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 假设 name 是一个对象或者数组</span></span><br><span class="line">props:[<span class="string">'name'</span>],</span><br><span class="line"><span class="keyword">return</span> &#123;</span><br><span class="line">  userName:<span class="keyword">this</span>.name,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 <p>就这样？！ </p>
 <p>没错就是这么简单粗暴，由于浅拷贝的问题，我们在子组件修改 <code>userName</code> 的时候，从父组件传递过来的那个值也会改变的，然后就会实现 props 的「双向绑定」了。但是一般没人会这么干，因为这样会造成维护上的问题，会让人觉得咋没干啥父组件的值咋就变了，会让人头秃啊，所以除非你项目中非得要搞这么一个子父组件 props 的「同生共死」，那就这么干吧。</p>
 <h2 id="3-子组件调用父组件的方法"><a href="#3-子组件调用父组件的方法" class="headerlink" title="3 子组件调用父组件的方法"></a>3 子组件调用父组件的方法</h2><p>不知道这样的叫法对不对，反正就这样啦。总结之后又下面这几种方法</p>
@@ -466,13 +464,13 @@
     
     <div>
     
-        <br />
-        <br />
+        <br>
+        <br>
         <div style="text-align:center;color: #ccc;font-size:14px;">----------- 本文结束 -----------</div>
-        <br />
-        <br />
-        <br />
-        <br />
+        <br>
+        <br>
+        <br>
+        <br>
     
 </div>
     
@@ -484,7 +482,7 @@
     
       <div>
         <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-    <img id="wechat_subscriber_qcode" src="/uploads/qrcode_for_gh.jpg" alt="小红帽 wechat" style="width: 200px; max-width: 100%;"/>
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode_for_gh.jpg" alt="小红帽 wechat" style="width: 200px; max-width: 100%;">
     <div>想看更多文章，那就订阅我的微信公众号吧</div>
 </div>
 
@@ -502,7 +500,7 @@
 
     
       <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="小红帽 微信支付"/>
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="小红帽 微信支付">
         <p>微信支付</p>
       </div>
     
@@ -625,11 +623,9 @@
 
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image"
-                src="/uploads/avatar.jpg"
-                alt="小红帽" />
+              <img class="site-author-image" itemprop="image" src="/uploads/avatar.jpg" alt="小红帽">
             
               <p class="site-author-name" itemprop="name">小红帽</p>
               <p class="site-description motion-element" itemprop="description">面向对象面向君，不负代码不负卿</p>
@@ -642,7 +638,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -653,7 +649,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -664,7 +660,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -725,7 +721,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-父组件传值给子组件"><span class="nav-text">1 父组件传值给子组件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-传值写法"><span class="nav-text">1.1 传值写法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-子组件使用父组件的值"><span class="nav-text">1.2 子组件使用父组件的值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-子组件传值给父组件"><span class="nav-text">2 子组件传值给父组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-emit-方法"><span class="nav-text">2.1 emit 方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-利用浅拷贝（不推荐）"><span class="nav-text">2.2 利用浅拷贝（不推荐）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-子组件调用父组件的方法"><span class="nav-text">3 子组件调用父组件的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-emit"><span class="nav-text">3.1 emit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-this-paarent-event"><span class="nav-text">3.2 this.$paarent.event</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-props"><span class="nav-text">3.3 props</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-父组件调用子组件的方法"><span class="nav-text">4 父组件调用子组件的方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-父组件传值给子组件"><span class="nav-text">1 父组件传值给子组件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-传值写法"><span class="nav-text">1.1 传值写法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-子组件使用父组件的值"><span class="nav-text">1.2 子组件使用父组件的值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-子组件传值给父组件"><span class="nav-text">2 子组件传值给父组件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-emit-方法"><span class="nav-text">2.1 emit 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-利用浅拷贝（不推荐）"><span class="nav-text">2.2 利用浅拷贝（不推荐）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-子组件调用父组件的方法"><span class="nav-text">3 子组件调用父组件的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-emit"><span class="nav-text">3.1 emit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-this-paarent-event"><span class="nav-text">3.2 this.$paarent.event</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-props"><span class="nav-text">3.3 props</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-父组件调用子组件的方法"><span class="nav-text">4 父组件调用子组件的方法</span></a></li></ol></div>
             
 
           </div>
@@ -745,7 +741,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
