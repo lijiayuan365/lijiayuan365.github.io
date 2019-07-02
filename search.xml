@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[node-debug]]></title>
+    <url>%2F2019%2F07%2F02%2Fnode-debug%2F</url>
+    <content type="text"><![CDATA[前言 作为一个程序员，感觉我们其实打代码的时间不多，大部分时间都在在调试上，所以如何调高我们调试的效率，这就成了我们的一个大问题了，经过在网上的搜索与自己的探索，就推荐这两种好用的调试方法吧 Chrome 调试因为 V8 检查器集成允许使用 Chrome 调试协议将 Chrome DevTools 附加到 Node.js 实例以进行调试。所以我们可以直接用 Chrome 进行调试。这个就最简单的的方法，直接在运行代码的地方加个前缀 --inspect，如下：1node --inspect /bin/www 这个时候我们在控制台会看到多出这么几个提示123Debugger listening on ws://127.0.0.1:9229/f54d4cb8-56bc-46c4-9b8e-fd7f2163c73cFor help, see: https://nodejs.org/en/docs/inspectorDebugger attached. 看到这个我们打开 Chrome，f12 打开控制台，点击上面的 Node 图标 我们就可以打开一个新的调试 Node 的浏览器窗口，我们在代码中打的 debugger 和 console.log 都会在那个窗口显示和输出出来。 VS Code 大法在 vscode 中调试步骤也是比较简单，1、 点击蜘蛛图标，打开调试控制台 2、选择一下调试环境 这里我们就直接选 Node的了的啦 3、配置调试模式我们选择好环境之后，他会弹出一个 launch.json 的配置文件，这里面我们可以vscode 有很多调试模式，我们可以通过 add configurations 添加调试模式。等到我们要调试的时候就在 debug 菜单那边选模式，然后点击绿色三角开始调试。下面我们着重介绍一下几个常见的模式吧 VS Code Node 调试模式attach 模式这个先拉出来说，因为后面几个模式都是通过 VS Code 启动项目的，而这个模式是你项目已经启动的情况下启用的，并且那项目还是开启了 Chrome 调试的123456789101112// launch.json// port 填 Chrome 调试的端口地址，一般都是 9229&quot;configurations&quot;: [ &#123; &quot;type&quot;: &quot;node&quot;, &quot;request&quot;: &quot;attach&quot;, &quot;name&quot;: &quot;Attach to Port&quot;, &quot;address&quot;: &quot;localhost&quot;, &quot;port&quot;: 9229 &#125;, ...] node 模式这个其实一开始的时候生成的配置就是 node 启动形式，代码如下1234567891011// launch.json&quot;configurations&quot;: [ &#123; &quot;type&quot;: &quot;node&quot;, &quot;request&quot;: &quot;launch&quot;, &quot;name&quot;: &quot;Launch Program&quot;, &quot;program&quot;: &quot;$&#123;workspaceFolder&#125;/bin/www&quot; &#125;, ...] nodemon 模式我们调试的时候肯定要修修改改，如果只是用 node 启动的话，我们每次修改后都要重新启动项目，这样是很费时间的，所以我们可以借助一些依赖来实现 node 项目的热重载，比如这个 nodemon， 然后 VS Code 也有这么一个对应的模式。 不过要注意，想用调用这个调试模式，你电脑必须全局 安装 nodemon，否跑不起来。123456789101112131415// launch.json&quot;configurations&quot;: [ &#123; &quot;type&quot;: &quot;node&quot;, &quot;request&quot;: &quot;launch&quot;, &quot;name&quot;: &quot;nodemon&quot;, &quot;runtimeExecutable&quot;: &quot;nodemon&quot;, &quot;program&quot;: &quot;$&#123;workspaceFolder&#125;/bin/www&quot;, &quot;restart&quot;: true, &quot;console&quot;: &quot;integratedTerminal&quot;, &quot;internalConsoleOptions&quot;: &quot;neverOpen&quot; &#125;, ...] 大概就是这些吧，最后唠叨一句，debug 是个好东西，大家要用好他。]]></content>
+      <categories>
+        <category>项目经验</category>
+      </categories>
+      <tags>
+        <tag>Node debug</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[搭建 Python 开发环境]]></title>
     <url>%2F2019%2F06%2F19%2Fpython-envi%2F</url>
     <content type="text"><![CDATA[1 下载安装包Python 的话有很多个版本，我们自己学习的话就用用的比较多的 Python 3.5 的版本，官网 3.5 版本已经没有安装包了，只有源代码了，所以大家就到我百度网盘去下载 3.5 的版本。 链接：https://pan.baidu.com/s/1s-dRnouVI_eojPKnJYDAoQ 提取码：8kgy 2 安装配置不得不说，Python 用起来方便，安装配置也是相当方便，我们直接打开安装包，勾选下面的“Add Python 3.5 to PATH”，如下图。 接着我们可以选择默认的直接安装到系统盘，或者点击那个“Customize installation”自定义安装目录再直接安装，安装好了就可以直接使用 Python 开发了。 3 检测安装完环境，老规矩，检查一下成功没。我们打开控制台输入1python -v 如果和下面一样出现 Python 的版本号就代表我们已经成功搭建好 Python 的开发环境了。]]></content>
@@ -20,8 +31,8 @@
         <category>Node</category>
       </categories>
       <tags>
-        <tag>搭建环境</tag>
         <tag>Node</tag>
+        <tag>搭建环境</tag>
       </tags>
   </entry>
   <entry>
@@ -32,8 +43,8 @@
         <category>Java</category>
       </categories>
       <tags>
-        <tag>Java</tag>
         <tag>搭建环境</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -247,7 +258,7 @@
   <entry>
     <title><![CDATA[搭建自己的github博客]]></title>
     <url>%2F2018%2F06%2F25%2Fbuild-hexo%2F</url>
-    <content type="text"><![CDATA[1 什么是 HexoHexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 2 开始搭建博客2.1 前提电脑安装好 Node 和 Git 2.2 安装直接用 npm 全局安装（嫌慢的话就用 cnpm 吧）1npm install -g hexo-cli 2.3 搭建博客网站完成 Hexo 的安装之后，就可以执行下面的命令，在指定文件夹内生成系列的网站文件123hexo init folderNamecd folderNamenpm install // 安装依赖 注意好像新版本的 hexo-cli 在初始化项目的时候会自动安装依赖，如下图\鉴于网络因素，直接用npm 安装依赖实在是太慢了，想快一点的同学看到他在装依赖的时候，不要怂，直接就是 Ctrl+C 断了它进程，然后自己进入文件夹用 cnpm install 装依赖。 3 查看效果运行下面代码，开启博客1hexo server 最后打开4000端口就可以看到自己的博客网站啦 4 项目结构新建个项目之后，指定的文件夹的目录如下：12345678.├── _config.yml├── package.json├── scaffolds├── source| ├── _drafts| └── _posts└── themes 4.1 _config.yml网站的 配置 信息，小伙伴们可以在这边配置大部分的参数。 4.2 package.json这个就不说了，就是这个项目的信息了。 4.3 scaffold 文件夹模板 文件夹。当我们新建文章的时候，Hexo 会根据 scaffold 来建议文件\Hexo 的模板是指在新建的 markdown 文件中默认填充的内容。例如，如果我们修改 scaffold/post.md 中的 Front-matter 内容，那么没一次新建一篇文章都会包含这个修改 4.4 source 文件夹资源文件夹是存放用户资源的地方。除 _posts 文件夹之外，开头命名为 _(下划线)的文件/文件夹和隐藏的文件将会被忽略（意思就是在这里不要以下划线开头去命名新建的文件/文件夹）。Markdown 和 HTML 文件会被解析并放到 public 文件夹，而其他文件会被拷贝过去。 4.5 themes 文件夹主题 文件夹。Hexo会根据主题来生成静态页面。这里的话，推荐一个主题吧。 next 我也不知道为啥要推荐它，反正就瞅他顺眼+多人用+文档全吧。不过想用其他也随便吧，反正写博客嘛，咱们还是多关注内容，外观的话，顺眼舒服就行了。 5 开始写博客这个就很简单了，三步走直接搞定啦。 直接找个能写 markdown 的工具就开始写我们的博客了。这里的话我推荐用一下 『有道云笔记』吧（『有道云笔记』的工作人员看到了麻烦给点广告费啊~(@^_^@)~），平常就可以在上面做做笔记，写写博客，写完直接导出来一个 markdown 文件。当然其他编辑器一般也是可以方便的写 markdown 的。\『注意：这里有道云笔记有个坑点，不是会员不给 markdown 引入本地的图片，如果想用图片的话只能引入网上外链，这时候就要使用图床了，这边推荐用一下『七牛云』吧，有免费 10 G 的空间可以用。（『七牛云』的小姐姐看到麻烦给我叫个鸡腿），里面还有一些使用技巧，这里就不说了，大家自己再去百度玩一下吧。』 将写完的 markdowm 文件直接丢到 source/_posts 文件夹内，但是为了方便分类和管理自己的文章，在导出的 markdown 文件加入下面这些东西 1234567891011---#文章标题title: flex布局#文章发布时间date: 2018-08-26 21:37:55#文章的标签，可多写几个tags: 前端布局#文章分类categories: flex---#下面就是我们的文章正文啦 上面然后就可以在我们的站点中看到我们新增的博客啦。 6 后续讲到这里，我们的博客已经搭建起来的了，如果还有不明白的东西可以去翻翻 hexo 中文文档。最后咧，虽然博客搭起来了，也能写了，但是不自己配置一下的话，还是有点简陋的，所以下次就来讲讲如何去配置我们的 Hexo 博客吧。]]></content>
+    <content type="text"><![CDATA[1 什么是 HexoHexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 2 开始搭建博客2.1 前提电脑安装好 Node 和 Git 2.2 安装直接用 npm 全局安装（嫌慢的话就用 cnpm 吧）1npm install -g hexo-cli 2.3 搭建博客网站完成 Hexo 的安装之后，就可以执行下面的命令，在指定文件夹内生成系列的网站文件123hexo init folderNamecd folderNamenpm install // 安装依赖 注意好像新版本的 hexo-cli 在初始化项目的时候会自动安装依赖，如下图 鉴于网络因素，直接用npm 安装依赖实在是太慢了，想快一点的同学看到他在装依赖的时候，不要怂，直接就是 Ctrl+C 断了它进程，然后自己进入文件夹用 cnpm install 装依赖。 3 查看效果运行下面代码，开启博客1hexo server 最后打开4000端口就可以看到自己的博客网站啦 4 项目结构新建个项目之后，指定的文件夹的目录如下：12345678.├── _config.yml├── package.json├── scaffolds├── source| ├── _drafts| └── _posts└── themes 4.1 _config.yml网站的 配置 信息，小伙伴们可以在这边配置大部分的参数。 4.2 package.json这个就不说了，就是这个项目的信息了。 4.3 scaffold 文件夹模板 文件夹。当我们新建文章的时候，Hexo 会根据 scaffold 来建议文件 Hexo 的模板是指在新建的 markdown 文件中默认填充的内容。例如，如果我们修改 scaffold/post.md 中的 Front-matter 内容，那么没一次新建一篇文章都会包含这个修改 4.4 source 文件夹资源文件夹是存放用户资源的地方。除 _posts 文件夹之外，开头命名为 _(下划线)的文件/文件夹和隐藏的文件将会被忽略（意思就是在这里不要以下划线开头去命名新建的文件/文件夹）。Markdown 和 HTML 文件会被解析并放到 public 文件夹，而其他文件会被拷贝过去。 4.5 themes 文件夹主题 文件夹。Hexo会根据主题来生成静态页面。这里的话，推荐一个主题吧。 next 我也不知道为啥要推荐它，反正就瞅他顺眼+多人用+文档全吧。不过想用其他也随便吧，反正写博客嘛，咱们还是多关注内容，外观的话，顺眼舒服就行了。 5 开始写博客这个就很简单了，三步走直接搞定啦。 直接找个能写 markdown 的工具就开始写我们的博客了。这里的话我推荐用一下 『有道云笔记』吧（『有道云笔记』的工作人员看到了麻烦给点广告费啊~(@^_^@)~），平常就可以在上面做做笔记，写写博客，写完直接导出来一个 markdown 文件。当然其他编辑器一般也是可以方便的写 markdown 的。 『注意：这里有道云笔记有个坑点，不是会员不给 markdown 引入本地的图片，如果想用图片的话只能引入网上外链，这时候就要使用图床了，这边推荐用一下『七牛云』吧，有免费 10 G 的空间可以用。（『七牛云』的小姐姐看到麻烦给我叫个鸡腿），里面还有一些使用技巧，这里就不说了，大家自己再去百度玩一下吧。』 将写完的 markdowm 文件直接丢到 source/_posts 文件夹内，但是为了方便分类和管理自己的文章，在导出的 markdown 文件加入下面这些东西 1234567891011---#文章标题title: flex布局#文章发布时间date: 2018-08-26 21:37:55#文章的标签，可多写几个tags: 前端布局#文章分类categories: flex---#下面就是我们的文章正文啦 上面然后就可以在我们的站点中看到我们新增的博客啦。 6 后续讲到这里，我们的博客已经搭建起来的了，如果还有不明白的东西可以去翻翻 hexo 中文文档。最后咧，虽然博客搭起来了，也能写了，但是不自己配置一下的话，还是有点简陋的，所以下次就来讲讲如何去配置我们的 Hexo 博客吧。]]></content>
       <categories>
         <category>Blog</category>
       </categories>
