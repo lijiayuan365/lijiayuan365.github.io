@@ -89,7 +89,7 @@
 <meta name="description" content="node 开发中必备的调试技能">
 <meta name="keywords" content="Node debug">
 <meta property="og:type" content="article">
-<meta property="og:title" content="node-debug">
+<meta property="og:title" content="Node 项目调试">
 <meta property="og:url" content="http://yoursite.com/2019/07/02/node-debug/index.html">
 <meta property="og:site_name" content="小红帽的博客">
 <meta property="og:description" content="node 开发中必备的调试技能">
@@ -98,9 +98,9 @@
 <meta property="og:image" content="http://yoursite.com/2019/07/02/node-debug/img.cdn.lijiayuan.top/node/node-debug2.png">
 <meta property="og:image" content="http://yoursite.com/2019/07/02/node-debug/img.cdn.lijiayuan.top/node/node-debug3.png">
 <meta property="og:image" content="http://yoursite.com/2019/07/02/node-debug/img.cdn.lijiayuan.top/node/node-debug4.png">
-<meta property="og:updated_time" content="2019-07-02T02:43:38.425Z">
+<meta property="og:updated_time" content="2019-07-06T01:23:04.736Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="node-debug">
+<meta name="twitter:title" content="Node 项目调试">
 <meta name="twitter:description" content="node 开发中必备的调试技能">
 <meta name="twitter:image" content="http://yoursite.com/2019/07/02/node-debug/img.cdn.lijiayuan.top/node/node-debug1.png">
 
@@ -138,7 +138,7 @@
 
 
 
-  <title>node-debug | 小红帽的博客</title>
+  <title>Node 项目调试 | 小红帽的博客</title>
   
 
 
@@ -324,7 +324,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">node-debug</h1>
+          <h1 class="post-title" itemprop="name headline">Node 项目调试</h1>
         
 
         <div class="post-meta">
@@ -352,8 +352,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-07-02T10:43:38+08:00">
-                2019-07-02
+              <time title="更新于" itemprop="dateModified" datetime="2019-07-06T09:23:04+08:00">
+                2019-07-06
               </time>
             
           </span>
@@ -407,7 +407,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  849
+                  926
                 </span>
               
 
@@ -448,24 +448,26 @@
       
 
       
-        <p><strong>前言</strong> 作为一个程序员，感觉我们其实打代码的时间不多，大部分时间都在在调试上，所以如何调高我们调试的效率，这就成了我们的一个大问题了，经过在网上的搜索与自己的探索，就推荐这两种好用的调试方法吧</p>
+        <p><strong>前言</strong> 作为一个程序员，感觉我们其实打代码的时间不多，大部分时间都在在调试上，所以如何调高我们调试的效率，这就成了我们的一个大问题了，经过在网上的搜索与自己的探索，就推荐这两种好用的 Node 调试方法吧</p>
 <h2 id="1-Chrome-调试"><a href="#1-Chrome-调试" class="headerlink" title="1 Chrome 调试"></a>1 Chrome 调试</h2><p>因为 V8 检查器集成允许使用 Chrome 调试协议将 Chrome DevTools 附加到 Node.js 实例以进行调试。所以我们可以直接用 Chrome 进行调试。<br>这个就最简单的的方法，直接在运行代码的地方加个前缀 <code>--inspect</code>，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node --inspect /bin/www</span><br></pre></td></tr></table></figure></p>
 <p>这个时候我们在控制台会看到多出这么几个提示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Debugger listening on ws://127.0.0.1:9229/f54d4cb8-56bc-46c4-9b8e-fd7f2163c73c</span><br><span class="line">For help, see: https://nodejs.org/en/docs/inspector</span><br><span class="line">Debugger attached.</span><br></pre></td></tr></table></figure></p>
 <p>看到这个我们打开 Chrome，f12 打开控制台，点击上面的 Node 图标</p>
 <p><img src="http:img.cdn.lijiayuan.top/node/node-debug1.png" alt="image"></p>
 <p>我们就可以打开一个新的调试 Node 的浏览器窗口，我们在代码中打的 debugger 和 console.log 都会在那个窗口显示和输出出来。</p>
 <p><img src="http:img.cdn.lijiayuan.top/node/node-debug2.png" alt="image"></p>
-<h2 id="2-VS-Code-大法"><a href="#2-VS-Code-大法" class="headerlink" title="2 VS Code 大法"></a>2 VS Code 大法</h2><p>在 vscode 中调试步骤也是比较简单，<br>1、 点击蜘蛛图标，打开调试控制台</p>
+<h2 id="2-VS-Code-大法"><a href="#2-VS-Code-大法" class="headerlink" title="2 VS Code 大法"></a>2 VS Code 大法</h2><p>在 VS Code 中调试步骤也是比较简单，<br>1、 点击蜘蛛图标，打开调试控制台</p>
 <p><img src="http:img.cdn.lijiayuan.top/node/node-debug3.png" alt="image"></p>
 <p>2、选择一下调试环境</p>
 <p>这里我们就直接选 Node的了的啦</p>
 <p><img src="http:img.cdn.lijiayuan.top/node/node-debug4.png" alt="image"></p>
-<p>3、配置调试模式<br>我们选择好环境之后，他会弹出一个 <code>launch.json</code> 的配置文件，这里面我们可以vscode 有很多调试模式，我们可以通过 <code>add configurations</code> 添加调试模式。等到我们要调试的时候就在 debug 菜单那边选模式，然后点击绿色三角开始调试。下面我们着重介绍一下几个常见的模式吧</p>
+<p>3、配置调试模式<br>我们选择好环境之后，他会弹出一个 <code>launch.json</code> 的配置文件，这里面我们可以 VS Code 有很多调试模式，我们可以通过 <code>add configurations</code> 添加调试模式。等到我们要调试的时候就在 debug 菜单那边选模式，然后点击绿色三角开始调试。下面我们着重介绍一下几个常见的模式吧</p>
 <h3 id="2-1-VS-Code-Node-调试模式"><a href="#2-1-VS-Code-Node-调试模式" class="headerlink" title="2.1 VS Code Node 调试模式"></a>2.1 VS Code Node 调试模式</h3><h4 id="2-1-1-attach-模式"><a href="#2-1-1-attach-模式" class="headerlink" title="2.1.1 attach 模式"></a>2.1.1 attach 模式</h4><p>这个先拉出来说，因为后面几个模式都是通过 VS Code 启动项目的，而这个模式是你项目已经启动的情况下启用的，并且那项目还是开启了 Chrome 调试的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// launch.json</span><br><span class="line">// port 填 Chrome 调试的端口地址，一般都是 9229</span><br><span class="line">&quot;configurations&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;type&quot;: &quot;node&quot;,</span><br><span class="line">        &quot;request&quot;: &quot;attach&quot;,</span><br><span class="line">        &quot;name&quot;: &quot;Attach to Port&quot;,</span><br><span class="line">        &quot;address&quot;: &quot;localhost&quot;,</span><br><span class="line">        &quot;port&quot;: 9229</span><br><span class="line">    &#125;,</span><br><span class="line">    ...</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
 <h4 id="2-1-2-node-模式"><a href="#2-1-2-node-模式" class="headerlink" title="2.1.2 node 模式"></a>2.1.2 node 模式</h4><p>这个其实一开始的时候生成的配置就是 node 启动形式，代码如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// launch.json</span><br><span class="line">&quot;configurations&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;type&quot;: &quot;node&quot;,</span><br><span class="line">        &quot;request&quot;: &quot;launch&quot;,</span><br><span class="line">        &quot;name&quot;: &quot;Launch Program&quot;,</span><br><span class="line">        &quot;program&quot;: &quot;$&#123;workspaceFolder&#125;/bin/www&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
+<p>选择后模式之后，我们点击调试控制台的绿三角就可以启动调试了。</p>
 <h4 id="2-1-3-nodemon-模式"><a href="#2-1-3-nodemon-模式" class="headerlink" title="2.1.3 nodemon 模式"></a>2.1.3 nodemon 模式</h4><p>我们调试的时候肯定要修修改改，如果只是用 node 启动的话，我们每次修改后都要重新启动项目，这样是很费时间的，所以我们可以借助一些依赖来实现 node 项目的热重载，比如这个 nodemon， 然后 VS Code 也有这么一个对应的模式。</p>
 <p>不过要注意，想用调用这个调试模式，你电脑必须全局 安装 nodemon，否跑不起来。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// launch.json</span><br><span class="line">&quot;configurations&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;type&quot;: &quot;node&quot;,</span><br><span class="line">        &quot;request&quot;: &quot;launch&quot;,</span><br><span class="line">        &quot;name&quot;: &quot;nodemon&quot;,</span><br><span class="line">        &quot;runtimeExecutable&quot;: &quot;nodemon&quot;,</span><br><span class="line">       &quot;program&quot;: &quot;$&#123;workspaceFolder&#125;/bin/www&quot;,</span><br><span class="line">        &quot;restart&quot;: true,</span><br><span class="line">        &quot;console&quot;: &quot;integratedTerminal&quot;,</span><br><span class="line">        &quot;internalConsoleOptions&quot;: &quot;neverOpen&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
-<p>大概就是这些吧，最后唠叨一句，debug 是个好东西，大家要用好他。</p>
+<p>和上面一样这个也是在 VS Code 里面启动调试的。</p>
+<p>大概就是这些吧，当然 Node 调试还有很多方式，这些就看大家喜欢然后自己去摸索了。最后唠叨一句，debug 是个好东西，大家要用好他。</p>
 
       
     </div>
