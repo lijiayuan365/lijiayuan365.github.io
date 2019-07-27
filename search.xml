@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Vuex 基础使用]]></title>
+    <url>%2F2019%2F07%2F27%2Fuse-vuex%2F</url>
+    <content type="text"><![CDATA[前言 vuex 是 vue 官方出的一个全局的状态管理模式，可以理解为一个 vuex 项目的全局变量吧，再构建大型项目的时候，我们可能会需要用到它。下面就来学一下怎么去使用它吧（本文偏向于具体使用，如要深入学习，请看官方文档）。 1 安装我们要用啥就要先装啥，直接 npm install 就行了1npm install vuex 2 文件结构vuex 的也是 vue 项目中的一个模块，使用我们一般会用一个 store 文件夹去存放属于 vuex 的文件。他一般是有下面这些模块 2.1 state.js这个的里面就放着 vuex 的 state 数据，个人理解这个就是一个一个全局变量库。123456let state = &#123; dept: 'TT', num: 'S0171',&#125;export default state; 2.2 getters.js除了我们默认的 state 状态之外，还会有一些类似组件中的计算属性的派生的状态，他定义的时候和定义计算属性是一样的，但是要传入一个 state 作为参数。12345// 使用箭头函数，简洁好看let getters = &#123; deptNo: state =&gt; state.dept + state.num&#125;export default getters; 2.3 mutations.js更改 Vuex 的 store 中的状态的唯一方法是提交 mutation。Vuex 中的 mutation 非常类似于事件：每个 mutation 都有一个字符串的 事件类型 (type) 和 一个 回调函数 (handler)。这个回调函数就是我们实际进行状态更改的地方，并且它会接受 state 作为第一个参数,然后还可以传入一个额外的参数，即载荷（payload），我们一般可以使用这个 payload 传入一些修改时需要的参数。 此外 vuex 官方是推荐用常量作为事件类型，使用我们一般也就按照推荐的来咯，当项目足够大的时候，我们还会搞多一个 mutation-type.js 文件来存放这些事件类型，但是现在我们就先把他们都写一起了。1234567891011// 事件类型const SET_DEPT = &apos;SET_DEPT&apos;const mutation = &#123; // 回调函数，就处理 state 的方法啦 [SET_DEPT](state, payload) &#123; state.dept = payload.dept; &#125;&#125;export default mutation; 2.4 actions.js由于 mutation 里面不支持异步操作，所以当我们需要在 vuex 里面执行异步操作的时候,就要用到 action 了，不过要注意 action 只是提供异步操作的机会，但是如果要修改 state 的数据的时候，还是要用到 mutation 里面的同步事件。 他的声明方式和 action 是差不多的123456789const ASET_DEPT = 'ASET_DEPT'const actions = &#123; [ASET_DEPT](context,payload)&#123; setTimeout(()=&gt;&#123; context.commit('SET_DEPT',payload.dept); &#125;,2000) &#125;,&#125;export default actions; 2.1 index.js这个就直接 vuex 的入口文件了，在这边要创建 store 实例，并将其导出,我们就要把我们之前搞的所有都丢到这里面来，然后创建一个 store 实例。12345678910111213141516import Vuex from 'vuex';import Vue from 'vue';import state from './state'import getters from './getters'import mutations from './mutations'import actions from './actions'Vue.use(Vuex);export default new Vuex.Store(&#123; state, getters, mutations, actions,&#125;); 最后我们只要在创建 vue 的实例的 main.js 文件里面导入 store 模块，并在初始化 vue 实例的时候引进去就成功搭建了一个全局的状态仓库了。 3 使用前面我们说了这么去搭这个仓库，现在我们已经搭好了，就要知道这么去使用这个仓库的数据。 3.1 state 数据的获取这个由于我们是在根 vue 实例就引入了 store，然后我们一般是在计算属性中去拿取 vuex 的状态12345computed :&#123; dept()&#123; this.$store.state.dept &#125;&#125; 为了减少我们的工作量，vuex 还给我们贴心准备了辅助函数 mapState12// 引入import &#123; mapState &#125; from "vuex"; 12345678910computed: &#123; ...mapState(&#123; name: state =&gt; state.Deno.name, dept: state =&gt; state.dept, &#125;) // 当 computed 里面的计算属性的名称和 state 里面名称一样时，还可以这么写 ...mapState([ 'name','dept' ]) &#125;, 3.2 getter 的获取这个和 state 差不多，直接发代码了12345computed: &#123; deptNo() &#123; return this.$store.getters.deptNo; &#125;,&#125; 然后他也有一个辅助函数 mapGetters。用法就123456789computed: &#123; ...mapGetters(&#123; deptNo: 'deptNo', &#125;) // 当 computed 里面的计算属性的名称和 state 里面名称一样时，还可以这么写 ...mapState([ 'deptNo' ]) &#125;, 3.3 mutation 的使用mutation 是事件，也就是方法啦，所以我们用方法的形式去使用它。我们可以直接使用123this.$store.commit('SET_DEPT', &#123; dept: 'QQ'&#125;) 也可以用辅助函数 mapMutations 映射为本地方法1234...mapMutations(["SET_DEPT"]),...mapMutations(&#123; setDept: "SET_DEPT"&#125;), 然后直接调用12this.SET_DEPT('QQ');this.setDept('QQ'); 3.4 action 的使用action 也是方法啦，所以他的使用和 mutation 是差不多的。1this.$store.dispatch('ASET_DEPT',&#123;dept:'QQ'&#125;) 它的辅助函数是 mapActions，用它映射为本地方法。123456...mapActions(&#123; aSetDept: 'ASET_DEPT',&#125;),...mapActions([ 'ASET_DEPT']) 关于 vuex 的简单使用就说明到这边了，但是由于有时候我们的项目是非常大，使用单一的一个 state 来存数据可能会导致数据太多，太杂，所以 vuex 还有一个 module 的机制，大家可以去官网看文档或者看我的下一篇文章。文章就写到这里啦，如果大家发现我哪边写错的话，还望指出勘误，期待与大家一起学习进步。]]></content>
+      <categories>
+        <category>Vue</category>
+      </categories>
+      <tags>
+        <tag>vuex</tag>
+        <tag>状态管理</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Node 项目调试]]></title>
     <url>%2F2019%2F07%2F02%2Fnode-debug%2F</url>
     <content type="text"><![CDATA[前言 作为一个程序员，感觉我们其实打代码的时间不多，大部分时间都在在调试上，所以如何调高我们调试的效率，这就成了我们的一个大问题了，经过在网上的搜索与自己的探索，就推荐这两种好用的 Node 调试方法吧 1 Chrome 调试因为 V8 检查器集成允许使用 Chrome 调试协议将 Chrome DevTools 附加到 Node.js 实例以进行调试。所以我们可以直接用 Chrome 进行调试。这个就最简单的的方法，直接在运行代码的地方加个前缀 --inspect，如下：1node --inspect /bin/www 这个时候我们在控制台会看到多出这么几个提示123Debugger listening on ws://127.0.0.1:9229/f54d4cb8-56bc-46c4-9b8e-fd7f2163c73cFor help, see: https://nodejs.org/en/docs/inspectorDebugger attached. 看到这个我们打开 Chrome，f12 打开控制台，点击上面的 Node 图标 我们就可以打开一个新的调试 Node 的浏览器窗口，我们在代码中打的 debugger 和 console.log 都会在那个窗口显示和输出出来。 2 VS Code 大法在 VS Code 中调试步骤也是比较简单，1、 点击蜘蛛图标，打开调试控制台 2、选择一下调试环境 这里我们就直接选 Node的了的啦 3、配置调试模式我们选择好环境之后，他会弹出一个 launch.json 的配置文件，这里面我们可以 VS Code 有很多调试模式，我们可以通过 add configurations 添加调试模式。等到我们要调试的时候就在 debug 菜单那边选模式，然后点击绿色三角开始调试。下面我们着重介绍一下几个常见的模式吧 2.1 VS Code Node 调试模式2.1.1 attach 模式这个先拉出来说，因为后面几个模式都是通过 VS Code 启动项目的，而这个模式是你项目已经启动的情况下启用的，并且那项目还是开启了 Chrome 调试的123456789101112// launch.json// port 填 Chrome 调试的端口地址，一般都是 9229&quot;configurations&quot;: [ &#123; &quot;type&quot;: &quot;node&quot;, &quot;request&quot;: &quot;attach&quot;, &quot;name&quot;: &quot;Attach to Port&quot;, &quot;address&quot;: &quot;localhost&quot;, &quot;port&quot;: 9229 &#125;, ...] 2.1.2 node 模式这个其实一开始的时候生成的配置就是 node 启动形式，代码如下1234567891011// launch.json&quot;configurations&quot;: [ &#123; &quot;type&quot;: &quot;node&quot;, &quot;request&quot;: &quot;launch&quot;, &quot;name&quot;: &quot;Launch Program&quot;, &quot;program&quot;: &quot;$&#123;workspaceFolder&#125;/bin/www&quot; &#125;, ...] 选择后模式之后，我们点击调试控制台的绿三角就可以启动调试了。 2.1.3 nodemon 模式我们调试的时候肯定要修修改改，如果只是用 node 启动的话，我们每次修改后都要重新启动项目，这样是很费时间的，所以我们可以借助一些依赖来实现 node 项目的热重载，比如这个 nodemon， 然后 VS Code 也有这么一个对应的模式。 不过要注意，想用调用这个调试模式，你电脑必须全局 安装 nodemon，否跑不起来。123456789101112131415// launch.json&quot;configurations&quot;: [ &#123; &quot;type&quot;: &quot;node&quot;, &quot;request&quot;: &quot;launch&quot;, &quot;name&quot;: &quot;nodemon&quot;, &quot;runtimeExecutable&quot;: &quot;nodemon&quot;, &quot;program&quot;: &quot;$&#123;workspaceFolder&#125;/bin/www&quot;, &quot;restart&quot;: true, &quot;console&quot;: &quot;integratedTerminal&quot;, &quot;internalConsoleOptions&quot;: &quot;neverOpen&quot; &#125;, ...] 和上面一样这个也是在 VS Code 里面启动调试的。 大概就是这些吧，当然 Node 调试还有很多方式，这些就看大家喜欢然后自己去摸索了。最后唠叨一句，debug 是个好东西，大家要用好他。]]></content>
@@ -215,8 +227,8 @@
         <category>JavaScript</category>
       </categories>
       <tags>
-        <tag>正则</tag>
         <tag>知识点</tag>
+        <tag>正则</tag>
       </tags>
   </entry>
   <entry>
@@ -251,8 +263,8 @@
         <category>JavaScript</category>
       </categories>
       <tags>
-        <tag>练习</tag>
         <tag>正则</tag>
+        <tag>练习</tag>
       </tags>
   </entry>
   <entry>

@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,配置博客,">
+  <meta name="keywords" content="vuex,状态管理,">
 
 
 
@@ -86,25 +86,18 @@
 
 
 
-<meta name="description" content="1 项目结构1.1 _config.yml网站的配置信息，在这边配置网站的大部分信息 1.2 scaffolds模板文件夹，新建文件会根据里面的模板创建新的文件 1.3 source资源文件夹是存放用户资源的地方，然后 _posts 是存放 markdown 文章的地方 1.4 themes主题文件夹，hexo 会根据主题生成静态文件夹。本次我们使用的主题是 Next 主题主题网站 2 _con">
-<meta name="keywords" content="Hexo,配置博客">
+<meta name="description" content="Vuex 是 Vue 官方出的状态管理模式，大型项目基本都会用到">
+<meta name="keywords" content="vuex,状态管理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="配置自己的github博客">
-<meta property="og:url" content="http://yoursite.com/2018/10/10/deploy-hexo/index.html">
+<meta property="og:title" content="Vuex 基础使用">
+<meta property="og:url" content="http://yoursite.com/2019/07/27/use-vuex/index.html">
 <meta property="og:site_name" content="小红帽的博客">
-<meta property="og:description" content="1 项目结构1.1 _config.yml网站的配置信息，在这边配置网站的大部分信息 1.2 scaffolds模板文件夹，新建文件会根据里面的模板创建新的文件 1.3 source资源文件夹是存放用户资源的地方，然后 _posts 是存放 markdown 文章的地方 1.4 themes主题文件夹，hexo 会根据主题生成静态文件夹。本次我们使用的主题是 Next 主题主题网站 2 _con">
+<meta property="og:description" content="Vuex 是 Vue 官方出的状态管理模式，大型项目基本都会用到">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://img.cdn.lijiayuan.top//hexo-config/website.png">
-<meta property="og:image" content="http://img.cdn.lijiayuan.top//hexo-config/url.png">
-<meta property="og:image" content="http://img.cdn.lijiayuan.top//hexo-config/dir.png">
-<meta property="og:image" content="http://img.cdn.lijiayuan.top//hexo-config/article.png">
-<meta property="og:image" content="http://img.cdn.lijiayuan.top//hexo-config/other.png">
-<meta property="og:image" content="http://img.cdn.lijiayuan.top//hexo-config/myblog.png">
-<meta property="og:updated_time" content="2018-11-02T05:00:22.769Z">
+<meta property="og:updated_time" content="2019-07-27T14:20:47.246Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="配置自己的github博客">
-<meta name="twitter:description" content="1 项目结构1.1 _config.yml网站的配置信息，在这边配置网站的大部分信息 1.2 scaffolds模板文件夹，新建文件会根据里面的模板创建新的文件 1.3 source资源文件夹是存放用户资源的地方，然后 _posts 是存放 markdown 文章的地方 1.4 themes主题文件夹，hexo 会根据主题生成静态文件夹。本次我们使用的主题是 Next 主题主题网站 2 _con">
-<meta name="twitter:image" content="http://img.cdn.lijiayuan.top//hexo-config/website.png">
+<meta name="twitter:title" content="Vuex 基础使用">
+<meta name="twitter:description" content="Vuex 是 Vue 官方出的状态管理模式，大型项目基本都会用到">
 
 
 
@@ -134,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/10/deploy-hexo/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/27/use-vuex/">
 
 
 
 
 
-  <title>配置自己的github博客 | 小红帽的博客</title>
+  <title>Vuex 基础使用 | 小红帽的博客</title>
   
 
 
@@ -309,7 +302,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/10/deploy-hexo/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/27/use-vuex/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小红帽">
@@ -326,7 +319,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">配置自己的github博客</h1>
+          <h1 class="post-title" itemprop="name headline">Vuex 基础使用</h1>
         
 
         <div class="post-meta">
@@ -338,8 +331,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-10T18:39:55+08:00">
-                2018-10-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-27T22:17:22+08:00">
+                2019-07-27
               </time>
             
 
@@ -354,8 +347,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-11-02T13:00:22+08:00">
-                2018-11-02
+              <time title="更新于" itemprop="dateModified" datetime="2019-07-27T22:20:47+08:00">
+                2019-07-27
               </time>
             
           </span>
@@ -373,8 +366,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Blog/" itemprop="url" rel="index">
-                    <span itemprop="name">Blog</span>
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
                   </a>
                 </span>
 
@@ -409,7 +402,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  926
+                  1.4k
                 </span>
               
 
@@ -425,12 +418,16 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  5
                 </span>
               
             </div>
           
 
+          
+              <div class="post-description">
+                  Vuex 是 Vue 官方出的状态管理模式，大型项目基本都会用到
+              </div>
           
 
         </div>
@@ -446,32 +443,29 @@
       
 
       
-        <a id="more"></a>
-<h2 id="1-项目结构"><a href="#1-项目结构" class="headerlink" title="1 项目结构"></a>1 项目结构</h2><h3 id="1-1-config-yml"><a href="#1-1-config-yml" class="headerlink" title="1.1 _config.yml"></a>1.1 _config.yml</h3><p>网站的配置信息，在这边配置网站的大部分信息</p>
-<h3 id="1-2-scaffolds"><a href="#1-2-scaffolds" class="headerlink" title="1.2 scaffolds"></a>1.2 scaffolds</h3><p>模板文件夹，新建文件会根据里面的模板创建新的文件</p>
-<h3 id="1-3-source"><a href="#1-3-source" class="headerlink" title="1.3 source"></a>1.3 source</h3><p>资源文件夹是存放用户资源的地方，然后 <code>_posts</code> 是存放 markdown 文章的地方</p>
-<h3 id="1-4-themes"><a href="#1-4-themes" class="headerlink" title="1.4 themes"></a>1.4 themes</h3><p>主题文件夹，hexo 会根据主题生成静态文件夹。本次我们使用的主题是 Next 主题<br><a href="https://hexo.io/themes/" target="_blank" rel="noopener">主题网站</a></p>
-<h2 id="2-config-yml-的配置"><a href="#2-config-yml-的配置" class="headerlink" title="2 _config.yml 的配置"></a>2 _config.yml 的配置</h2><h3 id="2-1-网站"><a href="#2-1-网站" class="headerlink" title="2.1 网站"></a>2.1 网站</h3><p>我们可以在 <code>_config.yml</code> 文件 中修改大部分的配置，具体咋配置，我就偷个懒了。直接贴中文文档的图了。<br><img src="http://img.cdn.lijiayuan.top//hexo-config/website.png" alt="image"><br>其中，<code>language</code> 就设置为 <code>zh-Hans</code> 啦，毕竟咱还是用中文写博客的，当然如果有大佬想搞个国际化的全英博客的话就另当别论了。  <code>description</code> 主要用于SEO，告诉搜索引擎一个关于我们站点的简单描述，官方是推荐在里面写我们站点的关键字，主题啥的，但是个人咧还是比较喜欢直接写个个人签名╭(╯^╰)╮ <code>author</code> 参数就是来说这个博客的是谁家的孩子啦。</p>
-<h3 id="2-2-网址"><a href="#2-2-网址" class="headerlink" title="2.2 网址"></a>2.2 网址</h3><p><img src="http://img.cdn.lijiayuan.top//hexo-config/url.png" alt="image"><br>如果你的网站存放在子目录中，例如 <code>http://yoursite.com/blog</code>，则请将你的 url 设为 <code>http://yoursite.com/blog</code> 并把 root 设为 <code>/blog/</code>。</p>
-<h3 id="2-3-目录"><a href="#2-3-目录" class="headerlink" title="2.3 目录"></a>2.3 目录</h3><p><img src="http://img.cdn.lijiayuan.top//hexo-config/dir.png" alt="image"><br>这里是高端局，我这种菜鸡就老老实实跟着官方走，不乱改了。</p>
-<h3 id="2-4-文章"><a href="#2-4-文章" class="headerlink" title="2.4 文章"></a>2.4 文章</h3><p><img src="http://img.cdn.lijiayuan.top//hexo-config/article.png" alt="image"><br>默认情况下，Hexo 生成的超链接都是绝对地址。例如，如果您的网站域名为 <code>example.com</code>，您有一篇文章名为 hello，那么绝对链接可能像这样：<code>http://example.com/hello.html</code>，它是绝对于域名的。相对链接像这样：<code>/hello.html</code>，也就是说，无论用什么域名访问该站点，都没有关系，这在进行反向代理时可能用到。通常情况下，建议使用绝对地址。</p>
-<h3 id="2-5-其他"><a href="#2-5-其他" class="headerlink" title="2.5 其他"></a>2.5 其他</h3><p><img src="http://img.cdn.lijiayuan.top//hexo-config/other.png" alt="image"></p>
-<h2 id="3-其他配置"><a href="#3-其他配置" class="headerlink" title="3 其他配置"></a>3 其他配置</h2><h3 id="3-1-标签、分类、关于设置"><a href="#3-1-标签、分类、关于设置" class="headerlink" title="3.1 标签、分类、关于设置"></a>3.1 标签、分类、关于设置</h3><p>仔细看了一下上面关于目录的配置，然后又看了其他人的 hexo 博客，心头是不是一阵疑惑，咦，咋感觉自己少了那么多目录结构咧。咋整啊？自己装呗。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo new page &quot;tags&quot;</span><br><span class="line">hexo new page &quot;categories&quot;</span><br><span class="line">hexo new page &quot;about&quot;</span><br></pre></td></tr></table></figure></p>
-<p>执行完这三条命令后，在站点的source 的目录下就生成了  tags，about，categories 三个文件夹然后就分别到 source 文件夹中新生成的 about  文件夹里面的 index.md 中添加下面的代码<br>type: “tags”<br>重新运行之后是不是就出来了，什么？出不来？好吧，我错了，这样的话就要去看你选择的 theme 里面的配置了，把 menu 里面对这三个菜单项的注释去掉，就可以了。再不行的话，那就那就，百度吧。</p>
-<h3 id="3-2-关联到-github-pages"><a href="#3-2-关联到-github-pages" class="headerlink" title="3.2 关联到 github pages"></a>3.2 关联到 github pages</h3><ol>
-<li>修改 _config.yml, 在文件最底部添加如下代码</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: ssh://git@github.com/你的github名/你的github名.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>安装一个 hexo 插件</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>部署项目，就直接运行下面三条命令就行了</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean // 清除原来打包的项目</span><br><span class="line">hexo g // 生成新的项目</span><br><span class="line">hexo d // 上传项目到github</span><br></pre></td></tr></table></figure>
-<p>最后的最后，让我们打开浏览器，输入 <code>https://你的github用户名.github.io</code>，例如我的 <code>https://lijiayuan365.github.io</code>\<br><img src="http://img.cdn.lijiayuan.top//hexo-config/myblog.png" alt="image"></p>
-<h2 id="4-真正的最后"><a href="#4-真正的最后" class="headerlink" title="4 真正的最后"></a>4 真正的最后</h2><p><code>强烈推荐下面这位大佬的博客</code> <a href="https://www.qcmoke.site/2018/09/14/131/" target="_blank" rel="noopener">Hexo 博客主题的设置与完善</a>，可以说是相当的全面与仔细了，快速配置好你的博客。</p>
+        <p><strong>前言</strong> vuex 是 vue 官方出的一个全局的状态管理模式，可以理解为一个 vuex 项目的全局变量吧，再构建大型项目的时候，我们可能会需要用到它。下面就来学一下怎么去使用它吧（本文偏向于具体使用，如要深入学习，请看<a href="https://vuex.vuejs.org/zh/" target="_blank" rel="noopener">官方文档</a>）。</p>
+<h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1 安装"></a>1 安装</h2><p>我们要用啥就要先装啥，直接 npm install 就行了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vuex</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-文件结构"><a href="#2-文件结构" class="headerlink" title="2 文件结构"></a>2 文件结构</h2><p>vuex 的也是 vue 项目中的一个模块，使用我们一般会用一个 store 文件夹去存放属于 vuex 的文件。他一般是有下面这些模块</p>
+<h3 id="2-1-state-js"><a href="#2-1-state-js" class="headerlink" title="2.1 state.js"></a>2.1 state.js</h3><p>这个的里面就放着 vuex 的 state 数据，个人理解这个就是一个一个全局变量库。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> state = &#123;</span><br><span class="line">    dept: <span class="string">'TT'</span>,</span><br><span class="line">    num: <span class="string">'S0171'</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> state;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-2-getters-js"><a href="#2-2-getters-js" class="headerlink" title="2.2 getters.js"></a>2.2 getters.js</h3><p>除了我们默认的 state 状态之外，还会有一些类似组件中的计算属性的派生的状态，他定义的时候和定义计算属性是一样的，但是要传入一个 state 作为参数。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用箭头函数，简洁好看</span></span><br><span class="line"><span class="keyword">let</span> getters = &#123;</span><br><span class="line">    deptNo: <span class="function"><span class="params">state</span> =&gt;</span> state.dept + state.num</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> getters;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-3-mutations-js"><a href="#2-3-mutations-js" class="headerlink" title="2.3 mutations.js"></a>2.3 mutations.js</h3><p>更改 Vuex 的 store 中的状态的唯一方法是提交 mutation。Vuex 中的 mutation 非常类似于事件：每个 mutation 都有一个字符串的 事件类型 (type) 和 一个 回调函数 (handler)。这个回调函数就是我们实际进行状态更改的地方，并且它会接受 state 作为第一个参数,然后还可以传入一个额外的参数，即载荷（payload），我们一般可以使用这个 payload 传入一些修改时需要的参数。</p>
+<p>此外 vuex 官方是推荐用常量作为事件类型，使用我们一般也就按照推荐的来咯，当项目足够大的时候，我们还会搞多一个 mutation-type.js 文件来存放这些事件类型，但是现在我们就先把他们都写一起了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 事件类型</span><br><span class="line">const SET_DEPT = &apos;SET_DEPT&apos;</span><br><span class="line"></span><br><span class="line">const mutation = &#123;</span><br><span class="line">    // 回调函数，就处理 state 的方法啦</span><br><span class="line">    [SET_DEPT](state, payload) &#123;</span><br><span class="line">        state.dept = payload.dept;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default mutation;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-4-actions-js"><a href="#2-4-actions-js" class="headerlink" title="2.4 actions.js"></a>2.4 actions.js</h3><p>由于 mutation 里面不支持异步操作，所以当我们需要在 vuex 里面执行异步操作的时候,就要用到 action 了，不过要注意 action 只是提供异步操作的机会，但是如果要修改 state 的数据的时候，还是要用到 mutation 里面的同步事件。</p>
+<p>他的声明方式和 action 是差不多的<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ASET_DEPT = <span class="string">'ASET_DEPT'</span></span><br><span class="line"><span class="keyword">const</span> actions = &#123;</span><br><span class="line">    [ASET_DEPT](context,payload)&#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">            context.commit(<span class="string">'SET_DEPT'</span>,payload.dept);</span><br><span class="line">        &#125;,<span class="number">2000</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> actions;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-1-index-js"><a href="#2-1-index-js" class="headerlink" title="2.1 index.js"></a>2.1 index.js</h3><p>这个就直接 vuex 的入口文件了，在这边要创建 store 实例，并将其导出,我们就要把我们之前搞的所有都丢到这里面来，然后创建一个 store 实例。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vuex <span class="keyword">from</span> <span class="string">'vuex'</span>;</span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> state <span class="keyword">from</span> <span class="string">'./state'</span></span><br><span class="line"><span class="keyword">import</span> getters <span class="keyword">from</span> <span class="string">'./getters'</span></span><br><span class="line"><span class="keyword">import</span> mutations <span class="keyword">from</span> <span class="string">'./mutations'</span></span><br><span class="line"><span class="keyword">import</span> actions <span class="keyword">from</span> <span class="string">'./actions'</span></span><br><span class="line"></span><br><span class="line">Vue.use(Vuex);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">    state,</span><br><span class="line">    getters,</span><br><span class="line">    mutations,</span><br><span class="line">    actions,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>最后我们只要在创建 vue 的实例的 main.js 文件里面导入 store 模块，并在初始化 vue 实例的时候引进去就成功搭建了一个全局的状态仓库了。</p>
+<h2 id="3-使用"><a href="#3-使用" class="headerlink" title="3 使用"></a>3 使用</h2><p>前面我们说了这么去搭这个仓库，现在我们已经搭好了，就要知道这么去使用这个仓库的数据。</p>
+<h3 id="3-1-state-数据的获取"><a href="#3-1-state-数据的获取" class="headerlink" title="3.1 state 数据的获取"></a>3.1 state 数据的获取</h3><p>这个由于我们是在根 vue 实例就引入了 store，然后我们一般是在计算属性中去拿取 vuex 的状态<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">computed :&#123;</span><br><span class="line">    dept()&#123;</span><br><span class="line">        <span class="keyword">this</span>.$store.state.dept</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>为了减少我们的工作量，vuex 还给我们贴心准备了辅助函数 mapState<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引入</span></span><br><span class="line"><span class="keyword">import</span> &#123; mapState &#125; <span class="keyword">from</span> <span class="string">"vuex"</span>;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">    ...mapState(&#123;</span><br><span class="line">      name: <span class="function"><span class="params">state</span> =&gt;</span> state.Deno.name,</span><br><span class="line">      dept: <span class="function"><span class="params">state</span> =&gt;</span> state.dept,</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="comment">// 当 computed 里面的计算属性的名称和 state 里面名称一样时，还可以这么写</span></span><br><span class="line">    ...mapState([</span><br><span class="line">      <span class="string">'name'</span>,<span class="string">'dept'</span></span><br><span class="line">    ])</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+<h3 id="3-2-getter-的获取"><a href="#3-2-getter-的获取" class="headerlink" title="3.2 getter 的获取"></a>3.2 getter 的获取</h3><p>这个和 state 差不多，直接发代码了<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">    deptNo() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.$store.getters.deptNo;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后他也有一个辅助函数 mapGetters。用法就<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">    ...mapGetters(&#123;</span><br><span class="line">      deptNo: <span class="string">'deptNo'</span>,</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="comment">// 当 computed 里面的计算属性的名称和 state 里面名称一样时，还可以这么写</span></span><br><span class="line">    ...mapState([</span><br><span class="line">      <span class="string">'deptNo'</span></span><br><span class="line">    ])</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-3-mutation-的使用"><a href="#3-3-mutation-的使用" class="headerlink" title="3.3 mutation 的使用"></a>3.3 mutation 的使用</h3><p>mutation 是事件，也就是方法啦，所以我们用方法的形式去使用它。我们可以直接使用<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$store.commit(<span class="string">'SET_DEPT'</span>, &#123;</span><br><span class="line">  dept: <span class="string">'QQ'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>也可以用辅助函数 mapMutations 映射为本地方法<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">...mapMutations([<span class="string">"SET_DEPT"</span>]),</span><br><span class="line">...mapMutations(&#123;</span><br><span class="line">    setDept: <span class="string">"SET_DEPT"</span></span><br><span class="line">&#125;),</span><br></pre></td></tr></table></figure></p>
+<p>然后直接调用<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.SET_DEPT(<span class="string">'QQ'</span>);</span><br><span class="line"><span class="keyword">this</span>.setDept(<span class="string">'QQ'</span>);</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-4-action-的使用"><a href="#3-4-action-的使用" class="headerlink" title="3.4 action 的使用"></a>3.4 action 的使用</h3><p>action 也是方法啦，所以他的使用和 mutation 是差不多的。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$store.dispatch(<span class="string">'ASET_DEPT'</span>,&#123;<span class="attr">dept</span>:<span class="string">'QQ'</span>&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>它的辅助函数是 mapActions，用它映射为本地方法。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">...mapActions(&#123;</span><br><span class="line">  aSetDept: <span class="string">'ASET_DEPT'</span>,</span><br><span class="line">&#125;),</span><br><span class="line">...mapActions([</span><br><span class="line">  <span class="string">'ASET_DEPT'</span></span><br><span class="line">])</span><br></pre></td></tr></table></figure></p>
+<p>关于 vuex 的简单使用就说明到这边了，但是由于有时候我们的项目是非常大，使用单一的一个 state 来存数据可能会导致数据太多，太杂，所以 vuex 还有一个 module 的机制，大家可以去官网看文档或者看我的下一篇文章。文章就写到这里啦，如果大家发现我哪边写错的话，还望指出勘误，期待与大家一起学习进步。</p>
 
       
     </div>
@@ -536,9 +530,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+            <a href="/tags/vuex/" rel="tag"># vuex</a>
           
-            <a href="/tags/配置博客/" rel="tag"># 配置博客</a>
+            <a href="/tags/状态管理/" rel="tag"># 状态管理</a>
           
         </div>
       
@@ -566,8 +560,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/26/flex-knowledge/" rel="next" title="flex布局">
-                <i class="fa fa-chevron-left"></i> flex布局
+              <a href="/2019/07/02/node-debug/" rel="next" title="Node 项目调试">
+                <i class="fa fa-chevron-left"></i> Node 项目调试
               </a>
             
           </div>
@@ -575,10 +569,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/13/reg-knowledge/" rel="prev" title="正则基础知识">
-                正则基础知识 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -744,7 +734,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-项目结构"><span class="nav-text">1 项目结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-config-yml"><span class="nav-text">1.1 _config.yml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-scaffolds"><span class="nav-text">1.2 scaffolds</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-source"><span class="nav-text">1.3 source</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-themes"><span class="nav-text">1.4 themes</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-config-yml-的配置"><span class="nav-text">2 _config.yml 的配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-网站"><span class="nav-text">2.1 网站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-网址"><span class="nav-text">2.2 网址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-目录"><span class="nav-text">2.3 目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-文章"><span class="nav-text">2.4 文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-其他"><span class="nav-text">2.5 其他</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-其他配置"><span class="nav-text">3 其他配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-标签、分类、关于设置"><span class="nav-text">3.1 标签、分类、关于设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-关联到-github-pages"><span class="nav-text">3.2 关联到 github pages</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-真正的最后"><span class="nav-text">4 真正的最后</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-安装"><span class="nav-text">1 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-文件结构"><span class="nav-text">2 文件结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-state-js"><span class="nav-text">2.1 state.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-getters-js"><span class="nav-text">2.2 getters.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-mutations-js"><span class="nav-text">2.3 mutations.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-actions-js"><span class="nav-text">2.4 actions.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-index-js"><span class="nav-text">2.1 index.js</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-使用"><span class="nav-text">3 使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-state-数据的获取"><span class="nav-text">3.1 state 数据的获取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-getter-的获取"><span class="nav-text">3.2 getter 的获取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-mutation-的使用"><span class="nav-text">3.3 mutation 的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-action-的使用"><span class="nav-text">3.4 action 的使用</span></a></li></ol></li></ol></div>
             
 
           </div>
