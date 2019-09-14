@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Vuex,项目经验,">
+  <meta name="keywords" content="常见标签,元素,">
 
 
 
@@ -86,18 +86,24 @@
 
 
 
-<meta name="description" content="前言 上回我们说了一下 vuex 的简单使用，最后面的时候有说了，由于使用单一状态树，应用的所有状态会集中到一个比较大的对象。当应用变得非常复杂时，store 对象就有可能变得相当臃肿。 为了解决以上问题，Vuex 允许我们将 store 分割成模块（module）。每个模块拥有自己的 state、mutation、action、getter、甚至是嵌套子模块——从上至下进行同样方式的分割，今天我">
-<meta name="keywords" content="Vuex,项目经验">
+<meta name="description" content="前言 上次我们介绍完 head 元素里面的东西，主要就是了解元数据的一些东西，也算摸明白整个 HTML 文件的一个结构了吧。然后聊了那么多枯燥的概念，今天来整点实际的，我们直接上手写页面，写一个丑的一批的网页简历（没有 CSS 写样式搭配，是真的丑。）。如下：  借助这个来了解一下我们常用到的这么几个 HTML 元素。 本文的笔记代码我丢到 GitHub 上面去了，最好可以去看看，然后自己琢磨搞出">
+<meta name="keywords" content="常见标签,元素">
 <meta property="og:type" content="article">
-<meta property="og:title" content="模块化使用 Vuex">
-<meta property="og:url" content="http://yoursite.com/2019/07/30/module-use-vuex/index.html">
+<meta property="og:title" content="小红帽学前端 | 1.3 常用元素">
+<meta property="og:url" content="http://yoursite.com/2019/09/14/cxqd-1-3-commonEle/index.html">
 <meta property="og:site_name" content="小红帽的博客">
-<meta property="og:description" content="前言 上回我们说了一下 vuex 的简单使用，最后面的时候有说了，由于使用单一状态树，应用的所有状态会集中到一个比较大的对象。当应用变得非常复杂时，store 对象就有可能变得相当臃肿。 为了解决以上问题，Vuex 允许我们将 store 分割成模块（module）。每个模块拥有自己的 state、mutation、action、getter、甚至是嵌套子模块——从上至下进行同样方式的分割，今天我">
+<meta property="og:description" content="前言 上次我们介绍完 head 元素里面的东西，主要就是了解元数据的一些东西，也算摸明白整个 HTML 文件的一个结构了吧。然后聊了那么多枯燥的概念，今天来整点实际的，我们直接上手写页面，写一个丑的一批的网页简历（没有 CSS 写样式搭配，是真的丑。）。如下：  借助这个来了解一下我们常用到的这么几个 HTML 元素。 本文的笔记代码我丢到 GitHub 上面去了，最好可以去看看，然后自己琢磨搞出">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-30T15:10:23.410Z">
+<meta property="og:image" content="http://img.cdn.lijiayuan.top/cxqd/1.3/1.png">
+<meta property="og:image" content="http://img.cdn.lijiayuan.top/cxqd/1.3/2.png">
+<meta property="og:image" content="http://img.cdn.lijiayuan.top/cxqd/1.3/3.png">
+<meta property="og:image" content="http://img.cdn.lijiayuan.top/cxqd/1.3/4.png">
+<meta property="og:image" content="http://img.cdn.lijiayuan.top/cxqd/1.3/5.png">
+<meta property="og:updated_time" content="2019-09-14T12:45:38.492Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="模块化使用 Vuex">
-<meta name="twitter:description" content="前言 上回我们说了一下 vuex 的简单使用，最后面的时候有说了，由于使用单一状态树，应用的所有状态会集中到一个比较大的对象。当应用变得非常复杂时，store 对象就有可能变得相当臃肿。 为了解决以上问题，Vuex 允许我们将 store 分割成模块（module）。每个模块拥有自己的 state、mutation、action、getter、甚至是嵌套子模块——从上至下进行同样方式的分割，今天我">
+<meta name="twitter:title" content="小红帽学前端 | 1.3 常用元素">
+<meta name="twitter:description" content="前言 上次我们介绍完 head 元素里面的东西，主要就是了解元数据的一些东西，也算摸明白整个 HTML 文件的一个结构了吧。然后聊了那么多枯燥的概念，今天来整点实际的，我们直接上手写页面，写一个丑的一批的网页简历（没有 CSS 写样式搭配，是真的丑。）。如下：  借助这个来了解一下我们常用到的这么几个 HTML 元素。 本文的笔记代码我丢到 GitHub 上面去了，最好可以去看看，然后自己琢磨搞出">
+<meta name="twitter:image" content="http://img.cdn.lijiayuan.top/cxqd/1.3/1.png">
 
 
 
@@ -127,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/07/30/module-use-vuex/">
+  <link rel="canonical" href="http://yoursite.com/2019/09/14/cxqd-1-3-commonEle/">
 
 
 
 
 
-  <title>模块化使用 Vuex | 小红帽的博客</title>
+  <title>小红帽学前端 | 1.3 常用元素 | 小红帽的博客</title>
   
 
 
@@ -302,7 +308,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/30/module-use-vuex/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/14/cxqd-1-3-commonEle/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小红帽">
@@ -319,7 +325,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">模块化使用 Vuex</h1>
+          <h1 class="post-title" itemprop="name headline">小红帽学前端 | 1.3 常用元素</h1>
         
 
         <div class="post-meta">
@@ -331,8 +337,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-30T23:09:16+08:00">
-                2019-07-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-14T10:42:08+08:00">
+                2019-09-14
               </time>
             
 
@@ -347,8 +353,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-07-30T23:10:23+08:00">
-                2019-07-30
+              <time title="更新于" itemprop="dateModified" datetime="2019-09-14T20:45:38+08:00">
+                2019-09-14
               </time>
             
           </span>
@@ -366,8 +372,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Vue/" itemprop="url" rel="index">
-                    <span itemprop="name">Vue</span>
+                  <a href="/categories/小红帽学前端/" itemprop="url" rel="index">
+                    <span itemprop="name">小红帽学前端</span>
                   </a>
                 </span>
 
@@ -402,7 +408,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.5k
+                  2.3k
                 </span>
               
 
@@ -418,7 +424,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6
+                  9
                 </span>
               
             </div>
@@ -439,41 +445,84 @@
       
 
       
-        <p><strong>前言</strong> 上回我们说了一下 vuex 的简单使用，最后面的时候有说了，由于使用单一状态树，应用的所有状态会集中到一个比较大的对象。当应用变得非常复杂时，store 对象就有可能变得相当臃肿。</p>
-<p>为了解决以上问题，Vuex 允许我们将 store 分割成模块（module）。每个模块拥有自己的 state、mutation、action、getter、甚至是嵌套子模块——从上至下进行同样方式的分割，今天我们也来简单了解一下他的使用，深入学习可能还是要去看<a href="https://vuex.vuejs.org/zh/guide/modules.html" target="_blank" rel="noopener">官方文档</a></p>
-<h2 id="1-文件结构"><a href="#1-文件结构" class="headerlink" title="1 文件结构"></a>1 文件结构</h2><p>文件结构的话，模块化的使用要多一个 modules 的文件夹，里面放着细分模块的 js 文件/模块名文件夹。</p>
-<p>这里官方的标准是一个模块一个 js 文件，但是要是模块太复杂的话，也可以把里面的代码拆分出来。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// store 文件夹 </span><br><span class="line">│  actions.js</span><br><span class="line">│  getters.js</span><br><span class="line">│  index.js</span><br><span class="line">│  mutations.js</span><br><span class="line">│  state.js</span><br><span class="line">│</span><br><span class="line">└─modules</span><br><span class="line">    │  moduleB.js</span><br><span class="line">    │</span><br><span class="line">    └─moduleA</span><br><span class="line">            index.js</span><br><span class="line">            mutation.js</span><br><span class="line">            state.js</span><br></pre></td></tr></table></figure></p>
-<p>然后在创建 store 的 js 文件中引入这些模块，直接<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> moduleA <span class="keyword">from</span> <span class="string">'./modules/moduleA/index'</span></span><br><span class="line"><span class="keyword">import</span> moduleB <span class="keyword">from</span> <span class="string">'./modules/moduleB'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">    state,</span><br><span class="line">    getters,</span><br><span class="line">    mutations,</span><br><span class="line">    actions,</span><br><span class="line">    modules: &#123;</span><br><span class="line">        moduleA,</span><br><span class="line">        moduleB,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<h2 id="2-模块的局部状态对象的定义"><a href="#2-模块的局部状态对象的定义" class="headerlink" title="2 模块的局部状态对象的定义"></a>2 模块的局部状态对象的定义</h2><p>模块内部的 getter，mutation 和 action，他们方法接收的参数会和根状态的不一样，我们一个一个来</p>
+        <p><strong>前言</strong> 上次我们介绍完 head 元素里面的东西，主要就是了解元数据的一些东西，也算摸明白整个 HTML 文件的一个结构了吧。然后聊了那么多枯燥的概念，今天来整点实际的，我们直接上手写页面，写一个丑的一批的网页简历（没有 CSS 写样式搭配，是真的丑。）。如下：</p>
+<p><img src="http://img.cdn.lijiayuan.top/cxqd/1.3/1.png" alt="image"></p>
+<p>借助这个来了解一下我们常用到的这么几个 HTML 元素。</p>
+<p>本文的笔记代码我丢到 GitHub 上面去了，最好可以去看看，然后自己琢磨搞出来练练手。</p>
+<h2 id="1-常用元素概览"><a href="#1-常用元素概览" class="headerlink" title="1 常用元素概览"></a>1 常用元素概览</h2><p>HTML 元素很多，但是常用的就那么几个。我们先看一下全景，然后在一个一个去用他。</p>
+<p>不同的元素有着不同的作用，我们简单做个分类，今天我们了解有下面的这些元素。</p>
 <ul>
-<li>getter</li>
+<li><p>布局相关</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">div span</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>文本元素</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h1 - h6, p</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>列表元素</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ul ol li</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>表格元素</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">table tr th td</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>其他元素</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">button(按钮) a（链接） img（图片）</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<p>getter 的话，他会有三个参数，第一个是模块内的 state，第二个是 模块内的 getters，第三个是根节点状态 rootState，</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> getters = &#123;</span><br><span class="line">  bFullName: <span class="function">(<span class="params">state, getters, rootState</span>) =&gt;</span> <span class="string">`full<span class="subst">$&#123;state.bName&#125;</span>`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>mutation</li>
-</ul>
-<p>mutation 里面的回调函数传入的第一个参数也是 模块内的 state，其他和根状态定义的时候一样</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mutations = &#123;</span><br><span class="line">  <span class="comment">// 这里的 `state` 对象是模块的局部状态</span></span><br><span class="line">  SET_B_NAME(state, payload) &#123;</span><br><span class="line">    <span class="keyword">debugger</span></span><br><span class="line">    state.bName = payload.name;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>action</li>
-</ul>
-<p>最后的 action 的话，他传入还是只有 context 对象，然后咧，这个对象里面的 state 属性指模块内的状态，rootState 指根状态，如下<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> actions = &#123;</span><br><span class="line">  ASYNC_SET_NAME(&#123; state, commit, rootState &#125;, payload) &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      state.bName = <span class="string">'asyncName'</span></span><br><span class="line">    &#125;, <span class="number">4000</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="3-使用"><a href="#3-使用" class="headerlink" title="3 使用"></a>3 使用</h2><h3 id="3-1-state-获取"><a href="#3-1-state-获取" class="headerlink" title="3.1 state 获取"></a>3.1 state 获取</h3><p>这个的话要在原来状态名前面加一个模块名才能放到到模块内的对象。具体如下<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 原先的基础上加个模块名</span></span><br><span class="line"><span class="keyword">this</span>.$store.state.moduleB.bName;</span><br><span class="line"><span class="comment">// 辅助函数也一样，name 前面加个模块名 Deno</span></span><br><span class="line">...mapState(&#123;</span><br><span class="line">    name: <span class="function"><span class="params">state</span> =&gt;</span> state.moduleB.bName,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<h3 id="3-3-命名空间"><a href="#3-3-命名空间" class="headerlink" title="3.3 命名空间"></a>3.3 命名空间</h3><p>getter，mutation，action 他们默认都是注册在全局命名空间的，所以我们默认是可以和使用根状态一样去使用他们，但是这样不可避免会出现命名冲突的问题，所以使模块有更高的封装性与复用性，我们可以通过添加 <code>namespaced: true</code> 使其成为带命名空间的模块。当模块被注册后，它的所有 getter、action 及 mutation 都会自动根据模块注册的路径调整命名。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// moduleB 模块导出的时候加个 namespaced: true,</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  namespaced: <span class="literal">true</span>,</span><br><span class="line">  state,</span><br><span class="line">  getters,</span><br><span class="line">  mutations,</span><br><span class="line">  actions,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="3-3-1-辅助函数的使用"><a href="#3-3-1-辅助函数的使用" class="headerlink" title="3.3.1 辅助函数的使用"></a>3.3.1 辅助函数的使用</h4><p>因为有了命名空间这么一层封装，所以我们在用辅助函数的时候都要多加那么一层模块名，具体看下面代码。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// getter</span></span><br><span class="line"><span class="keyword">this</span>.$store.getters[<span class="string">'moduleB/bFullName'</span>]; </span><br><span class="line"></span><br><span class="line">...mapGetters(&#123;</span><br><span class="line">  bGetter2: <span class="string">'moduleB/bFullName'</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// mutation </span></span><br><span class="line"><span class="keyword">this</span>.$store.commit(<span class="string">'moduleB/SET_B_NAME'</span>, &#123;</span><br><span class="line">  name: <span class="string">'QQ'</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">...mapMutations(&#123;</span><br><span class="line">  setBname: <span class="string">'moduleB/SET_B_NAME'</span></span><br><span class="line">&#125;),</span><br><span class="line"></span><br><span class="line"><span class="comment">// action</span></span><br><span class="line"><span class="keyword">this</span>.$store.dispatch(<span class="string">'moduleB/ASYNC_SET_NAME'</span>, &#123; <span class="attr">name</span>: <span class="string">"JJ"</span> &#125;);</span><br><span class="line"></span><br><span class="line">...mapActions(&#123;</span><br><span class="line">  aSetAge: <span class="string">'moduleB/ASYNC_SET_NAME'</span>,</span><br><span class="line">&#125;),</span><br></pre></td></tr></table></figure>
-<p>每次都要写模块名，这样写下来很烦，所以这些辅助函数给我们提供了一个参数位来绑定命名空间。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// moduleB 模块内的 bName</span></span><br><span class="line">...mapState(<span class="string">'moduleB'</span>, &#123;</span><br><span class="line">  name: <span class="function"><span class="params">state</span> =&gt;</span> state.bName</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 同理 mapAction mapMutation 也可以这个样子</span></span><br><span class="line">...mapAction(<span class="string">'moduleB'</span>,[</span><br><span class="line">  <span class="string">'/ASYNC_SET_NAME'</span></span><br><span class="line">])</span><br></pre></td></tr></table></figure>
-<p>除了这个之外，如果你当前组件用的 vuex 状态都是一个模块的话，我们可以使用 <code>createNamespacedHelpers</code> 创建基于某个命名空间辅助函数，如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createNamespacedHelpers &#125; <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123; mapState, mapActions &#125; = createNamespacedHelpers(<span class="string">'moduleB'</span>) <span class="comment">// moduleName</span></span><br></pre></td></tr></table></figure></p>
-<p>这样创建之后，我们就可以用之前的写法来访问到模块的状态。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...mapState(&#123;</span><br><span class="line">  bName: <span class="function"><span class="params">state</span> =&gt;</span> state.bName,</span><br><span class="line">&#125;),</span><br></pre></td></tr></table></figure>
-<h4 id="3-3-2-在带命名空间的模块内访问全局内容"><a href="#3-3-2-在带命名空间的模块内访问全局内容" class="headerlink" title="3.3.2 在带命名空间的模块内访问全局内容"></a>3.3.2 在带命名空间的模块内访问全局内容</h4><p>如果你希望使用全局 state 和 getter，rootState 和 rootGetter 会作为第三和第四参数传入 getter，也会通过 context 对象的属性传入 action。</p>
-<p>若需要在全局命名空间内分发 action 或提交 mutation，将 { root: true } 作为第三参数传给 dispatch 或 commit 即可。具体看下面代码：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">modules: &#123;</span><br><span class="line">  foo: &#123;</span><br><span class="line">    namespaced: <span class="literal">true</span>,</span><br><span class="line"></span><br><span class="line">    getters: &#123;</span><br><span class="line">      <span class="comment">// 在这个模块的 getter 中，`getters` 被局部化了</span></span><br><span class="line">      <span class="comment">// 你可以使用 getter 的第四个参数来调用 `rootGetters`</span></span><br><span class="line">      someGetter (state, getters, rootState, rootGetters) &#123;</span><br><span class="line">        getters.someOtherGetter <span class="comment">// -&gt; 'foo/someOtherGetter 模块内的 getter'</span></span><br><span class="line">        rootGetters.someOtherGetter <span class="comment">// -&gt; 'someOtherGetter 全局的getter'</span></span><br><span class="line">      &#125;,</span><br><span class="line">      someOtherGetter: <span class="function"><span class="params">state</span> =&gt;</span> &#123; ... &#125;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    actions: &#123;</span><br><span class="line">      <span class="comment">// 在这个模块中， dispatch 和 commit 也被局部化了</span></span><br><span class="line">      <span class="comment">// 他们可以接受 `root` 属性以访问根 dispatch 或 commit</span></span><br><span class="line">      someAction (&#123; dispatch, commit, getters, rootGetters &#125;) &#123;</span><br><span class="line">        getters.someGetter <span class="comment">// -&gt; 'foo/someGetter'</span></span><br><span class="line">        rootGetters.someGetter <span class="comment">// -&gt; 'someGetter'</span></span><br><span class="line"></span><br><span class="line">        dispatch(<span class="string">'someOtherAction'</span>) <span class="comment">// -&gt; 'foo/someOtherAction' 模块内的 action</span></span><br><span class="line">        dispatch(<span class="string">'someOtherAction'</span>, <span class="literal">null</span>, &#123; <span class="attr">root</span>: <span class="literal">true</span> &#125;) <span class="comment">// -&gt;'someOtherAction' 全局的 action </span></span><br><span class="line"></span><br><span class="line">        commit(<span class="string">'someMutation'</span>) <span class="comment">// -&gt; 'foo/someMutation' 模块内的 action</span></span><br><span class="line">        commit(<span class="string">'someMutation'</span>, <span class="literal">null</span>, &#123; <span class="attr">root</span>: <span class="literal">true</span> &#125;) <span class="comment">// -&gt; 'someMutation' 全局 mutation</span></span><br><span class="line">      &#125;,</span><br><span class="line">      someOtherAction (ctx, payload) &#123; ... &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="3-3-3-将模块内的-action-注册为全局"><a href="#3-3-3-将模块内的-action-注册为全局" class="headerlink" title="3.3.3 将模块内的 action 注册为全局"></a>3.3.3 将模块内的 action 注册为全局</h4><p>这个感觉和维护模块的封装性有点冲突，但是既然作者提出来了，那就学吧，当我们想要我们模块内的某个 action 提升为全局 action 的时候，在他声明的时候，添加 <code>root: true</code>，并将 action 的定义放到 hanler 函数中，具体如下：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> actions = &#123;</span><br><span class="line">    <span class="comment">// 模块内 action</span></span><br><span class="line">    [ASET_AGE](&#123; commit &#125;, payload) &#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">            commit(<span class="string">'SET_B_NAME'</span>, payload.name);</span><br><span class="line">        &#125;, <span class="number">2000</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 提升到全局的 action </span></span><br><span class="line">    globalAction: &#123;</span><br><span class="line">        root: <span class="literal">true</span>,</span><br><span class="line">        handler(&#123; commit &#125;, payload) &#123;</span><br><span class="line">            <span class="keyword">debugger</span></span><br><span class="line">            setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                commit(<span class="string">'SET_B_NAME'</span>, payload.name);</span><br><span class="line">            &#125;, <span class="number">2000</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>关于模块使用 Vuex 的介绍就说到这里了，这两篇笔记的项目源码我发到了 <a href="https://github.com/lijiayuan365/use-vuex" target="_blank" rel="noopener">GitHub</a> 上面，大家可以去看一下，要是项目中有啥不明白的或者我说的有问题的，欢迎大家留言指正。</p>
+<h2 id="2-布局元素-div-span"><a href="#2-布局元素-div-span" class="headerlink" title="2 布局元素 div span"></a>2 布局元素 div span</h2><p>这两个都是用于布局的布局容器，本身是没有任何语义的。也正因为如此，他们采用于布局，用于给元素分组分模块。比如像下面这种<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;header&quot;&gt;...&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;main&quot;&gt;...&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;footer&quot;&gt;...&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>就把整个页面分成了三个模块。</p>
+<p>这两个元素唯一的不同就是，<code>div</code> 是块级元素，<code>span</code> 是内联级元素。</p>
+<blockquote>
+<p>元素就分这两种。其中块级元素会独占一行，不能和其他元素并排，可以设置固定的宽高。内联元素可以与其他内联元素并排，不能设置宽高。</p>
+</blockquote>
+<p>比如我们看看下面的代码会显示啥<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>GitHub:<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://github.com/lijiayuan365"</span>&gt;</span>https://github.com/lijiayuan365<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>网站：<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://www.lijiayuan.top"</span>&gt;</span>lijiayuan.top<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>电话邮箱...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="http://img.cdn.lijiayuan.top/cxqd/1.3/2.png" alt="image"></p>
+<p>可以看到两个 <code>span</code> 的元素内容是挤在一行的，而 <code>div</code> 的内容是各占一行的。</p>
+<h2 id="3-标题元素-h1-h6"><a href="#3-标题元素-h1-h6" class="headerlink" title="3 标题元素 h1 - h6"></a>3 标题元素 h1 - h6</h2><p>h1 - h6 元素代表了六个级别的章节标题的。<code>h1</code> 是最高的部分级别，<code>h6</code> 是最低的。按照语义化的角度看，这个元素就用于做标题的咯。</p>
+<p>在 demo 页面中，每一项的标题就是用 h1 元素的。</p>
+<h2 id="4-段落元素-p"><a href="#4-段落元素-p" class="headerlink" title="4 段落元素 p"></a>4 段落元素 p</h2><p>HTML 段落元素。表示文本的一个段落。该元素通常表现为一整块与相邻文本分离的文本，或以垂直的空白隔离或以首行缩进。</p>
+<p>反正就是你要是有几段文字的，想要展示的，那就丢到 <code>p</code> 元素里面咯，一个元素的内容就是一个段落。</p>
+<h2 id="5-列表元素-ul-ol-li"><a href="#5-列表元素-ul-ol-li" class="headerlink" title="5 列表元素 ul ol li"></a>5 列表元素 ul ol li</h2><p>这个是列表元素。其中 <code>ul</code>，<code>ol</code> 分别定义无序列表和有序列表。<code>li</code> 是他们列表里面的列表项目。看个代码就知道了。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>熟练掌握 HTML，CSS，JavaScript 等前端技术；<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>熟悉使用 DIV + CSS 布局；<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>熟悉运用 jQuery，Vue，WePY 等前端开发框架；<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>熟悉前端开发规范、工程化、组件化，模块化开发；<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>了解面向对象设计原则，常见的数据结构与算法及设计模式；<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>了解服务端语言 Java，Node.js 和 HTTP 协议；<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">...</span><br><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>用 Express 搭建后台，用分层思想优化后台项目结构<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>使用 Antv-G6 设计工作流绘制组件<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>使用 Vue 动态组件实现表单字段的动态渲染<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>...<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="http://img.cdn.lijiayuan.top/cxqd/1.3/3.png" alt="image"></p>
+<p>可以看到 <code>ul</code> 无序列表的列表项前面用一个黑点标注，<code>ol</code> 有序列表的列表项目前面就直接用数字依次排下来。</p>
+<h2 id="6-表格元素-table-tr-th-td"><a href="#6-表格元素-table-tr-th-td" class="headerlink" title="6 表格元素 table tr th td"></a>6 表格元素 table tr th td</h2><p>有时候我们展示数据使用单纯的列表看起来不是特别直观，我们会使用表格。他里面涉及的元素还挺多的。其中 <code>table</code> 定义一个表格，<code>tr</code> 表示表格的一行，里面的 <code>td</code> 和 <code>th</code> 都是行内的列项目。其中 <code>th</code> 是列标题。看个代码就明白了。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">"1"</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 表格标题行 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">th</span>&gt;</span>时间<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">th</span>&gt;</span>单位<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">th</span>&gt;</span>工作内容<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">th</span>&gt;</span>岗位<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--表格第二行内容--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>2018.06 - 2018.10<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>XX 公司<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>做了啥牛逼的事情，取得啥牛逼的成绩<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>前端开发工程师<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>2018.06 - 2018.10<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>XX 公司<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>做了啥牛逼的事情，取得啥牛逼的成绩<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>前端开发工程师<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>上面的内容显示到网页就有了下面的效果。</p>
+<p><img src="http://img.cdn.lijiayuan.top/cxqd/1.3/4.png" alt="image"></p>
+<p>然后 <code>table</code> 元素的属性有几个我们要拉出来看看。</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>border</td>
+<td>定义表格的边框的宽度</td>
+</tr>
+<tr>
+<td>cellspacing</td>
+<td>规定单元格之间的空白</td>
+</tr>
+<tr>
+<td>cellpadding</td>
+<td>规定单元边沿与其内容之间的空白。（也就是内边距）</td>
+</tr>
+</tbody>
+</table>
+<p>此外 <code>td</code> 元素有两个属性我们也要关注一下。<br>属性| 描述<br>—|—<br>colspan | 规定单元格可以横跨的列数<br>rowspan | 规定单元格可横跨的行数</p>
+<p>这两个有啥子用啊，很有用的，我们的表格不可能都是那么规规矩矩几行几列来着。有时候我们会存在合并左右两个单元格的情况，也有可能存在合并上下两个单元格的情况，就像下面这种情况。</p>
+<p><img src="http://img.cdn.lijiayuan.top/cxqd/1.3/5.png" alt="image"></p>
+<p>这种这么搞啊，就是分别使用 <code>colspan=&quot;2&quot;</code> 和 <code>rowspan=&quot;2&quot;</code> 来让一个 <code>td</code> 占据两个 <code>td</code> 的列（行）。代码如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">"1"</span> <span class="attr">cellspacing</span>=<span class="string">"0"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">th</span>&gt;</span>1<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">th</span>&gt;</span>2<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">th</span>&gt;</span>3<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 此处 td 占据两列 td 的空间（就是合并左右两个单元格吧）--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span> <span class="attr">colspan</span>=<span class="string">"2"</span>&gt;</span>2列<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 此处 td 占据两行 td 的空间（就是合并上下两个单元格吧）--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span> <span class="attr">rowspan</span>=<span class="string">"2"</span>&gt;</span>2行<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>rrr<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>rrr<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>eee<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>eee<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>上面空间安排的刚好，要是空间多或者小，出现多余的 td 会怎么样呢？自己玩玩。</p>
+<h2 id="7-其他元素"><a href="#7-其他元素" class="headerlink" title="7 其他元素"></a>7 其他元素</h2><h3 id="7-1-按钮元素-button"><a href="#7-1-按钮元素-button" class="headerlink" title="7.1 按钮元素 button"></a>7.1 按钮元素 button</h3><p>按钮树与用户交互最为常见的元素啦，他用起来也简单。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onclick=&quot;alert(&apos;I want you&apos;)&quot;&gt;I want you&lt;/button&gt;</span><br></pre></td></tr></table></figure></p>
+<p>就是展示一个按钮，然后给他的点击事件（onclick）绑定一个方法，让用户点击之后弹出出一个对话框。</p>
+<h3 id="7-2-链接元素-a"><a href="#7-2-链接元素-a" class="headerlink" title="7.2 链接元素 a"></a>7.2 链接元素 a</h3><p>我们平常有 word 的时候应该用过超链接吧，这个就是网页里面的链接，他就是用于从当前页面链接到其他地方的。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://www.lijiayuan.top"</span>&gt;</span>lijiayuan.top<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>上面 <code>a</code> 元素的内容就是网页上显示的东西，然后元素的 <code>href</code> 属性就是链接跳转的地址。当我们在网页点击这个内容的时候，我们就会直接跳转到 <code>http://www.lijiayuan.top</code> 这个网址。</p>
+<h3 id="7-3-图片元素-img"><a href="#7-3-图片元素-img" class="headerlink" title="7.3 图片元素 img"></a>7.3 图片元素 img</h3><p>常言道「一图胜前言」，所以我们的网页里面肯定是要放图的啦。放图就用 img 元素啦。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"./img/avatar.png"</span> <span class="attr">alt</span>=<span class="string">"照片"</span> <span class="attr">width</span>=<span class="string">"auto"</span> <span class="attr">height</span>=<span class="string">"100"</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><code>img</code> 元素的 <code>src</code> 属性是指显示图片的地址，可以是本地的也可以是网上的。然后 <code>alt</code> 属性是指当你的 <code>src</code> 给的地址没有图片的时候会显示的文本。按道理是要写的。<code>height</code>,<code>width</code> 属性就不说了，就是图片的高宽啦。</p>
+<h2 id="讲在最后"><a href="#讲在最后" class="headerlink" title="讲在最后"></a>讲在最后</h2><p>上面这这个元素基本就是我们平常用的比较多的元素啦。其实基本用到的就只有这些。但是在 HTML5 之后的话，出现了许多新的语义化的标签，这个就自己看或者我们到时候再讲咯。因为不想写太多，所以元素内的一些属性没有细说，只是让大家知道这么简单去用咯，深入一点的了解，自己来或者看后面我写不写吧。</p>
+<p>看完这一篇，大家其实基本的 HTML 都会写啦，只不过是写的很难看而已。无所谓，难看大家也要写下去，练一下，可以模仿我给的 demo。（基本学前端都是模仿过来的）。反正就是一句话，多敲代码。</p>
 
       
     </div>
@@ -538,9 +587,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Vuex/" rel="tag"># Vuex</a>
+            <a href="/tags/常见标签/" rel="tag"># 常见标签</a>
           
-            <a href="/tags/项目经验/" rel="tag"># 项目经验</a>
+            <a href="/tags/元素/" rel="tag"># 元素</a>
           
         </div>
       
@@ -568,8 +617,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/27/use-vuex/" rel="next" title="Vuex 基础使用">
-                <i class="fa fa-chevron-left"></i> Vuex 基础使用
+              <a href="/2019/09/01/cxqd-1-2-head/" rel="next" title="小红帽学前端 | 1.2 了解 head 元素">
+                <i class="fa fa-chevron-left"></i> 小红帽学前端 | 1.2 了解 head 元素
               </a>
             
           </div>
@@ -577,10 +626,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/17/cxqd-0-bb/" rel="prev" title="小红帽学前端教程（0） 开头瞎BB">
-                小红帽学前端教程（0） 开头瞎BB <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -746,7 +791,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-文件结构"><span class="nav-text">1 文件结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-模块的局部状态对象的定义"><span class="nav-text">2 模块的局部状态对象的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-使用"><span class="nav-text">3 使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-state-获取"><span class="nav-text">3.1 state 获取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-命名空间"><span class="nav-text">3.3 命名空间</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-1-辅助函数的使用"><span class="nav-text">3.3.1 辅助函数的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-2-在带命名空间的模块内访问全局内容"><span class="nav-text">3.3.2 在带命名空间的模块内访问全局内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-3-将模块内的-action-注册为全局"><span class="nav-text">3.3.3 将模块内的 action 注册为全局</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-常用元素概览"><span class="nav-text">1 常用元素概览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-布局元素-div-span"><span class="nav-text">2 布局元素 div span</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-标题元素-h1-h6"><span class="nav-text">3 标题元素 h1 - h6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-段落元素-p"><span class="nav-text">4 段落元素 p</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-列表元素-ul-ol-li"><span class="nav-text">5 列表元素 ul ol li</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-表格元素-table-tr-th-td"><span class="nav-text">6 表格元素 table tr th td</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-其他元素"><span class="nav-text">7 其他元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-按钮元素-button"><span class="nav-text">7.1 按钮元素 button</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2-链接元素-a"><span class="nav-text">7.2 链接元素 a</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-3-图片元素-img"><span class="nav-text">7.3 图片元素 img</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#讲在最后"><span class="nav-text">讲在最后</span></a></li></ol></div>
             
 
           </div>
