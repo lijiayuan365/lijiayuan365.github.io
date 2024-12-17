@@ -20,7 +20,29 @@ sudo apt install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-3. 设置 zsh 为默认 shell
+3. 安装zsh-syntax-highlighting。zsh-syntax-highlighting是一个插件，可以高亮显示Zsh中的命令语法。
+```bash
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
+
+4. 安装zsh-autosuggestions。zsh-autosuggestions是一个插件，可以自动提示你之前输入过的命令。
+```bash
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+```
+
+5. 配置
+```bash
+vim ~/.zshrc
+
+# 在.zshrc文件中，找到plugins=(这一行，然后添加zsh-syntax-highlighting和zsh-autosuggestions：
+plugins=(... zsh-syntax-highlighting zsh-autosuggestions)
+
+
+# 保存成功后启用配置
+source ~/.zshrc
+```
+
+6. 设置 zsh 为默认 shell
 ```bash
 chsh -s $(which zsh)
 ```
