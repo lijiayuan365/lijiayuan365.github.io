@@ -6,6 +6,22 @@
 
 直接终端跑 `wsl.exe --install` 即可。后面会自动下载和安装启动的，默认装的Ubuntu，后面就是设置账户密码那些，设置完毕后终端就会多出一个Ubuntu的入口。了解更多看[文档](https://learn.microsoft.com/en-us/windows/wsl/install)
 
+配置 .wslconfig 文件， 这个文件可以配置wsl2的内存，交换空间，内核命令行等， 可以参考[文档](https://learn.microsoft.com/en-us/windows/wsl/wsl-config)
+
+```conf
+[experimental]
+networkingMode=mirrored # 网络模式
+dnsTunneling=true # dns隧道
+firewall=true # 防火墙
+autoProxy=true # 自动代理
+hostAddressLoopback=true # 主机地址回环
+[wsl2]
+memory=8GB # 内存
+swap=30GB # 交换空间
+autoMemoryReclaim=dropcache # 自动内存回收
+kernelCommandLine = cgroup_no_v1=all systemd.unified_cgroup_hierarchy=1 # 内核命令行, 这个是cgroup v2的配置
+```
+
 ## 安装 zsh
 在 Windows Subsystem for Linux (WSL) 2 中使用 Zsh (Z shell) 是一个常见的选择，因为 Zsh 提供了比默认的 Bash shell 更多的功能和更友好的用户界面。以下是在 WSL2 中安装和使用 Zsh 的基本步骤：
 
