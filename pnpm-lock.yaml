@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       vite-plugin-vitepress-utils:
-        specifier: ^1.0.2
-        version: 1.0.2(vite@5.4.11)(vitepress@1.5.0(@algolia/client-search@5.17.1)(postcss@8.4.49)(search-insights@2.17.3))
+        specifier: ^1.0.3
+        version: 1.0.3(vite@5.4.11)(vitepress@1.5.0(@algolia/client-search@5.17.1)(postcss@8.4.49)(search-insights@2.17.3))
     devDependencies:
       vitepress:
         specifier: ^1.5.0
@@ -716,8 +716,8 @@ packages:
   vfile@6.0.3:
     resolution: {integrity: sha512-KzIbH/9tXat2u30jf+smMwFCsno4wHVdNmzFyL+T/L3UGqqk6JKfVqOFOZEpZSHADH1k40ab6NUIXZq422ov3Q==}
 
-  vite-plugin-vitepress-utils@1.0.2:
-    resolution: {integrity: sha512-eA6U+LjPJrt/rfYttv2uZ5F6n9BqytZseX3qVlwSWpPrgZZF7SOZTI5OcRZzxOWRLHDf9X2Tk+aFfLqCe8o3qQ==}
+  vite-plugin-vitepress-utils@1.0.3:
+    resolution: {integrity: sha512-kBF9TsBjKnx8kygPFbZ03wRv4vXsD1Yeo4oOcEjDCU9Gv2BLWHCRWXqIfwqglRIRZ0or6t7d1erJmfVXU1EukQ==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       vite: ^5.0.0
@@ -1491,7 +1491,7 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.2
 
-  vite-plugin-vitepress-utils@1.0.2(vite@5.4.11)(vitepress@1.5.0(@algolia/client-search@5.17.1)(postcss@8.4.49)(search-insights@2.17.3)):
+  vite-plugin-vitepress-utils@1.0.3(vite@5.4.11)(vitepress@1.5.0(@algolia/client-search@5.17.1)(postcss@8.4.49)(search-insights@2.17.3)):
     dependencies:
       vite: 5.4.11
       vitepress: 1.5.0(@algolia/client-search@5.17.1)(postcss@8.4.49)(search-insights@2.17.3)
