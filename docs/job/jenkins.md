@@ -86,7 +86,8 @@ sudo chmod 666 /var/run/docker.sock
 
 2. 重启服务：
 ```bash
-sudo systemctl restart docker
+sudo systemctl restart docker 
+# rootless模式下用这个命令重启 systemctl --user restart docker
 docker-compose down
 docker-compose up -d
 ```
