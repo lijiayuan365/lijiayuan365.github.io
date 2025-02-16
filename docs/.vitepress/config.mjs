@@ -1,10 +1,14 @@
 import { defineConfig } from 'vitepress'
 import { autoSidebar } from 'vite-plugin-vitepress-utils'
 
+import { blogTheme } from './blog-theme'
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "My Awesome Project",
-  description: "A VitePress Site",
+  // 继承博客主题(@sugarat/theme)
+  extends: blogTheme,
+  title: "异乡小红帽",
+  description: "随便写写",
   themeConfig: {
     outline: {
       level: [2, 3], // 配置显示的标题级别，从 h2 到 h6
@@ -15,7 +19,7 @@ export default defineConfig({
     },
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/' },
+      // { text: 'Home', link: '/' },
       { text: '工作记录', link: '/job' },
     ],
 
@@ -30,7 +34,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/lijiayuan365/lijiayuan365.github.io' }
     ]
   },
   vite: {
@@ -41,4 +45,5 @@ export default defineConfig({
       }),
     ],
   },
+  srcExclude: ['**/resume.md']
 })
