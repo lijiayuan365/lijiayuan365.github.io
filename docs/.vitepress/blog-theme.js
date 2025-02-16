@@ -47,6 +47,17 @@ const blogTheme = getThemeConfig({
 
   // 文章默认作者
   author: '异乡小红帽',
+   // 评论
+   comment: {
+    type: 'giscus',
+    options: {
+      repo: 'lijiayuan365/lijiayuan365.github.io',
+      repoId: 'MDEwOlJlcG9zaXRvcnkxMzc1OTI4MzU=',
+      category: 'Announcements',
+      categoryId: 'DIC_kwDOCDOAA84CnA_5',
+      inputPosition: 'top',
+    },
+  },
 
   // 友链
   friend: [],
