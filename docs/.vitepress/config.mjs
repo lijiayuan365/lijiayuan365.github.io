@@ -19,6 +19,10 @@ export default defineConfig({
     },
     // https://vitepress.dev/reference/default-theme-config
     nav: [
+      {
+        text: 'AI 相关',
+        link: '/ai'
+      },
       { text: '开源作品', items: [
         { text: 'vue-docgen-component', link: 'https://github.com/lijiayuan365/vue-docgen-component' },
         { text: 'vite-plugin-vitepress-utils', link: 'https://github.com/lijiayuan365/vite-plugin-vitepress-utils' },
