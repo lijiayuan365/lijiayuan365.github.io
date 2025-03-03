@@ -127,3 +127,40 @@ sudo loginctl enable-linger ljy
 ```bash
 sudo apt-get install docker-compose
 ```
+
+## 配置 Java 环境
+
+配置 Java 主要是为了调试和开发应用。由于在 WSL2 上开发可能会遇到许多问题，因此建议在 Windows 环境中进行配置。不同版本的 React Native (RN) 对 Java 版本的要求各不相同：旧版本 RN 需要 Java 8，新版本 RN 需要 Java 11，而 Flutter 则需要 Java 17。为了方便管理这些版本，建议使用 [JEnv-for-Windows](https://github.com/FelixSelter/JEnv-for-Windows) 进行版本管理。
+
+### 步骤
+
+1. **安装 JEnv**  
+  找一个目录将 JEnv 仓库克隆到本地，并将其添加到系统 PATH 中。
+  ```bash
+  git clone https://github.com/FelixSelter/JEnv-for-Windows.git
+  ```
+
+2. **下载多版本 JDK**  
+  前往 [Adoptium](https://adoptium.net/zh-CN/temurin/releases/?os=windows&version=17&package=jdk&arch=x64) 选择所需的 JDK 版本。下载 ZIP 包并放置在本地目录中，例如：`D:\java`，可以下载多个版本。
+  ```
+  目录: D:\java
+  jdk8
+  jdk11
+   jdk17
+  ```
+
+3. **将 JDK 添加到 JEnv**  
+   使用以下命令将下载的 JDK 添加到 JEnv 中：
+   ```bash
+   jenv add jdk8 D:\java\jdk8
+   jenv add jdk11 D:\java\jdk11
+   jenv add jdk17 D:\java\jdk17
+   ```
+
+4. **切换 JDK 版本**  
+   使用以下命令切换到所需的 JDK 版本：
+   ```bash
+   jenv local remove
+   jenv change jdk17
+   # 切换到 Java 17 版本需要一些时间
+   ```
