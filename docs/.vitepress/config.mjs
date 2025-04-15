@@ -23,10 +23,18 @@ export default defineConfig({
         text: 'AI 相关',
         link: '/ai'
       },
-      { text: '开源作品', items: [
-        { text: 'vue-docgen-component', link: 'https://github.com/lijiayuan365/vue-docgen-component' },
-        { text: 'vite-plugin-vitepress-utils', link: 'https://github.com/lijiayuan365/vite-plugin-vitepress-utils' },
-      ] },
+      { text: '开源作品', 
+        items: [
+          { text: 'vue-docgen-component', link: 'https://github.com/lijiayuan365/vue-docgen-component' },
+          { text: 'vite-plugin-vitepress-utils', link: 'https://github.com/lijiayuan365/vite-plugin-vitepress-utils' },
+        ] 
+      },
+        {
+          text: '在线作品',
+          items: [
+            { text: '从零开始的面试示例', link: 'https://interview-frontend-pi.vercel.app' },
+          ]
+      },
       { text: '工作记录', link: '/job' },
     ],
 
