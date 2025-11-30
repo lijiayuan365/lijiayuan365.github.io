@@ -1,6 +1,6 @@
 # 常用 AI IDE 添加 MCP 指南（以 Figma 为例）
 
-MCP (Model Context Protocol) 的安装通常非常简单，大多数情况下只需一条命令即可完成。本文档旨在记录在不同 AI 编程工具中配置 Figma MCP 的具体步骤和注意事项，作为备忘。
+MCP (Model Context Protocol) 的安装通常非常简单，大多数情况下只需一条命令即可完成，具体的步骤在对应 mcp 的文档里面也会有说明。本文档旨在记录在不同 AI 编程工具中配置 Figma MCP 的具体步骤和注意事项，作为备忘。
 
 ## 1. Claude Code
 
